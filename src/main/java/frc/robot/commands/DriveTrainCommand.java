@@ -30,7 +30,6 @@ public class DriveTrainCommand extends CommandBase {
 	public void execute() {
 		Map<String, Double> sticks = RobotContainer.controller.getSticks();
 		RobotContainer.drivetrain.driveCartesian(sticks.get("LSX"), sticks.get("LSY"), sticks.get("RSX"));
-		System.out.println("ok");
 	}
 
 	// Called once the command ends or is interrupted.

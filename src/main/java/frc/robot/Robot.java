@@ -95,8 +95,7 @@ public class Robot extends TimedRobot {
 	/** This function is called periodically during operator control. */
 	@Override
 	public void teleopPeriodic() {
-		System.out.println(XboxController.Axis.kLeftY);
-		System.out.println(XboxController.Axis.kLeftX);
+		//RobotContainer.drivetrain.driveCartesian(0,0.5,0);
 	}
 
 	@Override

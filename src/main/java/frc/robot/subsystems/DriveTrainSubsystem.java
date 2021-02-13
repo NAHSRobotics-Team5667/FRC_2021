@@ -24,10 +24,10 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	private WPI_TalonFX frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor;
 	MecanumDrive drive;
 	private DifferentialDrive m_drive;
-	int FL = 4; // Front Left
-	int RL = 0; // Rear Left
-	int FR = 7; // Front Right
-	int RR = 3; // Rear Right
+	int FL = 3; // Front Left
+	int RL = 7; // Rear Left
+	int FR = 0; // Front Right
+	int RR = 4; // Rear Right
 	
 	public DriveTrainSubsystem() {
 		frontLeftMotor = new WPI_TalonFX(FL);
@@ -40,13 +40,13 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		frontRightMotor.configFactoryDefault();
 		rearRightMotor.configFactoryDefault();
 		TalonFXConfiguration falconConfig = new TalonFXConfiguration();
-		falconConfig.primaryPID.selectedFeedbackSensor = FeedbackDevice.IntegratedSensor;
-		falconConfig.openloopRamp = .8;
+		// falconConfig.primaryPID.selectedFeedbackSensor = FeedbackDevice.IntegratedSensor;
+		// falconConfig.openloopRamp = .8;
 
 		// frontLeftMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
 		// frontRightMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
 
-		setNeutralMode(NeutralMode.Coast);
+		setNeutralMode(NeutralMode.Brake);
 
 		frontRightMotor.configAllSettings(falconConfig);
 		frontLeftMotor.configAllSettings(falconConfig);
@@ -58,7 +58,7 @@ public class DriveTrainSubsystem extends SubsystemBase {
 
 		rearRightMotor.follow(frontRightMotor);
 
-		m_drive = new DifferentialDrive(frontLeftMotor, frontRightMotor);
+	//	m_drive = new DifferentialDrive(frontLeftMotor, frontRightMotor);
 
 	}
 
@@ -69,21 +69,12 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	 * @param ySpeed    - The y axis (Forward/Backward joystick)
 	 * @param zRotation - The z axis (Rotation)
 	 */
-	private double threshold(double stick, double thresh){
-		if(Math.abs(stick)<thresh){
-			return 0;
-		}
-		else{
-			return stick;
-		}
-	}
+	
 	public void driveCartesian(double xSpeed, double ySpeed, double zRotation) {
-		xSpeed = threshold(xSpeed, 0.1);
-		ySpeed = threshold(ySpeed, 0.1);
-		zRotation = threshold(zRotation, 0.1);
-		System.out.println(xSpeed);
-		System.out.println(ySpeed);
-		this.drive.driveCartesian(0.5*xSpeed,0.5*ySpeed, 0.5*zRotation);
+
+		this.drive.driveCartesian(0.7*xSpeed*xSpeed * Math.signum(xSpeed),0.7*ySpeed*ySpeed * Math.signum(ySpeed), 0.5*zRotation);
+		//this.drive.driveCartesian(0,0.75, 0);
+
 	}
 	public void setNeutralMode(NeutralMode neutralMode) {
 		frontLeftMotor.setNeutralMode(neutralMode);

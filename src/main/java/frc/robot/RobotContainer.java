@@ -7,6 +7,7 @@ package frc.robot;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 
 import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.commands.DriveTrainCommand;
 import frc.robot.subsystems.DriveTrainSubsystem;
@@ -26,6 +27,7 @@ public class RobotContainer {
 	// The robot's subsystems and commands are defined here...
 	public static Controller controller = new Controller(0);
 	public static DriveTrainSubsystem drivetrain;
+	public static PowerDistributionPanel panel = new PowerDistributionPanel(0);
 
 	/**
 	 * The container for the robot. Contains subsystems, OI devices, and commands.

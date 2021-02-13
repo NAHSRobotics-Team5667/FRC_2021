@@ -7,7 +7,7 @@ import frc.robot.Constants;
 
 public class Controller extends XboxController {
 
-    public final double kGHOST = .05; // Threshold for blocking ghost signals
+    public final double kGHOST = .1; // Threshold for blocking ghost signals
 
     /**
      * Initializes an Xbox controller.
