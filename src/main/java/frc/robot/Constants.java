@@ -15,6 +15,8 @@ package frc.robot;
  * wherever the constants are needed, to reduce verbosity.
  */
 public final class Constants {
+    public static final int FALCON_CPR = 2048; // counts per revolution of Falcon 500
+
     public final static class ControllerConstants {
         public static final int CONTROLLER_PORT = 0; // Controller port
 
@@ -45,5 +47,11 @@ public final class Constants {
         public static final int BUTTON_MENU_PORT = 8; // Menu Button
         public static final int BUTTON_START_PORT = 7; // Start button
 
+    }
+
+    public final static class ShooterConstants {
+        // Hood
+        public static final int HOOD_ID = -1; // placeholder
+        public static final double HOOD_GEAR_RATIO = 1 / 53.3333;
     }
 }
