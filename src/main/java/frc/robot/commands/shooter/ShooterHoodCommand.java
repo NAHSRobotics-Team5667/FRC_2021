@@ -16,8 +16,8 @@ public class ShooterHoodCommand extends CommandBase {
    * Creates a ShooterHoodCommand object.
    * 
    * @param initialDegrees initial degrees of the shooter hood.
-   * @param endDegrees end degrees of the shooter hood.
-   * @param m_shooter shooter subsystem.
+   * @param endDegrees     end degrees of the shooter hood.
+   * @param m_shooter      shooter subsystem.
    */
   public ShooterHoodCommand(double initialDegrees, double endDegrees, ShooterSubsystem m_shooter) {
     this.initialDegrees = initialDegrees;

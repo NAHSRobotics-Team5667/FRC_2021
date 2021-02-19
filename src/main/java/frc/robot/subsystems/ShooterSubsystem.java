@@ -53,9 +53,9 @@ public class ShooterSubsystem extends SubsystemBase {
   }
 
   /**
-   * @param endDegrees end degree position of the hood.
+   * @param endDegrees     end degree position of the hood.
    * @param initialDegrees initial degree position of the hood.
-   * @return Tick difference for the Falcon 500.
+   * @return               Tick difference for the Falcon 500.
    */
   public double degreesToTicks(double endDegrees, double initialDegrees) {
     return ((Constants.FALCON_CPR * (1 / Constants.ShooterConstants.HOOD_GEAR_RATIO)) * (endDegrees - initialDegrees)) / 360;
