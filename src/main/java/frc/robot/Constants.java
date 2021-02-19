@@ -52,6 +52,8 @@ public final class Constants {
     public final static class ShooterConstants {
         // Hood
         public static final int HOOD_ID = -1; // placeholder
+        public static final double HOOD_GEAR_RATIO = 1 / 37.7778;
+
         public static final double HOOD_GEAR_RATIO = 1 / 53.3333;
 
         // Turret

@@ -33,9 +33,10 @@ public class ShooterHoodCommand extends CommandBase {
   }
 
   // Called every time the scheduler runs while the command is scheduled.
-  // TODO: adjust hood at a fixed, relatively slow speed (PID unnecessary) until angle is approximately equal to endDegrees
   @Override
-  public void execute() {}
+  public void execute() {
+    m_shooter.setHood(m_shooter.degreesToTicks(endDegrees, initialDegrees), 0.01);
+  }
 
   // Called once the command ends or is interrupted.
   @Override
