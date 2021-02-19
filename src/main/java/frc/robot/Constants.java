@@ -53,5 +53,12 @@ public final class Constants {
         // Hood
         public static final int HOOD_ID = -1; // placeholder
         public static final double HOOD_GEAR_RATIO = 1 / 53.3333;
+
+        // Turret
+        public static final int TURRET_ID = -1; // placeholder
+        public static final double TURRET_kP = 0; // placeholder
+        public static final double TURRET_kI = 0; // placeholder
+        public static final double TURRET_kD = 0; // placeholder
+        public static final double TURRET_GEAR_RATIO = 1 / 2;
     }
 }
