@@ -23,6 +23,14 @@ import com.ctre.phoenix.motorcontrol.can.TalonFXConfiguration;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 import com.kauailabs.navx.frc.AHRS;
 
+import edu.wpi.first.networktables.NetworkTable;
+import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.util.Units;
+
 import frc.robot.Constants.DriveConstants;
 import java.lang.Math;
 
@@ -41,8 +49,16 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	private final SpeedControllerGroup m_leftMotors;
 // The motors on the right side of the drive.
 	private final SpeedControllerGroup m_rightMotors;
-	
-	
+	private DriveModes m_driveMode = DriveModes.MANUAL;
+
+	private ShuffleboardTab graphTab = Shuffleboard.getTab("Graphs");
+	private ShuffleboardTab compTab = Shuffleboard.getTab("Teleop");
+
+	private NetworkTable live_dashboard = NetworkTableInstance.getDefault().getTable("Live_Dashboard");
+	private NetworkTableEntry robotX = live_dashboard.getEntry("robotX");
+	private NetworkTableEntry robotY = live_dashboard.getEntry("robotY");
+	private NetworkTableEntry robotHeading = live_dashboard.getEntry("robotHeading");
+
 	private final DifferentialDrive m_drive;
 	private DifferentialDriveOdometry m_odometry;
 	public static enum DriveModes {
@@ -126,6 +142,35 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		m_navx.reset();
 		m_odometry.resetPosition(pose, Rotation2d.fromDegrees(getHeading()));
 	}
+	/**
+	 * Controls the left and right sides of the drive directly with voltages.
+	 *
+	 * @param leftVolts  the commanded left output
+	 * @param rightVolts the commanded right output
+	 */
+	public void tankDriveVolts(double leftVolts, double rightVolts) {
+		SmartDashboard.putNumber("raw_lv", leftVolts);
+		SmartDashboard.putNumber("raw_rv", -rightVolts);
+
+		m_leftMotors.set(leftVolts);
+		m_rightMotors.set(-rightVolts);
+		m_drive.feed();
+	}
+
+	/**
+	 * Controls the left and right sides of the drive directly with voltages.
+	 *
+	 * @param leftVolts  the commanded left output
+	 * @param rightVolts the commanded right output
+	 */
+	public void tankDriveVoltsReverse(double leftVolts, double rightVolts) {
+		SmartDashboard.putNumber("raw_lv", leftVolts);
+		SmartDashboard.putNumber("raw_rv", -rightVolts);
+
+		m_leftMotors.set(-rightVolts);
+		m_rightMotors.set(leftVolts);
+		m_drive.feed();
+	}
 	public void setNeutralMode(NeutralMode neutralMode) {
 		frontLeftMotor.setNeutralMode(neutralMode);
 		rearLeftMotor.setNeutralMode(neutralMode);
@@ -138,14 +183,22 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	  public double getHeading() {
 		return m_navx.getRotation2d().getDegrees();
 	  }
+	  public double getLeftEncoderPosition() {
+		return frontLeftMotor.getSelectedSensorPosition(0) * DriveConstants.ENCODER_CONSTANT
+				* DriveConstants.MAG;
+	}
+	public double getRightEncoderPosition() {
+		return -frontRightMotor.getSelectedSensorPosition(0) * DriveConstants.ENCODER_CONSTANT
+				* DriveConstants.MAG;
+	}
 	  public void zeroHeading() {
 		m_navx.reset();
 	}
-	public void tankDriveVolts(double leftVolts, double rightVolts) {
-		m_leftMotors.setVoltage(leftVolts);
-		m_rightMotors.setVoltage(-rightVolts);
-		m_drive.feed();
+	public Pose2d getPose() {
+		return m_odometry.getPoseMeters();
 	}
+
+	
 	public double getLeftEncoderRate() {
 		return frontLeftMotor.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT * 10
 				*DriveConstants.MAG;
@@ -186,6 +239,9 @@ public class DriveTrainSubsystem extends SubsystemBase {
 
 	@Override
 	public void periodic() {
-		// This method will be called once per scheduler run
-	}
+		m_odometry.update(Rotation2d.fromDegrees(getHeading()), getLeftEncoderPosition(), getRightEncoderPosition());
+
+		robotX.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getTranslation().getX()));
+		robotY.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getTranslation().getY()));
+		robotHeading.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getRotation().getRadians()));	}
 }
