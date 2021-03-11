@@ -70,8 +70,5 @@ public class RobotContainer {
 	public void setNeutralMode(NeutralMode mode){
 		drivetrain.setNeutralMode(mode);
 	}	
-	public Command getAutonomousCommand() {
-		// An ExampleCommand will run in autonomous
-		return null;
-	}
+	
 }
