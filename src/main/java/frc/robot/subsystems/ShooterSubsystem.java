@@ -12,8 +12,9 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 public class ShooterSubsystem extends SubsystemBase {
-  // hood
   private WPI_TalonFX m_hood;
+  private WPI_TalonFX m_shooter;
+
   private double initialHoodAngle;
   private double hoodAngle;
 
@@ -22,9 +23,13 @@ public class ShooterSubsystem extends SubsystemBase {
    */
   public ShooterSubsystem(double hoodAngle) {
     m_hood = new WPI_TalonFX(Constants.ShooterConstants.HOOD_ID);
-    m_hood.setInverted(false); // positive makes the angle larger, negative makes the angle smaller
+    m_shooter = new WPI_TalonFX(Constants.ShooterConstants.SHOOTER_ID);
+    // m_hood.setInverted(true); // positive makes the angle larger, negative makes the angle smaller
+    // m_shooter.setInverted(true); // positive shoots power cells
     m_hood.setNeutralMode(NeutralMode.Brake);
-    m_hood.setVoltage(12);
+    m_shooter.setNeutralMode(NeutralMode.Coast);
+    m_hood.setVoltage(6); // requires less voltage, may need more idk
+    m_shooter.setVoltage(10); // requires more voltage to launch powercells idk
 
     this.initialHoodAngle = hoodAngle;
     this.hoodAngle = hoodAngle;
@@ -32,6 +37,10 @@ public class ShooterSubsystem extends SubsystemBase {
 
   public void stopHood() {
     m_hood.stopMotor();
+  }
+
+  public void stopShooter() {
+    m_shooter.stopMotor();
   }
 
   /**
@@ -59,6 +68,10 @@ public class ShooterSubsystem extends SubsystemBase {
    */
   public double degreesToTicks(double endDegrees, double initialDegrees) {
     return ((Constants.FALCON_CPR * (1 / Constants.ShooterConstants.HOOD_GEAR_RATIO)) * (endDegrees - initialDegrees)) / 360;
+  }
+
+  public void startShooter() {
+    m_shooter.set(ControlMode.PercentOutput, 1); // set shooter to full speed
   }
 
   /**
