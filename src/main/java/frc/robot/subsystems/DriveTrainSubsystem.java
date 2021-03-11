@@ -38,24 +38,38 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	int RR = 4; // Rear Right
 
 	// The motors on the left side of the drive.
-	private final SpeedControllerGroup m_leftMotors =
-	new SpeedControllerGroup(new WPI_TalonFX(FL),
-							 new WPI_TalonFX(RL));
-
+	private final SpeedControllerGroup m_leftMotors;
 // The motors on the right side of the drive.
-	private final SpeedControllerGroup m_rightMotors =
-	new SpeedControllerGroup(new WPI_TalonFX(FR),
-							 new WPI_TalonFX(RR));
+	private final SpeedControllerGroup m_rightMotors;
 	
-	private final DifferentialDrive m_drive = new DifferentialDrive(m_leftMotors, m_rightMotors);
+	
+	private final DifferentialDrive m_drive;
 	private DifferentialDriveOdometry m_odometry;
+	public static enum DriveModes {
+		MANUAL(0), AUTO(1);
+
+		private int mode;
+
+		private DriveModes(int mode) {
+			this.mode = mode;
+		}
+
+		public int getMode() {
+			return mode;
+		}
+	}
 
 	public DriveTrainSubsystem() {
 		frontLeftMotor = new WPI_TalonFX(FL);
 		rearLeftMotor = new WPI_TalonFX(RL);
 		frontRightMotor = new WPI_TalonFX(FR);
 		rearRightMotor = new WPI_TalonFX(RR);
+
+		m_leftMotors = new SpeedControllerGroup(frontLeftMotor, rearLeftMotor);
+		m_rightMotors = new SpeedControllerGroup(frontRightMotor, rearRightMotor);
 		drive = new MecanumDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
+		m_drive = new DifferentialDrive(m_leftMotors, m_rightMotors);
+
 		frontLeftMotor.configFactoryDefault();
 		rearLeftMotor.configFactoryDefault();
 		frontRightMotor.configFactoryDefault();
@@ -65,11 +79,11 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		m_odometry = new DifferentialDriveOdometry(Rotation2d.fromDegrees(getHeading()));
 		reverseEncoders();
 		resetOdometry(new Pose2d());
-		// falconConfig.primaryPID.selectedFeedbackSensor = FeedbackDevice.IntegratedSensor;
-		// falconConfig.openloopRamp = .8;
+		falconConfig.primaryPID.selectedFeedbackSensor = FeedbackDevice.IntegratedSensor;
+		falconConfig.openloopRamp = .8;
 
-		// frontLeftMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
-		// frontRightMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
+		frontLeftMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
+		frontRightMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
 
 		setNeutralMode(NeutralMode.Brake);
 
@@ -83,7 +97,6 @@ public class DriveTrainSubsystem extends SubsystemBase {
 
 		rearRightMotor.follow(frontRightMotor);
 
-	//	m_drive = new DifferentialDrive(frontLeftMotor, frontRightMotor);
 
 	}
 
