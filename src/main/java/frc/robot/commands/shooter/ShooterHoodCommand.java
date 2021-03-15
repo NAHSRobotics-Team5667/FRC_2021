@@ -35,7 +35,7 @@ public class ShooterHoodCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_shooter.setHood(m_shooter.degreesToTicks(endDegrees, initialDegrees), 0.01);
+    m_shooter.setHood(m_shooter.degreesToHoodTicks(endDegrees, initialDegrees), 0.01);
   }
 
   // Called once the command ends or is interrupted.
