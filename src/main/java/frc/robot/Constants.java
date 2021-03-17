@@ -108,4 +108,35 @@ public final class Constants {
         public static double TURRET_kI = 0;
         public static double TURRET_kD = 0;
     }
+
+    public static enum ShooterStates {
+        IDLE,
+        SEARCHING,
+        LOCATED,
+        SHOOTING
+    }
+
+    public final static class IntakeConstants {
+        public static final int INTAKE_ID = -1; // placeholder
+        public static final int PISTON_ID = -1; // placeholder
+
+        public static final double INTAKE_SPEED = 0.5; // placeholder
+    }
+
+    public static enum IntakeStates {
+        STORED,
+        EXTENDED,
+        INTAKING
+    }
+
+    public final static class IndexConstants {
+        public static final int INDEX_ID = -1; // placeholder
+
+        public static final double INDEX_SPEED = 0.1;
+    }
+
+    public static enum IndexStates {
+        IDLE,
+        POWERED
+    }
 }
