@@ -51,6 +51,8 @@ public class RobotContainer {
 	 */
 	public RobotContainer() {
 		drivetrain = new DriveTrainSubsystem();
+		// XXX: these are placeholders!!
+		m_shooter = new ShooterSubsystem(0.0, 0.0);
 		m_index = new IndexSubsystem();
 		configureButtonBindings();
 		//Set default commands

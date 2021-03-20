@@ -52,6 +52,8 @@ public class IndexCommand extends CommandBase {
   @Override
   public boolean isFinished() {
     // end the command if the intake or shooter are idle
-    return (m_intake.getIntakeState() == IntakeStates.STORED) || (m_shooter.getShooterState() == ShooterStates.IDLE);
+    // XXX: Setting this to true
+    // return (m_intake.getIntakeState() == IntakeStates.STORED) || (m_shooter.getShooterState() == ShooterStates.IDLE);
+    return (false);
   }
 }
