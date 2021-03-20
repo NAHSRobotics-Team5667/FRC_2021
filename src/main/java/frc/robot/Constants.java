@@ -20,6 +20,8 @@ import edu.wpi.first.wpilibj.kinematics.DifferentialDriveKinematics;
  * wherever the constants are needed, to reduce verbosity.
  */
 public final class Constants {
+    public final static int FALCON_CPR = 2048;
+
     public final static class ControllerConstants {
         public static final int CONTROLLER_PORT = 0; // Controller port
 
@@ -92,5 +94,49 @@ public final class Constants {
         public static final PIDController R_CONTROLLER = new PIDController(DriveConstants.kP, DriveConstants.kD,
                 DriveConstants.kD);
 
+    }
+
+    public final static class ShooterConstants {
+        public static final int HOOD_ID = -1; // placeholder
+        public static final int SHOOTER_ID = -1; // placeholder
+        public static final int TURRET_ID = -1; // placeholder
+        public static final int SHOOTER_INTAKE_ID = -1; // placeholder
+
+        public static final double HOOD_GEAR_RATIO = 1 / 37.7778;
+
+        public static double TURRET_kP = 0;
+        public static double TURRET_kI = 0;
+        public static double TURRET_kD = 0;
+    }
+
+    public static enum ShooterStates {
+        IDLE,
+        SEARCHING,
+        LOCATED,
+        SHOOTING
+    }
+
+    public final static class IntakeConstants {
+        public static final int INTAKE_ID = -1; // placeholder
+        public static final int PISTON_ID = -1; // placeholder
+
+        public static final double INTAKE_SPEED = 0.5; // placeholder
+    }
+
+    public static enum IntakeStates {
+        STORED,
+        EXTENDED,
+        INTAKING
+    }
+
+    public final static class IndexConstants {
+        public static final int INDEX_ID = -1; // placeholder
+
+        public static final double INDEX_SPEED = 0.1;
+    }
+
+    public static enum IndexStates {
+        IDLE,
+        POWERED
     }
 }
