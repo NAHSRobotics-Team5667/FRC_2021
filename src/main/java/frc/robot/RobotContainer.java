@@ -12,6 +12,9 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import frc.robot.commands.DriveTrainCommand;
 import frc.robot.subsystems.DriveTrainSubsystem;
+import frc.robot.subsystems.IndexSubsystem;
+import frc.robot.commands.IndexCommand;
+import frc.robot.subsystems.ShooterSubsystem;
 import frc.robot.utils.Controller;
 
 import edu.wpi.first.wpilibj.trajectory.Trajectory;
@@ -33,6 +36,8 @@ public class RobotContainer {
 	// The robot's subsystems and commands are defined here...
 	public static Controller controller = new Controller(0);
 	public static DriveTrainSubsystem drivetrain;
+	public static IndexSubsystem m_index;
+	public static ShooterSubsystem m_shooter;
 	public static PowerDistributionPanel panel = new PowerDistributionPanel(0);
 
 	private Trajectory[] paths = new Trajectory[] { PATHS.PathWeaver.getTrajectory("FAR_TRENCH"),
@@ -46,9 +51,11 @@ public class RobotContainer {
 	 */
 	public RobotContainer() {
 		drivetrain = new DriveTrainSubsystem();
+		m_index = new IndexSubsystem();
 		configureButtonBindings();
 		//Set default commands
 		drivetrain.setDefaultCommand(new DriveTrainCommand());
+		m_index.setDefaultCommand(new IndexCommand(m_index, m_shooter));
 
 	}
 

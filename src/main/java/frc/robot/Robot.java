@@ -4,6 +4,8 @@
 
 package frc.robot;
 
+import com.ctre.phoenix.motorcontrol.NeutralMode;
+
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -66,20 +68,20 @@ public class Robot extends TimedRobot {
 	 * This autonomous runs the autonomous command selected by your
 	 * {@link RobotContainer} class.
 	 */
-	@Override
-	public void autonomousInit() {
-		m_autonomousCommand = m_robotContainer.getAutonomousCommand(10);
+	//@Override
+	// public void autonomousInit() {
+	// 	m_autonomousCommand = m_robotContainer.getAutonomousCommand(10);
 
-		// schedule the autonomous command (example)
-			m_autonomousCommand.schedule();
-	}
+	// 	// schedule the autonomous command (example)
+	// 		m_autonomousCommand.schedule();
+	// }
 
 	/** This function is called periodically during autonomous. */
-	@Override
-	public void autonomousPeriodic() {
-		m_autonomousCommand.schedule();
-		m_robotContainer.feedMotorSafety();
-	}
+	// @Override
+	// public void autonomousPeriodic() {
+	// 	m_autonomousCommand.schedule();
+	// 	m_robotContainer.feedMotorSafety();
+	// }
 
 	 @Override
 	public void teleopInit() {
@@ -90,12 +92,12 @@ public class Robot extends TimedRobot {
 		// if (m_autonomousCommand != null) {
 		// 	m_autonomousCommand.cancel();
 		// }
+		m_robotContainer.setNeutralMode(NeutralMode.Brake);
 	}
 
 	/** This function is called periodically during operator control. */
 	@Override
 	public void teleopPeriodic() {
-		//RobotContainer.drivetrain.driveCartesian(0,0.5,0);
 	}
 
 	@Override
