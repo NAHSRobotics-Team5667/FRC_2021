@@ -4,11 +4,22 @@
 
 package frc.robot;
 
+import java.nio.file.Paths;
+import java.util.List;
 
-import edu.wpi.first.wpilibj.util.Units;
+import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.controller.PIDController;
+import edu.wpi.first.wpilibj.controller.SimpleMotorFeedforward;
+import edu.wpi.first.wpilibj.geometry.Pose2d;
+import edu.wpi.first.wpilibj.geometry.Rotation2d;
+import edu.wpi.first.wpilibj.geometry.Translation2d;
 import edu.wpi.first.wpilibj.kinematics.DifferentialDriveKinematics;
-
+import edu.wpi.first.wpilibj.trajectory.Trajectory;
+import edu.wpi.first.wpilibj.trajectory.TrajectoryConfig;
+import edu.wpi.first.wpilibj.trajectory.TrajectoryGenerator;
+import edu.wpi.first.wpilibj.trajectory.TrajectoryUtil;
+import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveVoltageConstraint;
+import edu.wpi.first.wpilibj.util.Units;
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide
  * numerical or boolean constants. This class should not be used for any other
@@ -95,6 +106,85 @@ public final class Constants {
                 DriveConstants.kD);
 
     }
+    public final static class PATHS {
+        public static final DifferentialDriveVoltageConstraint autoVoltageConstraint = new DifferentialDriveVoltageConstraint(
+                new SimpleMotorFeedforward(Constants.DriveConstants.ksVolts,
+                        Constants.DriveConstants.kvVoltSecondsPerMeter,
+                        Constants.DriveConstants.kaVoltSecondsSquaredPerMeter),
+                Constants.DriveConstants.kDriveKinematics, 6);
+
+        // Create config for trajectory
+        public static final TrajectoryConfig config = new TrajectoryConfig(
+                Constants.AutoConstants.kMaxSpeedMetersPerSecond,
+                Constants.AutoConstants.kMaxAccelerationMetersPerSecondSquared)
+                        // Add kinematics to ensure max speed is actually obeyed
+                        .setKinematics(Constants.DriveConstants.kDriveKinematics)
+                        // Apply the voltage constraint
+                        .addConstraint(autoVoltageConstraint);
+
+        // An example trajectory to follow. All units in meters.
+        public static final Trajectory S_TRAJECTORY = TrajectoryGenerator.generateTrajectory(
+                // Start at the origin facing the +X direction
+                new Pose2d(0, 0, new Rotation2d(0)),
+                // Pass through these two interior waypoints, making an 's' curve path
+                List.of(new Translation2d(1, 1), new Translation2d(2, -1)),
+                // End 3 meters straight ahead of where we started, facing forward
+                new Pose2d(3, 0, new Rotation2d(0)),
+                // Pass config
+                config);
+
+        public static final Trajectory STRAIGHT_TRAJECTORY_2M = TrajectoryGenerator.generateTrajectory(
+                // Start at the origin facing the +X direction
+                new Pose2d(0, 0, new Rotation2d(0)),
+                // Pass through these two interior waypoints
+                List.of(new Translation2d(1, 0)),
+                // End 3 meters straight ahead of where we started, facing forward
+                new Pose2d(2, 0, new Rotation2d(0)),
+                // Pass config
+                config);
+
+        public static final Trajectory OFF_LINE = TrajectoryGenerator.generateTrajectory(
+                // Start at the origin facing the +X direction
+                new Pose2d(0, 0, new Rotation2d(0)),
+                // Pass through these two interior waypoints
+                List.of(new Translation2d(1, 0)),
+                // End 3 meters straight ahead of where we started, facing forward
+                new Pose2d(2, 0, new Rotation2d(0)),
+                // Pass config
+                config);
+
+        public static final Trajectory TRENCH_LINE = TrajectoryGenerator.generateTrajectory(
+                // Start
+                new Pose2d(5.2, -0.7, new Rotation2d(0)),
+                // Pass through balls
+                List.of(new Translation2d(5.885, -0.7)),
+                // End at the end of the color wheel
+                new Pose2d(6.57, -0.7, new Rotation2d(0)), config);
+
+        public static final Trajectory SIDE_TRENCH = TrajectoryGenerator.generateTrajectory(
+                // Start
+                new Pose2d(6.244, -1.463, new Rotation2d(90)),
+                // Pass through balls
+                List.of(new Translation2d(6.244, -1.1)),
+                // End at the end of the color wheel
+                new Pose2d(6.244, -1, new Rotation2d(90)), config);
+
+        public static final Trajectory SIDE_FORWARD = PathWeaver.getTrajectory("TRENCH_LINE");
+
+        public static final class PathWeaver {
+            public static Trajectory getTrajectory(String path) {
+                try {
+                    return TrajectoryUtil
+                            .fromPathweaverJson(Paths.get("/home/lvuser/deploy/output/" + path + ".wpilib.json"));
+                } catch (Exception e) {
+                    System.out.println("CANNOT READ Trajectory - " + path);
+                    System.out.println("WITH ERROR: " + e.toString());
+                    return null;
+                }
+            }
+        }
+    }
+
 
     public final static class ShooterConstants {
         public static final int HOOD_ID = -1; // placeholder

@@ -9,11 +9,17 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.RunCommand;
 import frc.robot.commands.DriveTrainCommand;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.utils.Controller;
+
+import edu.wpi.first.wpilibj.trajectory.Trajectory;
 import edu.wpi.first.wpilibj2.command.button.Button;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+
+import frc.robot.autos.RunPath;
+import frc.robot.Constants.PATHS;
 
 
 /**
@@ -29,6 +35,12 @@ public class RobotContainer {
 	public static DriveTrainSubsystem drivetrain;
 	public static PowerDistributionPanel panel = new PowerDistributionPanel(0);
 
+	private Trajectory[] paths = new Trajectory[] { PATHS.PathWeaver.getTrajectory("FAR_TRENCH"),
+			PATHS.PathWeaver.getTrajectory("FAR_RENDEVOUS"), PATHS.PathWeaver.getTrajectory("MIDDLE_TRENCH"),
+			PATHS.PathWeaver.getTrajectory("MIDDLE_RENDEVOUS"), PATHS.PathWeaver.getTrajectory("CLOSE_TRENCH"),
+			PATHS.PathWeaver.getTrajectory("CLOSE_RENDEVOUS"), PATHS.PathWeaver.getTrajectory("BALL_THIEF"), null,
+			PATHS.PathWeaver.getTrajectory("MIDDLE_TRENCH_SIDE"), null, PATHS.STRAIGHT_TRAJECTORY_2M,
+			PATHS.S_TRAJECTORY };
 	/**
 	 * The container for the robot. Contains subsystems, OI devices, and commands.
 	 */
@@ -66,9 +78,17 @@ public class RobotContainer {
 	public static Controller getController() {
 		return controller;
 	}
-
+	public Command getAutonomousCommand(int selection) {
+			drivetrain.resetOdometry(paths[selection].getInitialPose());
+			return RunPath.getCommand(paths[selection], drivetrain, false).andThen(new RunCommand(drivetrain::stop));
+		
+		
+		}
+	
 	public void setNeutralMode(NeutralMode mode){
 		drivetrain.setNeutralMode(mode);
 	}	
-	
+	public void feedMotorSafety() {
+		drivetrain.feedMotorSafety();
+	}
 }
