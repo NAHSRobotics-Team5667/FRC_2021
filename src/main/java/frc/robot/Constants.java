@@ -220,9 +220,9 @@ public final class Constants {
     }
 
     public final static class IndexConstants {
-        public static final int INDEX_ID = -1; // placeholder
+        public static final int INDEX_ID = 2; // placeholder
 
-        public static final double INDEX_SPEED = 0.1;
+        public static final double INDEX_SPEED = 0.05;
     }
 
     public static enum IndexStates {
