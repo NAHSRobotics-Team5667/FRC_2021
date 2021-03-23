@@ -35,8 +35,7 @@ public class IndexCommand extends CommandBase {
 
   @Override
   public void execute() {
-    System.out.println("made it");
-    if(RobotContainer.getController().getBumperPressed(Hand.kLeft)){
+    if(RobotContainer.getController().getBumper(Hand.kLeft)){
     m_index.startIndex();
     }
     else{
@@ -54,6 +53,7 @@ public class IndexCommand extends CommandBase {
     // end the command if the intake or shooter are idle
     // XXX: Setting this to true
     // return (m_intake.getIntakeState() == IntakeStates.STORED) || (m_shooter.getShooterState() == ShooterStates.IDLE);
+
     return (false);
   }
 }

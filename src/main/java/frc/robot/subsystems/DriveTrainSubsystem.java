@@ -95,11 +95,11 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		m_odometry = new DifferentialDriveOdometry(Rotation2d.fromDegrees(getHeading()));
 		reverseEncoders();
 		resetOdometry(new Pose2d());
-		falconConfig.primaryPID.selectedFeedbackSensor = FeedbackDevice.IntegratedSensor;
-		falconConfig.openloopRamp = .8;
+		// falconConfig.primaryPID.selectedFeedbackSensor = FeedbackDevice.IntegratedSensor;
+		// falconConfig.openloopRamp = .8;
 
-		frontLeftMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
-		frontRightMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
+		// frontLeftMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
+		// frontRightMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
 
 		setNeutralMode(NeutralMode.Brake);
 
@@ -184,11 +184,11 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		return m_navx.getRotation2d().getDegrees();
 	  }
 	  public double getLeftEncoderPosition() {
-		return frontLeftMotor.getSelectedSensorPosition(0) * DriveConstants.ENCODER_CONSTANT
+		return frontLeftMotor.getSelectedSensorPosition() * DriveConstants.ENCODER_CONSTANT
 				* DriveConstants.MAG;
 	}
 	public double getRightEncoderPosition() {
-		return -frontRightMotor.getSelectedSensorPosition(0) * DriveConstants.ENCODER_CONSTANT
+		return -frontRightMotor.getSelectedSensorPosition() * DriveConstants.ENCODER_CONSTANT
 				* DriveConstants.MAG;
 	}
 	  public void zeroHeading() {
