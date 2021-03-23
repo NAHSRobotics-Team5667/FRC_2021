@@ -76,10 +76,10 @@ public final class Constants {
         public static final double MAX_SPEED_TELE = 3.25;
         public static final double MAX_ANGULAR_VEL = 320;
 
-        public static final int RIGHT_MASTER = 0;
-        public static final int LEFT_MASTER = 3;
-        public static final int RIGHT_SLAVE = 4;
-        public static final int LEFT_SLAVE = 7;
+        public static final int FR = 0;
+        public static final int FL = 3;
+        public static final int RR = 4;
+        public static final int RL = 7;
 
         public static final double ksVolts = 0.0869 / 10;
         public static final double kvVoltSecondsPerMeter = 2.46 / 10;

@@ -5,8 +5,11 @@
 package frc.robot;
 
 import com.ctre.phoenix.motorcontrol.NeutralMode;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+import com.kauailabs.navx.frc.AHRS;
 
 import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
@@ -50,7 +53,7 @@ public class RobotContainer {
 	 * The container for the robot. Contains subsystems, OI devices, and commands.
 	 */
 	public RobotContainer() {
-		drivetrain = new DriveTrainSubsystem();
+		drivetrain = new DriveTrainSubsystem(new AHRS(SPI.Port.kMXP), new WPI_TalonFX(Constants.DriveConstants.FR), new WPI_TalonFX(Constants.DriveConstants.FL), new WPI_TalonFX(Constants.DriveConstants.RR), new WPI_TalonFX(Constants.DriveConstants.RL));
 		// XXX: these are placeholders!!
 		m_shooter = new ShooterSubsystem(0.0, 0.0);
 		m_index = new IndexSubsystem();

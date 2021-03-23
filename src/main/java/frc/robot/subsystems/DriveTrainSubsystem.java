@@ -40,10 +40,6 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	MecanumDrive drive;
 	private final AHRS m_navx;
 
-	int FL = 3; // Front Left
-	int RL = 7; // Rear Left
-	int FR = 0; // Front Right
-	int RR = 4; // Rear Right
 
 	// The motors on the left side of the drive.
 	private final SpeedControllerGroup m_leftMotors;
@@ -75,11 +71,12 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		}
 	}
 
-	public DriveTrainSubsystem() {
-		frontLeftMotor = new WPI_TalonFX(FL);
-		rearLeftMotor = new WPI_TalonFX(RL);
-		frontRightMotor = new WPI_TalonFX(FR);
-		rearRightMotor = new WPI_TalonFX(RR);
+	public DriveTrainSubsystem(AHRS gyro, WPI_TalonFX frontRight, WPI_TalonFX frontLeft, WPI_TalonFX rearRight, WPI_TalonFX rearLeft) {
+		frontLeftMotor = frontLeft;
+		rearLeftMotor = rearLeft;
+		frontRightMotor = frontRight;
+		rearRightMotor = rearRight;
+		m_navx = gyro;
 
 		m_leftMotors = new SpeedControllerGroup(frontLeftMotor, rearLeftMotor);
 		m_rightMotors = new SpeedControllerGroup(frontRightMotor, rearRightMotor);
@@ -91,15 +88,14 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		frontRightMotor.configFactoryDefault();
 		rearRightMotor.configFactoryDefault();
 		TalonFXConfiguration falconConfig = new TalonFXConfiguration();
-		m_navx = new AHRS();
 		m_odometry = new DifferentialDriveOdometry(Rotation2d.fromDegrees(getHeading()));
 		reverseEncoders();
 		resetOdometry(new Pose2d());
-		// falconConfig.primaryPID.selectedFeedbackSensor = FeedbackDevice.IntegratedSensor;
-		// falconConfig.openloopRamp = .8;
+		falconConfig.primaryPID.selectedFeedbackSensor = FeedbackDevice.IntegratedSensor;
+		falconConfig.openloopRamp = .8;
 
-		// frontLeftMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
-		// frontRightMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
+		frontLeftMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
+		frontRightMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
 
 		setNeutralMode(NeutralMode.Brake);
 
@@ -184,11 +180,11 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		return m_navx.getRotation2d().getDegrees();
 	  }
 	  public double getLeftEncoderPosition() {
-		return frontLeftMotor.getSelectedSensorPosition() * DriveConstants.ENCODER_CONSTANT
+		return frontLeftMotor.getSelectedSensorPosition(0) * DriveConstants.ENCODER_CONSTANT
 				* DriveConstants.MAG;
 	}
 	public double getRightEncoderPosition() {
-		return -frontRightMotor.getSelectedSensorPosition() * DriveConstants.ENCODER_CONSTANT
+		return -frontRightMotor.getSelectedSensorPosition(0) * DriveConstants.ENCODER_CONSTANT
 				* DriveConstants.MAG;
 	}
 	  public void zeroHeading() {
