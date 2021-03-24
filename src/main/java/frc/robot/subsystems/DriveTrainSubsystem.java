@@ -55,7 +55,6 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	private NetworkTableEntry robotY = live_dashboard.getEntry("robotY");
 	private NetworkTableEntry robotHeading = live_dashboard.getEntry("robotHeading");
 
-	private final DifferentialDrive m_drive;
 	private DifferentialDriveOdometry m_odometry;
 	public static enum DriveModes {
 		MANUAL(0), AUTO(1);
@@ -81,8 +80,6 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		m_leftMotors = new SpeedControllerGroup(frontLeftMotor, rearLeftMotor);
 		m_rightMotors = new SpeedControllerGroup(frontRightMotor, rearRightMotor);
 		drive = new MecanumDrive(frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor);
-		m_drive = new DifferentialDrive(m_leftMotors, m_rightMotors);
-
 		frontLeftMotor.configFactoryDefault();
 		rearLeftMotor.configFactoryDefault();
 		frontRightMotor.configFactoryDefault();
@@ -104,11 +101,9 @@ public class DriveTrainSubsystem extends SubsystemBase {
 
 		rearRightMotor.configAllSettings(falconConfig);
 		rearLeftMotor.configAllSettings(falconConfig);
-
-		rearLeftMotor.follow(frontLeftMotor);
-
-		rearRightMotor.follow(frontRightMotor);
-
+		
+		//rearLeftMotor.follow(frontLeftMotor);
+		//rearRightMotor.follow(frontRightMotor);
 
 	}
 
@@ -144,14 +139,14 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	 * @param leftVolts  the commanded left output
 	 * @param rightVolts the commanded right output
 	 */
-	public void tankDriveVolts(double leftVolts, double rightVolts) {
-		SmartDashboard.putNumber("raw_lv", leftVolts);
-		SmartDashboard.putNumber("raw_rv", -rightVolts);
+	// public void tankDriveVolts(double leftVolts, double rightVolts) {
+	// 	SmartDashboard.putNumber("raw_lv", leftVolts);
+	// 	SmartDashboard.putNumber("raw_rv", -rightVolts);
 
-		m_leftMotors.set(leftVolts);
-		m_rightMotors.set(-rightVolts);
-		m_drive.feed();
-	}
+	// 	m_leftMotors.set(leftVolts);
+	// 	m_rightMotors.set(-rightVolts);
+	// 	m_drive.feed();
+	// }
 
 	/**
 	 * Controls the left and right sides of the drive directly with voltages.
@@ -159,23 +154,23 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	 * @param leftVolts  the commanded left output
 	 * @param rightVolts the commanded right output
 	 */
-	public void tankDriveVoltsReverse(double leftVolts, double rightVolts) {
-		SmartDashboard.putNumber("raw_lv", leftVolts);
-		SmartDashboard.putNumber("raw_rv", -rightVolts);
+	// public void tankDriveVoltsReverse(double leftVolts, double rightVolts) {
+	// 	SmartDashboard.putNumber("raw_lv", leftVolts);
+	// 	SmartDashboard.putNumber("raw_rv", -rightVolts);
 
-		m_leftMotors.set(-rightVolts);
-		m_rightMotors.set(leftVolts);
-		m_drive.feed();
-	}
+	// 	m_leftMotors.set(-rightVolts);
+	// 	m_rightMotors.set(leftVolts);
+	// 	m_drive.feed();
+	// }
 	public void setNeutralMode(NeutralMode neutralMode) {
 		frontLeftMotor.setNeutralMode(neutralMode);
 		rearLeftMotor.setNeutralMode(neutralMode);
 		frontRightMotor.setNeutralMode(neutralMode);
 		rearRightMotor.setNeutralMode(neutralMode);
 	}
-	public void arcadeDrive(double fwd, double rot) {
-		m_drive.arcadeDrive(fwd, rot);
-	  }
+	// public void arcadeDrive(double fwd, double rot) {
+	// 	m_drive.arcadeDrive(fwd, rot);
+	//   }
 	  public double getHeading() {
 		return m_navx.getRotation2d().getDegrees();
 	  }
@@ -217,7 +212,7 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	}
 	
 	public void feedMotorSafety() {
-		m_drive.feed();
+		drive.feed();
 	}
 	public void reverseEncoders() {
 		DriveConstants.MAG *= -1;
