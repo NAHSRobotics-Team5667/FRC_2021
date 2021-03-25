@@ -85,7 +85,7 @@ public final class Constants {
         public static final double kvVoltSecondsPerMeter = 2.46 / 10;
         public static final double kaVoltSecondsSquaredPerMeter = 0.185 / 10; // 1.9356652467050692
 
-        public static final double kTrackwidthMeters = Units.inchesToMeters(22);
+        public static final double kTrackwidthMeters = Units.inchesToMeters(20.36);
         public static final DifferentialDriveKinematics kDriveKinematics = new DifferentialDriveKinematics(
                 kTrackwidthMeters);
 

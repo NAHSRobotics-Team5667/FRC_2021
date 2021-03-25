@@ -139,14 +139,14 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	 * @param leftVolts  the commanded left output
 	 * @param rightVolts the commanded right output
 	 */
-	// public void tankDriveVolts(double leftVolts, double rightVolts) {
-	// 	SmartDashboard.putNumber("raw_lv", leftVolts);
-	// 	SmartDashboard.putNumber("raw_rv", -rightVolts);
+	public void tankDriveVolts(double leftVolts, double rightVolts) {
+		SmartDashboard.putNumber("raw_lv", leftVolts);
+		SmartDashboard.putNumber("raw_rv", -rightVolts);
 
-	// 	m_leftMotors.set(leftVolts);
-	// 	m_rightMotors.set(-rightVolts);
-	// 	m_drive.feed();
-	// }
+		m_leftMotors.set(leftVolts);
+		m_rightMotors.set(-rightVolts);
+		drive.feed();
+	}
 
 	/**
 	 * Controls the left and right sides of the drive directly with voltages.
@@ -154,14 +154,14 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	 * @param leftVolts  the commanded left output
 	 * @param rightVolts the commanded right output
 	 */
-	// public void tankDriveVoltsReverse(double leftVolts, double rightVolts) {
-	// 	SmartDashboard.putNumber("raw_lv", leftVolts);
-	// 	SmartDashboard.putNumber("raw_rv", -rightVolts);
+	public void tankDriveVoltsReverse(double leftVolts, double rightVolts) {
+		SmartDashboard.putNumber("raw_lv", leftVolts);
+		SmartDashboard.putNumber("raw_rv", -rightVolts);
 
-	// 	m_leftMotors.set(-rightVolts);
-	// 	m_rightMotors.set(leftVolts);
-	// 	m_drive.feed();
-	// }
+		m_leftMotors.set(-rightVolts);
+		m_rightMotors.set(leftVolts);
+		drive.feed();
+	}
 	public void setNeutralMode(NeutralMode neutralMode) {
 		frontLeftMotor.setNeutralMode(neutralMode);
 		rearLeftMotor.setNeutralMode(neutralMode);
