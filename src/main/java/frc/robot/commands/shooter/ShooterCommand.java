@@ -2,6 +2,7 @@ package frc.robot.commands.shooter;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.RobotContainer;
 import frc.robot.subsystems.ShooterSubsystem;
 
 public class ShooterCommand extends CommandBase {
@@ -39,8 +40,10 @@ public class ShooterCommand extends CommandBase {
   @Override
   public void execute() {
     if (Timer.getFPGATimestamp() - initTime <= timeout) {
+      if(RobotContainer.controller.getRightTrigger()>0.05){
       m_shooter.startShooter();
     }
+  }
   }
 
   @Override

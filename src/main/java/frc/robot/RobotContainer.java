@@ -14,8 +14,10 @@ import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import frc.robot.commands.DriveTrainCommand;
+import frc.robot.commands.shooter.ShooterCommand;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.IndexSubsystem;
+import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.commands.IndexCommand;
 import frc.robot.subsystems.ShooterSubsystem;
 import frc.robot.utils.Controller;
@@ -40,6 +42,7 @@ public class RobotContainer {
 	public static Controller controller = new Controller(0);
 	public static DriveTrainSubsystem drivetrain;
 	public static IndexSubsystem m_index;
+	public static IntakeSubsystem m_intake;
 	public static ShooterSubsystem m_shooter;
 	public static PowerDistributionPanel panel = new PowerDistributionPanel(0);
 
@@ -56,12 +59,13 @@ public class RobotContainer {
 		drivetrain = new DriveTrainSubsystem(new AHRS(SPI.Port.kMXP), new WPI_TalonFX(Constants.DriveConstants.FR), new WPI_TalonFX(Constants.DriveConstants.FL), new WPI_TalonFX(Constants.DriveConstants.RR), new WPI_TalonFX(Constants.DriveConstants.RL));
 		// XXX: these are placeholders!!
 		m_shooter = new ShooterSubsystem(0.0, 0.0);
+		m_intake = new IntakeSubsystem();
 		m_index = new IndexSubsystem();
 		configureButtonBindings();
 		//Set default commands
 		drivetrain.setDefaultCommand(new DriveTrainCommand());
 		m_index.setDefaultCommand(new IndexCommand(m_index, m_shooter));
-
+		m_shooter.setDefaultCommand(new ShooterCommand(m_shooter));
 	}
 
 	/**
