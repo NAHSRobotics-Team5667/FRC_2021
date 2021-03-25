@@ -80,6 +80,7 @@ public class RobotContainer {
 		Button start = new JoystickButton(getController(), Constants.ControllerConstants.BUTTON_START_PORT);
 		Button menu = new JoystickButton(getController(), Constants.ControllerConstants.BUTTON_MENU_PORT);
 
+		Button right_bumper = new JoystickButton(getController(), Constants.ControllerConstants.BUMPER_RIGHT_PORT);
 	}
 
 	/**

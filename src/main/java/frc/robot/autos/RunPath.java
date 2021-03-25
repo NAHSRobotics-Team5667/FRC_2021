@@ -25,13 +25,14 @@ public class RunPath {
         if (isReverse)
             drive.reverseEncoders();
         drive.setNeutralMode(NeutralMode.Brake);
-        return new RamseteCommand(path, drive::getPose,
+        /* return new RamseteCommand(path, drive::getPose,
                 new RamseteController(AutoConstants.kRamseteB, AutoConstants.kRamseteZeta),
                 new SimpleMotorFeedforward(DriveConstants.ksVolts, DriveConstants.kvVoltSecondsPerMeter,
                         DriveConstants.kaVoltSecondsSquaredPerMeter),
                 DriveConstants.kDriveKinematics, drive::getWheelSpeeds, AutoConstants.L_CONTROLLER,
                 AutoConstants.R_CONTROLLER,
                 // RamseteCommand passes volts to the callback
-                (!isReverse ? drive::tankDriveVoltsReverse : drive::tankDriveVolts), drive);
+                (!isReverse ? drive::tankDriveVoltsReverse : drive::tankDriveVolts), drive); */
+        return null;
     }
 }

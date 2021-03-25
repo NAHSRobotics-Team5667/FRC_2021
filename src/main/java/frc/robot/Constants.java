@@ -207,7 +207,7 @@ public final class Constants {
     }
 
     public final static class IntakeConstants {
-        public static final int INTAKE_ID = -1; // placeholder
+        public static final int INTAKE_ID = 5;
         public static final int PISTON_ID = -1; // placeholder
 
         public static final double INTAKE_SPEED = 0.5; // placeholder
@@ -220,7 +220,7 @@ public final class Constants {
     }
 
     public final static class IndexConstants {
-        public static final int INDEX_ID = 2; // placeholder
+        public static final int INDEX_ID = 2;
 
         public static final double INDEX_SPEED = 0.1;
     }
