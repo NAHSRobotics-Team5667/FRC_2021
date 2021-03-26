@@ -202,7 +202,6 @@ public final class Constants {
     public static enum ShooterStates {
         IDLE,
         SEARCHING,
-        LOCATED,
         SHOOTING
     }
 
