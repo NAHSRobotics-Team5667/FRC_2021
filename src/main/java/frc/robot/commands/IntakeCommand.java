@@ -24,9 +24,14 @@ public class IntakeCommand extends CommandBase {
 
   @Override
   public void execute() {
-    double LT = RobotContainer.controller.getLeftTrigger();
-      m_intake.startIntake(LT);
+    double LT = RobotContainer.getController().getLeftTrigger();
+      if(LT>0){
+      m_intake.startIntake(-1);
   }
+    else{
+    m_intake.stopIntake();
+    }
+}
 
   @Override
   public void end(boolean interrupted) {

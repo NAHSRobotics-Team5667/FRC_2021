@@ -208,9 +208,9 @@ public final class Constants {
 
     public final static class IntakeConstants {
         public static final int INTAKE_ID = 5;
-        public static final int PISTON_ID = -1; // placeholder
+        public static final int PISTON_ID = 1; // placeholder
 
-        public static final double INTAKE_SPEED = 0.5; // placeholder
+        public static final double INTAKE_SPEED = .45; // placeholder
     }
 
     public static enum IntakeStates {

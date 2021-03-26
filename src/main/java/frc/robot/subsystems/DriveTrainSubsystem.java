@@ -14,8 +14,9 @@ import edu.wpi.first.wpilibj.geometry.Rotation2d;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.kinematics.DifferentialDriveOdometry;
-import edu.wpi.first.wpilibj.kinematics.DifferentialDriveWheelSpeeds;
+import edu.wpi.first.wpilibj.kinematics.MecanumDriveOdometry;
+import edu.wpi.first.wpilibj.kinematics.MecanumDriveKinematics;
+import edu.wpi.first.wpilibj.kinematics.MecanumDriveWheelSpeeds;
 
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
@@ -55,7 +56,7 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	private NetworkTableEntry robotY = live_dashboard.getEntry("robotY");
 	private NetworkTableEntry robotHeading = live_dashboard.getEntry("robotHeading");
 
-	private DifferentialDriveOdometry m_odometry;
+	private MecanumDriveOdometry m_odometry;
 	public static enum DriveModes {
 		MANUAL(0), AUTO(1);
 
@@ -85,7 +86,7 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		frontRightMotor.configFactoryDefault();
 		rearRightMotor.configFactoryDefault();
 		TalonFXConfiguration falconConfig = new TalonFXConfiguration();
-		m_odometry = new DifferentialDriveOdometry(Rotation2d.fromDegrees(getHeading()));
+		m_odometry = new MecanumDriveOdometry(Rotation2d.fromDegrees(getHeading()));
 		reverseEncoders();
 		resetOdometry(new Pose2d());
 		falconConfig.primaryPID.selectedFeedbackSensor = FeedbackDevice.IntegratedSensor;

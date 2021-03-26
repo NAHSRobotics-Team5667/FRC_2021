@@ -53,6 +53,6 @@ public class ShooterCommand extends CommandBase {
 
   @Override
   public boolean isFinished() {
-    return (Timer.getFPGATimestamp() - initTime > 0); // end the command when difference is greater than timeout
+    return (false); // end the command when difference is greater than timeout
   }
 }

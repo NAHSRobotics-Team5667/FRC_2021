@@ -19,6 +19,7 @@ import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.IndexSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.commands.IndexCommand;
+import frc.robot.commands.IntakeCommand;
 import frc.robot.subsystems.ShooterSubsystem;
 import frc.robot.utils.Controller;
 
@@ -65,7 +66,8 @@ public class RobotContainer {
 		//Set default commands
 		drivetrain.setDefaultCommand(new DriveTrainCommand());
 		m_index.setDefaultCommand(new IndexCommand(m_index, m_shooter));
-		m_shooter.setDefaultCommand(new ShooterCommand(m_shooter));
+		m_intake.setDefaultCommand(new IntakeCommand(m_intake));
+		//m_shooter.setDefaultCommand(new ShooterCommand(m_shooter));
 	}
 
 	/**
