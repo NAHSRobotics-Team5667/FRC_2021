@@ -201,14 +201,14 @@ public final class Constants {
 
     public static final class ShooterConstants {
         public static final int HOOD_ID = -1; // placeholder
-        public static final int SHOOTER_ID = -1; // placeholder
+        public static final int SHOOTER_ID = 9; // placeholder
         public static final int TURRET_ID = 8;
         public static final int SHOOTER_INTAKE_ID = 1;
 
-        public static final double HOOD_VOLTAGE = 6.0;
-        public static final double SHOOTER_VOLTAGE = 10.0;
-        public static final double INTAKE_VOLTAGE = 8.0;
-        public static final double TURRET_VOLTAGE = 6.0;
+        public static final double HOOD_SPEED = 6.0;
+        public static final double SHOOTER_SPEED = 10.0;
+        public static final double INTAKE_SPEED = -0.4;
+        public static final double TURRET_SPEED = 2.0;
 
         public static final double HOOD_GEAR_RATIO = 1 / 37.7777777777777777777777777777;
         public static final double TURRET_GEAR_RATIO = 1 / 53.3333333333333333333333333333;

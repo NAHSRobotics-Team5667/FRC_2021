@@ -17,6 +17,7 @@ public class ShooterCommand extends CommandBase {
    * @param m_shooter The shooter subsystem.
   */
   public ShooterCommand(ShooterSubsystem m_shooter) {
+    this.m_shooter = m_shooter;
     addRequirements(m_shooter);
   }
 
@@ -39,14 +40,15 @@ public class ShooterCommand extends CommandBase {
 
   @Override
   public void execute() {
-    double startTime = Timer.getFPGATimestamp();
-    while (Timer.getFPGATimestamp() - startTime <= timeout) {
-      if(RobotContainer.controller.getRightTrigger()>0.05){
+    
+      if(RobotContainer.controller.getRightTrigger()>0){
       m_shooter.startShooter();
+      }
+      else{
+      m_shooter.stopShooter();
     }
   }
-  }
-
+  
   @Override
   public void end(boolean interrupted) {
     m_shooter.stopShooter();

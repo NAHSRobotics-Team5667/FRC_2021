@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj.controller.PIDController;
 
 import frc.robot.Constants;
+import frc.robot.RobotContainer;
 import frc.robot.subsystems.TurretSubsystem;
 
 public class TurretCommand extends CommandBase {
@@ -25,7 +26,9 @@ public class TurretCommand extends CommandBase {
 	 * @param endAngle   end degrees of the shooter hood.
 	 * @param m_shooter  shooter subsystem.
 	 */
-	public TurretCommand() {
+	public TurretCommand(TurretSubsystem m_turret) {
+		this.m_turret = m_turret;
+		addRequirements(m_turret);
 		// Use addRequirements() here to declare subsystem dependencies.
 	}
 
@@ -38,6 +41,12 @@ public class TurretCommand extends CommandBase {
 	// Called every time the scheduler runs while the command is scheduled.
 	@Override
 	public void execute() {
+		if(RobotContainer.getController().getXButton()){
+			m_turret.startTurret(true);
+		}
+		else if(RobotContainer.getController().getBButton()){
+			m_turret.startTurret(false);
+		}
 		// use PID Controller to adjust turret angle
 	}
 
@@ -50,7 +59,8 @@ public class TurretCommand extends CommandBase {
 	// Returns true when the command should end.
 	@Override
 	public boolean isFinished() {
-		return Math.abs(m_turret.getTurretAngle() - endAngle) <= 1; // ends when turret is in direction of target, with
+		return false;
+		//return Math.abs(m_turret.getTurretAngle() - endAngle) <= 1; // ends when turret is in direction of target, with
 																	// 1 degree of inaccuracy
 	}
 }

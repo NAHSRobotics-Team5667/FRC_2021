@@ -117,8 +117,8 @@ public class ShooterSubsystem extends SubsystemBase {
    * Starts the shooter and shooter-intake.
    */
   public void startShooter() {
-    m_shooterIntake.setVoltage(ShooterConstants.INTAKE_VOLTAGE); // set shooter-intake to full speed (maybe)
-    m_shooter.setVoltage(ShooterConstants.SHOOTER_VOLTAGE); // set shooter to full speed
+    m_shooterIntake.set(ShooterConstants.INTAKE_SPEED); // set shooter-intake to full speed (maybe)
+    //m_shooter.setVoltage(ShooterConstants.SHOOTER_VOLTAGE); // set shooter to full speed
   }
 
   /**
@@ -155,7 +155,7 @@ public class ShooterSubsystem extends SubsystemBase {
 
   @Override
   public void periodic() {
-    updateHoodAngle(m_hood.getSelectedSensorPosition());
-    updateTurretAngle(m_turret.getSelectedSensorPosition());
+    //updateHoodAngle(m_hood.getSelectedSensorPosition());
+    //updateTurretAngle(m_turret.getSelectedSensorPosition());
   }
 }

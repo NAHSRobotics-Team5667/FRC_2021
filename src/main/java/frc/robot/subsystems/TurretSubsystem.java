@@ -7,7 +7,7 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Constants;
+import frc.robot.Constants.ShooterConstants;
 
 public class TurretSubsystem extends SubsystemBase {
 
@@ -20,9 +20,8 @@ public class TurretSubsystem extends SubsystemBase {
 	 * @param m_turret    - The turret motor.
 	 * @param turretAngle - The initial angle of the turret.
 	 */
-	public TurretSubsystem(double turretAngle) {
-		m_turret = new WPI_TalonFX(Constants.ShooterConstants.TURRET_ID);
-		this.turretAngle = turretAngle;
+	public TurretSubsystem() {
+		m_turret = new WPI_TalonFX(ShooterConstants.TURRET_ID);
 
 	}
 
@@ -30,7 +29,15 @@ public class TurretSubsystem extends SubsystemBase {
 	public void stopTurret() {
 		m_turret.stopMotor();
 	}
-
+	//Starts turret motor
+	public void startTurret(boolean dir){
+		if(dir){
+			m_turret.set(ShooterConstants.TURRET_SPEED);
+		}
+		else{
+			m_turret.set(-ShooterConstants.TURRET_SPEED);
+		}
+		}
 	/**
 	 * @return Angle of the turret in relation to the robot.
 	 */
