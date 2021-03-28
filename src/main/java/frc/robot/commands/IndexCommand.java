@@ -15,10 +15,9 @@ public class IndexCommand extends CommandBase {
   private IntakeSubsystem m_intake;
 
   /** Creates a new IndexCommand. */
-  public IndexCommand(IndexSubsystem m_index, ShooterSubsystem m_shooter) {
+  public IndexCommand(IndexSubsystem m_index) {
     this.m_index = m_index;
-    this.m_shooter = m_shooter;
-    addRequirements(m_index, m_shooter);
+    addRequirements(m_index);
   }
 
   /** Creates a new IndexCommand. */
@@ -52,7 +51,6 @@ public class IndexCommand extends CommandBase {
   public boolean isFinished() {
     // end the command if the intake or shooter are idle
     // XXX: Setting this to true
-    return (m_intake.getIntakeState() == IntakeStates.EXTENDED) && (m_shooter.getShooterState() == ShooterStates.IDLE);
-    // return false;
+    return false;
   }
 }

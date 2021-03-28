@@ -39,7 +39,8 @@ public class ShooterCommand extends CommandBase {
 
   @Override
   public void execute() {
-    if (Timer.getFPGATimestamp() - initTime <= timeout) {
+    double startTime = Timer.getFPGATimestamp();
+    while (Timer.getFPGATimestamp() - startTime <= timeout) {
       if(RobotContainer.controller.getRightTrigger()>0.05){
       m_shooter.startShooter();
     }

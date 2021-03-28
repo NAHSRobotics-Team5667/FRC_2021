@@ -41,10 +41,10 @@ public class ShooterSubsystem extends SubsystemBase {
     m_shooterIntake.setNeutralMode(NeutralMode.Brake);
     m_turret.setNeutralMode(NeutralMode.Brake);
 
-    m_hood.setVoltage(ShooterConstants.HOOD_VOLTAGE); // requires less voltage, may need more idk
-    m_shooter.setVoltage(ShooterConstants.SHOOTER_VOLTAGE); // requires more voltage to launch powercells idk
-    m_shooterIntake.setVoltage(ShooterConstants.INTAKE_VOLTAGE); // requires less voltage than shooter but more than turret
-    m_turret.setVoltage(ShooterConstants.TURRET_VOLTAGE); // requires less voltage, may need more because of torque idk
+    // m_hood.setVoltage(ShooterConstants.HOOD_VOLTAGE); // requires less voltage, may need more idk
+    // m_shooter.setVoltage(ShooterConstants.SHOOTER_VOLTAGE); // requires more voltage to launch powercells idk
+    // m_shooterIntake.setVoltage(ShooterConstants.INTAKE_VOLTAGE); // requires less voltage than shooter but more than turret
+    // m_turret.setVoltage(ShooterConstants.TURRET_VOLTAGE); // requires less voltage, may need more because of torque idk
 
     this.initialHoodAngle = hoodAngle;
     this.hoodAngle = hoodAngle;
@@ -117,8 +117,8 @@ public class ShooterSubsystem extends SubsystemBase {
    * Starts the shooter and shooter-intake.
    */
   public void startShooter() {
-    m_shooterIntake.set(ControlMode.PercentOutput, 1); // set shooter-intake to full speed (maybe)
-    m_shooter.set(ControlMode.PercentOutput, 1); // set shooter to full speed
+    m_shooterIntake.setVoltage(ShooterConstants.INTAKE_VOLTAGE); // set shooter-intake to full speed (maybe)
+    m_shooter.setVoltage(ShooterConstants.SHOOTER_VOLTAGE); // set shooter to full speed
   }
 
   /**

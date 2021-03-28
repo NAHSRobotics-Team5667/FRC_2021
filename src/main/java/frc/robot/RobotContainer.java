@@ -65,9 +65,9 @@ public class RobotContainer {
 		configureButtonBindings();
 		//Set default commands
 		drivetrain.setDefaultCommand(new DriveTrainCommand());
-		m_index.setDefaultCommand(new IndexCommand(m_index, m_shooter));
+		m_index.setDefaultCommand(new IndexCommand(m_index));
 		m_intake.setDefaultCommand(new IntakeCommand(m_intake));
-		//m_shooter.setDefaultCommand(new ShooterCommand(m_shooter));
+		m_shooter.setDefaultCommand(new ShooterCommand(m_shooter));
 	}
 
 	/**
