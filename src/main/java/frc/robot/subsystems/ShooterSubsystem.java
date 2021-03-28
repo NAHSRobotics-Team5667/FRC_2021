@@ -99,13 +99,6 @@ public class ShooterSubsystem extends SubsystemBase {
   }
 
   /**
-   * @param targetY vertical degree difference bewteen crosshair and target
-   */
-  public double yValToDegrees(double targetY) {
-    return -1; // placeholder, requires data from testing
-  }
-
-  /**
    * @param endDegrees     end degree position of the hood.
    * @param initialDegrees initial degree position of the hood.
    * @return               Tick difference for the Falcon 500.
