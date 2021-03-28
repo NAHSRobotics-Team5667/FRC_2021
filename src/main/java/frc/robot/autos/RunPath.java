@@ -10,9 +10,13 @@ package frc.robot.autos;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 
 import edu.wpi.first.wpilibj.controller.RamseteController;
+import edu.wpi.first.wpilibj.controller.PIDController;
+import edu.wpi.first.wpilibj.controller.ProfiledPIDController;
 import edu.wpi.first.wpilibj.controller.SimpleMotorFeedforward;
 import edu.wpi.first.wpilibj.trajectory.Trajectory;
 import edu.wpi.first.wpilibj2.command.RamseteCommand;
+import edu.wpi.first.wpilibj2.command.MecanumControllerCommand;
+import frc.robot.Constants;
 import frc.robot.Constants.AutoConstants;
 import frc.robot.Constants.DriveConstants;
 import frc.robot.subsystems.DriveTrainSubsystem;
@@ -21,17 +25,16 @@ import frc.robot.subsystems.DriveTrainSubsystem;
  * Get a Ramsete Command that drives a path
  */
 public class RunPath {
-    public static RamseteCommand getCommand(Trajectory path, DriveTrainSubsystem drive, boolean isReverse) {
+    public static MecanumControllerCommand getCommand(Trajectory path, DriveTrainSubsystem drive, boolean isReverse) {
         if (isReverse)
             drive.reverseEncoders();
         drive.setNeutralMode(NeutralMode.Brake);
-        return new RamseteCommand(path, drive::getPose,
-                new RamseteController(AutoConstants.kRamseteB, AutoConstants.kRamseteZeta),
+        return new MecanumControllerCommand(path, drive::getPose,
                 new SimpleMotorFeedforward(DriveConstants.ksVolts, DriveConstants.kvVoltSecondsPerMeter,
                         DriveConstants.kaVoltSecondsSquaredPerMeter),
-                DriveConstants.kDriveKinematics, drive::getWheelSpeeds, AutoConstants.L_CONTROLLER,
-                AutoConstants.R_CONTROLLER,
+                DriveConstants.kDriveKinematics, AutoConstants.xController, AutoConstants.yController, AutoConstants.THET_CONTROLLER, AutoConstants.kMaxSpeedMetersPerSecond,
+                 AutoConstants.FL_CONTROLLER, AutoConstants.RL_CONTROLLER, AutoConstants.FR_CONTROLLER, AutoConstants.RR_CONTROLLER, drive::getWheelSpeeds,
                 // RamseteCommand passes volts to the callback
-                (!isReverse ? drive::tankDriveVoltsReverse : drive::tankDriveVolts), drive);
+                (drive::driveVoltage), drive);
     }
 }

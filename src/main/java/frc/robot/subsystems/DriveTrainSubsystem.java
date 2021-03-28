@@ -12,10 +12,12 @@ import edu.wpi.first.wpilibj.geometry.Rotation2d;
 
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 import frc.robot.RobotContainer;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.kinematics.MecanumDriveOdometry;
 import edu.wpi.first.wpilibj.kinematics.MecanumDriveKinematics;
+import edu.wpi.first.wpilibj.kinematics.MecanumDriveMotorVoltages;
 import edu.wpi.first.wpilibj.kinematics.MecanumDriveWheelSpeeds;
 
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
@@ -86,7 +88,7 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		frontRightMotor.configFactoryDefault();
 		rearRightMotor.configFactoryDefault();
 		TalonFXConfiguration falconConfig = new TalonFXConfiguration();
-		m_odometry = new MecanumDriveOdometry(Rotation2d.fromDegrees(getHeading()));
+		m_odometry = new MecanumDriveOdometry(Constants.DriveConstants.kDriveKinematics,new Rotation2d(getHeading()) , new Pose2d(Constants.DriveConstants.startY, Constants.DriveConstants.startX, new Rotation2d()));
 		reverseEncoders();
 		resetOdometry(new Pose2d());
 		falconConfig.primaryPID.selectedFeedbackSensor = FeedbackDevice.IntegratedSensor;
@@ -122,9 +124,14 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		//this.drive.driveCartesian(0,0.75, 0);
 
 	}
-	public DifferentialDriveWheelSpeeds getWheelSpeeds() {
-		return new DifferentialDriveWheelSpeeds(getLeftEncoderRate(), getRightEncoderRate());
+	public void driveVoltage(MecanumDriveMotorVoltages voltages){
+		frontLeftMotor.set(voltages.frontLeftVoltage);
+		frontRightMotor.set(voltages.frontRightVoltage);
+		rearLeftMotor.set(voltages.rearLeftVoltage);
+		rearRightMotor.set(voltages.rearRightVoltage);
+		drive.feed();
 	}
+	
 	public void zeroDriveTrainEncoders() {
 		frontLeftMotor.setSelectedSensorPosition(0);
 		frontRightMotor.setSelectedSensorPosition(0);
@@ -175,6 +182,7 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	  public double getHeading() {
 		return m_navx.getRotation2d().getDegrees();
 	  }
+ 
 	  public double getLeftEncoderPosition() {
 		return frontLeftMotor.getSelectedSensorPosition(0) * DriveConstants.ENCODER_CONSTANT
 				* DriveConstants.MAG;
@@ -191,11 +199,22 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	}
 
 	
+	public MecanumDriveWheelSpeeds getWheelSpeeds(){
+		return new MecanumDriveWheelSpeeds(getLeftEncoderRate(), getRightEncoderRate(), getRearLeftEncoderRate(), getRearRightEncoderRate());
+	}
 	public double getLeftEncoderRate() {
 		return frontLeftMotor.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT * 10
 				*DriveConstants.MAG;
 	}
+	public double getRearLeftEncoderRate() {
+		return rearLeftMotor.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT * 10
+				*DriveConstants.MAG;
+	}
 	public double getRightEncoderRate() {
+		return -frontRightMotor.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT * 10
+				* DriveConstants.MAG;
+	} 
+	public double getRearRightEncoderRate() {
 		return -frontRightMotor.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT * 10
 				* DriveConstants.MAG;
 	} 
@@ -231,7 +250,7 @@ public class DriveTrainSubsystem extends SubsystemBase {
 
 	@Override
 	public void periodic() {
-		m_odometry.update(Rotation2d.fromDegrees(getHeading()), getLeftEncoderPosition(), getRightEncoderPosition());
+		m_odometry.update(Rotation2d.fromDegrees(getHeading()), getWheelSpeeds());
 
 		robotX.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getTranslation().getX()));
 		robotY.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getTranslation().getY()));

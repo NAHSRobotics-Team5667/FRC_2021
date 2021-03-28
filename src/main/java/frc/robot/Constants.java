@@ -9,16 +9,18 @@ import java.util.List;
 
 import edu.wpi.first.wpilibj.I2C;
 import edu.wpi.first.wpilibj.controller.PIDController;
+import edu.wpi.first.wpilibj.controller.ProfiledPIDController;
+import edu.wpi.first.wpilibj.trajectory.TrapezoidProfile.Constraints;
 import edu.wpi.first.wpilibj.controller.SimpleMotorFeedforward;
 import edu.wpi.first.wpilibj.geometry.Pose2d;
 import edu.wpi.first.wpilibj.geometry.Rotation2d;
 import edu.wpi.first.wpilibj.geometry.Translation2d;
-import edu.wpi.first.wpilibj.kinematics.DifferentialDriveKinematics;
+import edu.wpi.first.wpilibj.kinematics.MecanumDriveKinematics;
 import edu.wpi.first.wpilibj.trajectory.Trajectory;
 import edu.wpi.first.wpilibj.trajectory.TrajectoryConfig;
 import edu.wpi.first.wpilibj.trajectory.TrajectoryGenerator;
 import edu.wpi.first.wpilibj.trajectory.TrajectoryUtil;
-import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveVoltageConstraint;
+import edu.wpi.first.wpilibj.trajectory.constraint.MecanumDriveKinematicsConstraint;
 import edu.wpi.first.wpilibj.util.Units;
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide
@@ -86,8 +88,12 @@ public final class Constants {
         public static final double kaVoltSecondsSquaredPerMeter = 0.185 / 10; // 1.9356652467050692
 
         public static final double kTrackwidthMeters = Units.inchesToMeters(20.36);
-        public static final DifferentialDriveKinematics kDriveKinematics = new DifferentialDriveKinematics(
-                kTrackwidthMeters);
+        public static final double kTracklengthMeters = Units.inchesToMeters(20.36);
+        public static final MecanumDriveKinematics kDriveKinematics = new MecanumDriveKinematics(new Translation2d(kTrackwidthMeters, kTracklengthMeters),
+        new Translation2d(kTrackwidthMeters, -kTracklengthMeters), new Translation2d(-kTrackwidthMeters, kTracklengthMeters), new Translation2d(-kTrackwidthMeters, -kTracklengthMeters));
+
+        public static double startY = 1.0;
+        public static double startX = 13.5;
 
         public static double kP = 0.01; // 7.43;
         public static double kI = 0; // 0.01; // 7.43;
@@ -100,18 +106,25 @@ public final class Constants {
         public static final double kRamseteZeta = 0.7;
         public static final double kMaxSpeedMetersPerSecond = .8;
         public static final double kMaxAccelerationMetersPerSecondSquared = .5;
-        public static final PIDController L_CONTROLLER = new PIDController(DriveConstants.kP, DriveConstants.kI,
+        public static final PIDController xController = new PIDController(DriveConstants.kP, DriveConstants.kI,
                 DriveConstants.kD);
-        public static final PIDController R_CONTROLLER = new PIDController(DriveConstants.kP, DriveConstants.kD,
+        public static final PIDController yController = new PIDController(DriveConstants.kP, DriveConstants.kI,
                 DriveConstants.kD);
+        public static final PIDController FL_CONTROLLER = new PIDController(DriveConstants.kP, DriveConstants.kI,
+                DriveConstants.kD);
+        public static final PIDController FR_CONTROLLER = new PIDController(DriveConstants.kP, DriveConstants.kD,
+                DriveConstants.kD);
+                public static final PIDController RL_CONTROLLER = new PIDController(DriveConstants.kP, DriveConstants.kI,
+                DriveConstants.kD);
+        public static final PIDController RR_CONTROLLER = new PIDController(DriveConstants.kP, DriveConstants.kD,
+                DriveConstants.kD);
+        public static final Constraints theta_constraints = new Constraints(kMaxSpeedMetersPerSecond, kMaxAccelerationMetersPerSecondSquared);
+        public static final ProfiledPIDController THET_CONTROLLER = new ProfiledPIDController(DriveConstants.kP, DriveConstants.kI, DriveConstants.kD, theta_constraints);
 
     }
     public final static class PATHS {
-        public static final DifferentialDriveVoltageConstraint autoVoltageConstraint = new DifferentialDriveVoltageConstraint(
-                new SimpleMotorFeedforward(Constants.DriveConstants.ksVolts,
-                        Constants.DriveConstants.kvVoltSecondsPerMeter,
-                        Constants.DriveConstants.kaVoltSecondsSquaredPerMeter),
-                Constants.DriveConstants.kDriveKinematics, 6);
+        public static final MecanumDriveKinematicsConstraint autoVoltageConstraint = new MecanumDriveKinematicsConstraint(
+               Constants.DriveConstants.kDriveKinematics, Constants.AutoConstants.kMaxSpeedMetersPerSecond);
 
         // Create config for trajectory
         public static final TrajectoryConfig config = new TrajectoryConfig(
