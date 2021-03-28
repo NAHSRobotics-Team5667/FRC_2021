@@ -1,5 +1,6 @@
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import frc.robot.Constants.ShooterStates;
@@ -9,7 +10,6 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 public class ShooterSubsystem extends SubsystemBase {
-  // TODO: add turret integration
   private WPI_TalonFX m_hood, m_shooter, m_shooterIntake, m_turret;
 
   private double initialHoodAngle;
@@ -19,6 +19,8 @@ public class ShooterSubsystem extends SubsystemBase {
   private double turretAngle;
 
   private ShooterStates m_shooterState = ShooterStates.IDLE;
+
+  private PIDController m_turretController;
 
   /**
    * @param hoodAngle   The initial angle of the hood.
@@ -48,6 +50,12 @@ public class ShooterSubsystem extends SubsystemBase {
 
     this.initialTurretAngle = turretAngle;
     this.turretAngle = turretAngle;
+
+    m_turretController = new PIDController(
+      Constants.ShooterConstants.TURRET_kP, 
+      Constants.ShooterConstants.TURRET_kI,
+      Constants.ShooterConstants.TURRET_kD
+    );
   }
 
   /**
@@ -91,9 +99,9 @@ public class ShooterSubsystem extends SubsystemBase {
   }
 
   /**
-   * @param distance normal distance from inner power port
+   * @param targetY vertical degree difference bewteen crosshair and target
    */
-  public double distanceToDegrees(double distance) {
+  public double yValToDegrees(double targetY) {
     return -1; // placeholder, requires data from testing
   }
 
@@ -104,6 +112,11 @@ public class ShooterSubsystem extends SubsystemBase {
    */
   public double degreesToHoodTicks(double endDegrees, double initialDegrees) {
     return ((Constants.FALCON_CPR * (1 / Constants.ShooterConstants.HOOD_GEAR_RATIO)) * (endDegrees - initialDegrees)) / 360;
+  }
+
+  public void adjustTurret(double turretTicks, double tickTarget) {
+    double pidOutput = m_turretController.calculate(turretTicks, tickTarget);
+    m_turret.set(ControlMode.PercentOutput, pidOutput);
   }
 
   /**
@@ -121,11 +134,22 @@ public class ShooterSubsystem extends SubsystemBase {
     hoodAngle = ((hoodTicks * 360) / (Constants.FALCON_CPR * (1 / Constants.ShooterConstants.HOOD_GEAR_RATIO))) + initialHoodAngle;
   }
 
+  private void updateTurretAngle(double turretTicks) {
+    turretAngle = ((turretTicks * 360) / (Constants.FALCON_CPR * (1 / Constants.ShooterConstants.TURRET_GEAR_RATIO))) + initialTurretAngle;
+  }
+
   /**
    * @return Angle of the powercell in relation to the ground when it exits the shooter.
    */
   public double getHoodAngle() {
     return hoodAngle;
+  }
+
+  /**
+   * @return current turret angle based on turret motor ticks.
+   */
+  public double getTurretAngle() {
+    return turretAngle;
   }
 
   /**
@@ -138,5 +162,6 @@ public class ShooterSubsystem extends SubsystemBase {
   @Override
   public void periodic() {
     updateHoodAngle(m_hood.getSelectedSensorPosition());
+    updateTurretAngle(m_turret.getSelectedSensorPosition());
   }
 }
