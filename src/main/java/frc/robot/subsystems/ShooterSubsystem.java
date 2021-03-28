@@ -3,6 +3,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.controller.PIDController;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
+import frc.robot.Constants.ShooterConstants;
 import frc.robot.Constants.ShooterStates;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
@@ -24,7 +25,7 @@ public class ShooterSubsystem extends SubsystemBase {
 
   /**
    * @param hoodAngle   The initial angle of the hood.
-   * @param turretAngle The intiangle of the turret.
+   * @param turretAngle The initial angle of the turret.
    */
   public ShooterSubsystem(double hoodAngle, double turretAngle) {
     m_hood = new WPI_TalonFX(Constants.ShooterConstants.HOOD_ID);
@@ -40,10 +41,10 @@ public class ShooterSubsystem extends SubsystemBase {
     m_shooterIntake.setNeutralMode(NeutralMode.Brake);
     m_turret.setNeutralMode(NeutralMode.Brake);
 
-    m_hood.setVoltage(6); // requires less voltage, may need more idk
-    m_shooter.setVoltage(10); // requires more voltage to launch powercells idk
-    m_shooterIntake.setVoltage(8); // requires less voltage than shooter but more than turret
-    m_turret.setVoltage(6); // requires less voltage, may need more because of torque idk
+    m_hood.setVoltage(ShooterConstants.HOOD_VOLTAGE); // requires less voltage, may need more idk
+    m_shooter.setVoltage(ShooterConstants.SHOOTER_VOLTAGE); // requires more voltage to launch powercells idk
+    m_shooterIntake.setVoltage(ShooterConstants.INTAKE_VOLTAGE); // requires less voltage than shooter but more than turret
+    m_turret.setVoltage(ShooterConstants.TURRET_VOLTAGE); // requires less voltage, may need more because of torque idk
 
     this.initialHoodAngle = hoodAngle;
     this.hoodAngle = hoodAngle;

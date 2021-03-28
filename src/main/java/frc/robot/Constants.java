@@ -205,6 +205,11 @@ public final class Constants {
         public static final int TURRET_ID = -1; // placeholder
         public static final int SHOOTER_INTAKE_ID = -1; // placeholder
 
+        public static final double HOOD_VOLTAGE = 6.0;
+        public static final double SHOOTER_VOLTAGE = 10.0;
+        public static final double INTAKE_VOLTAGE = 8.0;
+        public static final double TURRET_VOLTAGE = 6.0;
+
         public static final double HOOD_GEAR_RATIO = 1 / 37.7777777777777777777777777777;
         public static final double TURRET_GEAR_RATIO = 1 / 53.3333333333333333333333333333;
 
