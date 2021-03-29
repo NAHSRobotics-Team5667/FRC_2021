@@ -124,6 +124,25 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		//this.drive.driveCartesian(0,0.75, 0);
 
 	}
+
+	/**
+	 * Get the current drive mode
+	 * 
+	 * @return - The current drive mode
+	 */
+	public DriveModes getDriveMode() {
+		return m_driveMode;
+	}
+
+	/**
+	 * Set the current drive mode
+	 * 
+	 * @param mode - The current drive train mode
+	 */
+	public void setDriveMode(DriveModes mode) {
+		m_driveMode = mode;
+	}
+
 	public void driveVoltage(MecanumDriveMotorVoltages voltages){
 		frontLeftMotor.set(voltages.frontLeftVoltage);
 		frontRightMotor.set(voltages.frontRightVoltage);

@@ -22,6 +22,8 @@ import edu.wpi.first.wpilibj.trajectory.TrajectoryGenerator;
 import edu.wpi.first.wpilibj.trajectory.TrajectoryUtil;
 import edu.wpi.first.wpilibj.trajectory.constraint.MecanumDriveKinematicsConstraint;
 import edu.wpi.first.wpilibj.util.Units;
+import frc.robot.RobotState.States;
+
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide
  * numerical or boolean constants. This class should not be used for any other
@@ -33,6 +35,8 @@ import edu.wpi.first.wpilibj.util.Units;
  * wherever the constants are needed, to reduce verbosity.
  */
 public final class Constants {
+    public static RobotState m_RobotState = new RobotState(States.IDLE);
+
     public static final int FALCON_CPR = 2048;
 
     public final static class ControllerConstants {
@@ -218,6 +222,21 @@ public final class Constants {
         public static double TURRET_kD = 0; // placeholder
     }
 
+    /* FIX ALL OF THIS -- HOOD SHOOTER SYSTEM WORKS DIFFERENTLY
+   */
+    public final static class VisionConstants {
+        public static final double H1 = Units.inchesToMeters(36); // Height of limelight from the ground
+        public static final double H2 = Units.inchesToMeters(98.25); // Height of target
+        public static final double A1 = 10; // Limelight mounting angle
+        public static final double kP = 0.019;
+        public static final double kI = kP / 3.7;
+        public static final double kD = 0.01;
+
+        public static final double kP_far = 0.03;
+        public static final double kI_far = kP_far / 4;
+        public static final double kD_far = kD;
+
+    }
     public enum ShooterStates {
         IDLE,
         SEARCHING,
