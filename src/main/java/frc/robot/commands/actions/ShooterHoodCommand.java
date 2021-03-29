@@ -1,4 +1,4 @@
-package frc.robot.commands.shooter;
+package frc.robot.commands.actions;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.ShooterSubsystem;
