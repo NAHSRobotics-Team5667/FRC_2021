@@ -44,7 +44,7 @@ public class TurnToDegrees extends CommandBase {
 	public void execute() {
         System.out.println(-angleController.getPositionError());
         //ngl this is probably wrong will fix later
-		m_drive.driveCartesian(0, 0, -angleController.calculate(m_drive.getHeading()), false);
+		m_drive.driveCartesian(0, 0, -angleController.calculate(m_drive.getHeading()), false, false);
 	}
 
 	// Called once the command ends or is interrupted.

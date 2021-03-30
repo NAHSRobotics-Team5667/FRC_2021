@@ -14,6 +14,7 @@ import frc.robot.subsystems.DriveTrainSubsystem;
 
 public class DriveTrainCommand extends CommandBase {
 	private boolean slowMode = false;
+	private boolean doubleSlowMode = false;
 
 	/** Creates a new DriveTrainCommand. */
 	public DriveTrainCommand() {
@@ -32,8 +33,9 @@ public class DriveTrainCommand extends CommandBase {
 	@Override
 	public void execute() {
 		if (RobotContainer.getController().getStickButtonPressed(Hand.kLeft)) slowMode = !slowMode;
+		else if (RobotContainer.getController().getStickButtonPressed(Hand.kRight)) doubleSlowMode = !doubleSlowMode;
 		Map<String, Double> sticks = RobotContainer.controller.getSticks();
-		RobotContainer.drivetrain.driveCartesian(sticks.get("LSX"), sticks.get("LSY"), sticks.get("RSX"), slowMode);
+		RobotContainer.drivetrain.driveCartesian(sticks.get("LSX"), sticks.get("LSY"), sticks.get("RSX"), slowMode, doubleSlowMode);
 	}
 
 	// Called once the command ends or is interrupted.
