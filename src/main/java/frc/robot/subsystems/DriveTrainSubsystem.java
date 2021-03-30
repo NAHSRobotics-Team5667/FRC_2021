@@ -118,9 +118,10 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	 * @param zRotation - The z axis (Rotation)
 	 */
 	
-	public void driveCartesian(double xSpeed, double ySpeed, double zRotation) {
+	public void driveCartesian(double xSpeed, double ySpeed, double zRotation, boolean slowMode) {
 
-		this.drive.driveCartesian(0.7*xSpeed*xSpeed * Math.signum(xSpeed),0.7*ySpeed*ySpeed * Math.signum(ySpeed), 0.5*zRotation);
+		if (!slowMode) this.drive.driveCartesian(0.7*xSpeed*xSpeed * Math.signum(xSpeed),0.7*ySpeed*ySpeed * Math.signum(ySpeed), 0.5*zRotation);
+		else if (slowMode) this.drive.driveCartesian(0.35*xSpeed*xSpeed * Math.signum(xSpeed),0.35*ySpeed*ySpeed * Math.signum(ySpeed), 0.25*zRotation);
 		//this.drive.driveCartesian(0,0.75, 0);
 
 	}

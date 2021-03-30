@@ -6,12 +6,15 @@ package frc.robot.commands;
 
 import java.util.Map;
 
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Robot;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.DriveTrainSubsystem;
 
 public class DriveTrainCommand extends CommandBase {
+	private boolean slowMode = false;
+
 	/** Creates a new DriveTrainCommand. */
 	public DriveTrainCommand() {
 		// Use addRequirements() here to declare subsystem dependencies.
@@ -28,8 +31,9 @@ public class DriveTrainCommand extends CommandBase {
 	// Called every time the scheduler runs while the command is scheduled.
 	@Override
 	public void execute() {
+		if (RobotContainer.getController().getStickButtonPressed(Hand.kLeft)) slowMode = !slowMode;
 		Map<String, Double> sticks = RobotContainer.controller.getSticks();
-		RobotContainer.drivetrain.driveCartesian(sticks.get("LSX"), sticks.get("LSY"), sticks.get("RSX"));
+		RobotContainer.drivetrain.driveCartesian(sticks.get("LSX"), sticks.get("LSY"), sticks.get("RSX"), slowMode);
 	}
 
 	// Called once the command ends or is interrupted.
