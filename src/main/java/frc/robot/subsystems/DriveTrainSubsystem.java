@@ -120,17 +120,45 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	 * @param zRotation - The z axis (Rotation)
 	 */
 	
-	public void driveCartesian(double xSpeed, double ySpeed, double zRotation, boolean slowMode, boolean doubleSlowMode) {
-		// if (!slowMode && !doubleSlowMode) this.drive.driveCartesian(0.7*xSpeed, 0.7*ySpeed, 0.5*zRotation, m_navx.getAngle());
-		// else if (slowMode && !doubleSlowMode) this.drive.driveCartesian(0.5*xSpeed, 0.5*ySpeed, 0.3*zRotation, m_navx.getAngle());
-		// else if (slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed, 0.28*ySpeed, (0.4 * 0.3)*zRotation, m_navx.getAngle());
-		// else if (!slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed, 0.28*ySpeed, (0.4 * 0.3)*zRotation, m_navx.getAngle());
-		if (!slowMode && !doubleSlowMode) this.drive.driveCartesian(0.7*xSpeed*xSpeed * Math.signum(xSpeed),0.7*ySpeed*ySpeed * Math.signum(ySpeed), 0.5*zRotation, getHeading());
-		else if (slowMode && !doubleSlowMode) this.drive.driveCartesian(0.5*xSpeed*xSpeed * Math.signum(xSpeed),0.5*ySpeed*ySpeed * Math.signum(ySpeed), 0.3*zRotation, getHeading());
-		else if (slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed*xSpeed * Math.signum(xSpeed),0.28*ySpeed*ySpeed * Math.signum(ySpeed), (0.4 * 0.3)*zRotation, getHeading());
-		else if (!slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed*xSpeed * Math.signum(xSpeed),0.28*ySpeed*ySpeed * Math.signum(ySpeed), (0.4 * 0.3)*zRotation, getHeading());
+	public void driveCartesian(double ySpeed, double xSpeed, double zRotation, boolean slowMode, boolean doubleSlowMode) {
+		if (!slowMode && !doubleSlowMode) 
+			this.drive.driveCartesian(
+				0.7*ySpeed, 
+				0.7*xSpeed, 
+				0.5*zRotation, 
+				-m_navx.getAngle()
+			);
+		else if (slowMode && !doubleSlowMode) 
+			this.drive.driveCartesian(
+				0.5*ySpeed, 
+				0.5*xSpeed, 
+				0.3*zRotation, 
+				-m_navx.getAngle()
+			);
+		else if (slowMode && doubleSlowMode) 
+			this.drive.driveCartesian(
+				0.28*ySpeed, 
+				0.28*xSpeed, 
+				(0.4 * 0.3)*zRotation, 
+				-m_navx.getAngle()
+			);
+		else if (!slowMode && doubleSlowMode) 
+			this.drive.driveCartesian(
+				0.28*ySpeed,
+				0.28*xSpeed, 
+				(0.4 * 0.3)*zRotation, 
+				-m_navx.getAngle()
+			);
+		// if (!slowMode && !doubleSlowMode) this.drive.driveCartesian(0.7*xSpeed*xSpeed * Math.signum(xSpeed),0.7*ySpeed*ySpeed * Math.signum(ySpeed), 0.5*zRotation, m_navx.getAngle());
+		// else if (slowMode && !doubleSlowMode) this.drive.driveCartesian(0.5*xSpeed*xSpeed * Math.signum(xSpeed),0.5*ySpeed*ySpeed * Math.signum(ySpeed), 0.3*zRotation, m_navx.getAngle());
+		// else if (slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed*xSpeed * Math.signum(xSpeed),0.28*ySpeed*ySpeed * Math.signum(ySpeed), (0.4 * 0.3)*zRotation, m_navx.getAngle());
+		// else if (!slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed*xSpeed * Math.signum(xSpeed),0.28*ySpeed*ySpeed * Math.signum(ySpeed), (0.4 * 0.3)*zRotation, m_navx.getAngle());
 		//this.drive.driveCartesian(0,0.75, 0);
 
+	}
+
+	public void calibrateGyro() {
+		m_navx.calibrate();
 	}
 
 	public void resetGyro() {
@@ -285,5 +313,8 @@ public class DriveTrainSubsystem extends SubsystemBase {
 
 		robotX.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getTranslation().getX()));
 		robotY.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getTranslation().getY()));
-		robotHeading.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getRotation().getRadians()));	}
+		robotHeading.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getRotation().getRadians()));	
+
+		SmartDashboard.putNumber("gyro", m_navx.getAngle());
+	}
 }

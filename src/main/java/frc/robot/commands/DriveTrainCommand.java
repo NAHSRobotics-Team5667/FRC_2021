@@ -27,6 +27,7 @@ public class DriveTrainCommand extends CommandBase {
 	@Override
 	public void initialize() {
 		RobotContainer.drivetrain.stop();
+		RobotContainer.drivetrain.calibrateGyro();
 		RobotContainer.drivetrain.resetGyro();
 	}
 
@@ -37,6 +38,8 @@ public class DriveTrainCommand extends CommandBase {
 		else if (RobotContainer.getController().getStickButtonPressed(Hand.kRight)) doubleSlowMode = !doubleSlowMode;
 		Map<String, Double> sticks = RobotContainer.controller.getSticks();
 		RobotContainer.drivetrain.driveCartesian(sticks.get("LSX"), sticks.get("LSY"), sticks.get("RSX"), slowMode, doubleSlowMode);
+
+		if (RobotContainer.getController().getAButtonPressed()) RobotContainer.drivetrain.resetGyro();
 	}
 
 	// Called once the command ends or is interrupted.
