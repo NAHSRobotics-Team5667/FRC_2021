@@ -27,7 +27,7 @@ public class DriveTrainCommand extends CommandBase {
 	@Override
 	public void initialize() {
 		RobotContainer.drivetrain.stop();
-		RobotContainer.drivetrain.stop();
+		RobotContainer.drivetrain.resetGyro();
 	}
 
 	// Called every time the scheduler runs while the command is scheduled.
