@@ -91,11 +91,11 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		m_odometry = new MecanumDriveOdometry(Constants.DriveConstants.kDriveKinematics,new Rotation2d(getHeading()) , new Pose2d(Constants.DriveConstants.startY, Constants.DriveConstants.startX, new Rotation2d()));
 		reverseEncoders();
 		resetOdometry(new Pose2d());
-		falconConfig.primaryPID.selectedFeedbackSensor = FeedbackDevice.IntegratedSensor;
-		falconConfig.openloopRamp = .8;
+		// falconConfig.primaryPID.selectedFeedbackSensor = FeedbackDevice.IntegratedSensor;
+		// falconConfig.openloopRamp = .8;
 
-		frontLeftMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
-		frontRightMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
+		// frontLeftMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
+		// frontRightMotor.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
 
 		setNeutralMode(NeutralMode.Brake);
 
@@ -121,7 +121,7 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	public void driveCartesian(double xSpeed, double ySpeed, double zRotation, boolean slowMode) {
 
 		if (!slowMode) this.drive.driveCartesian(0.7*xSpeed*xSpeed * Math.signum(xSpeed),0.7*ySpeed*ySpeed * Math.signum(ySpeed), 0.5*zRotation);
-		else if (slowMode) this.drive.driveCartesian(0.35*xSpeed*xSpeed * Math.signum(xSpeed),0.35*ySpeed*ySpeed * Math.signum(ySpeed), 0.25*zRotation);
+		else if (slowMode) this.drive.driveCartesian((0.4*0.7)*xSpeed*xSpeed * Math.signum(xSpeed),(0.4*0.7)*ySpeed*ySpeed * Math.signum(ySpeed), (0.4*0.5)*zRotation);
 		//this.drive.driveCartesian(0,0.75, 0);
 
 	}

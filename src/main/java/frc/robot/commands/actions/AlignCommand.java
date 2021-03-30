@@ -62,7 +62,7 @@ public class AlignCommand extends CommandBase {
 
 		} else if (!Limelight.getInstance().hasValidTarget()) {
             //PLACEHOLDER: figure out logic behind this
-			m_drive.driveCartesian(-0.5, 0 , 0);
+			m_drive.driveCartesian(-0.5, 0 , 0, false);
 		} else {
 			m_drive.feedMotorSafety();
 			m_drive.stop();
