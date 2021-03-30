@@ -34,10 +34,9 @@ public class IndexCommand extends CommandBase {
 
   @Override
   public void execute() {
-    if(RobotContainer.getController().getBumper(Hand.kLeft)){
-    m_index.startIndex();
-    }
-    else{
+    if(RobotContainer.getController().getLeftTrigger() > 0) {
+      m_index.startIndex();
+    } else{
       m_index.stopIndex();
     }
   }
