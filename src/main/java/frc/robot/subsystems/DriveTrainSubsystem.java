@@ -4,6 +4,7 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
@@ -38,6 +39,7 @@ import frc.robot.Constants.DriveConstants;
 import java.lang.Math;
 
 public class DriveTrainSubsystem extends SubsystemBase {
+	RobotDrive robotDrive;
 	/** Creates a new DriveTrain. */
 	private WPI_TalonFX frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor;
 	MecanumDrive drive;
@@ -119,11 +121,14 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	 */
 	
 	public void driveCartesian(double xSpeed, double ySpeed, double zRotation, boolean slowMode, boolean doubleSlowMode) {
-
-		if (!slowMode && !doubleSlowMode) this.drive.driveCartesian(0.7*xSpeed*xSpeed * Math.signum(xSpeed),0.7*ySpeed*ySpeed * Math.signum(ySpeed), 0.5*zRotation, m_navx.getAngle());
-		else if (slowMode && !doubleSlowMode) this.drive.driveCartesian(0.5*xSpeed*xSpeed * Math.signum(xSpeed),0.5*ySpeed*ySpeed * Math.signum(ySpeed), 0.3*zRotation, m_navx.getAngle());
-		else if (slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed*xSpeed * Math.signum(xSpeed),0.28*ySpeed*ySpeed * Math.signum(ySpeed), (0.4 * 0.3)*zRotation, m_navx.getAngle());
-		else if (!slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed*xSpeed * Math.signum(xSpeed),0.28*ySpeed*ySpeed * Math.signum(ySpeed), (0.4 * 0.3)*zRotation, m_navx.getAngle());
+		if (!slowMode && !doubleSlowMode) this.drive.driveCartesian(0.7*xSpeed*xSpeed,0.7*ySpeed*ySpeed, 0.5*zRotation, m_navx.getAngle());
+		else if (slowMode && !doubleSlowMode) this.drive.driveCartesian(0.5*xSpeed*xSpeed,0.5*ySpeed*ySpeed, 0.3*zRotation, m_navx.getAngle());
+		else if (slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed*xSpeed,0.28*ySpeed*ySpeed, (0.4 * 0.3)*zRotation, m_navx.getAngle());
+		else if (!slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed*xSpeed,0.28*ySpeed*ySpeed, (0.4 * 0.3)*zRotation, m_navx.getAngle());
+		// if (!slowMode && !doubleSlowMode) this.drive.driveCartesian(0.7*xSpeed*xSpeed * Math.signum(xSpeed),0.7*ySpeed*ySpeed * Math.signum(ySpeed), 0.5*zRotation, m_navx.getAngle());
+		// else if (slowMode && !doubleSlowMode) this.drive.driveCartesian(0.5*xSpeed*xSpeed * Math.signum(xSpeed),0.5*ySpeed*ySpeed * Math.signum(ySpeed), 0.3*zRotation, m_navx.getAngle());
+		// else if (slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed*xSpeed * Math.signum(xSpeed),0.28*ySpeed*ySpeed * Math.signum(ySpeed), (0.4 * 0.3)*zRotation, m_navx.getAngle());
+		// else if (!slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed*xSpeed * Math.signum(xSpeed),0.28*ySpeed*ySpeed * Math.signum(ySpeed), (0.4 * 0.3)*zRotation, m_navx.getAngle());
 		//this.drive.driveCartesian(0,0.75, 0);
 
 	}
