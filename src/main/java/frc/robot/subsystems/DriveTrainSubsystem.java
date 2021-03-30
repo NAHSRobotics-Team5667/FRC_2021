@@ -121,16 +121,20 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	 */
 	
 	public void driveCartesian(double xSpeed, double ySpeed, double zRotation, boolean slowMode, boolean doubleSlowMode) {
-		if (!slowMode && !doubleSlowMode) this.drive.driveCartesian(0.7*xSpeed*xSpeed,0.7*ySpeed*ySpeed, 0.5*zRotation, m_navx.getAngle());
-		else if (slowMode && !doubleSlowMode) this.drive.driveCartesian(0.5*xSpeed*xSpeed,0.5*ySpeed*ySpeed, 0.3*zRotation, m_navx.getAngle());
-		else if (slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed*xSpeed,0.28*ySpeed*ySpeed, (0.4 * 0.3)*zRotation, m_navx.getAngle());
-		else if (!slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed*xSpeed,0.28*ySpeed*ySpeed, (0.4 * 0.3)*zRotation, m_navx.getAngle());
+		if (!slowMode && !doubleSlowMode) this.drive.driveCartesian(0.7*xSpeed, 0.7*ySpeed, 0.5*zRotation, m_navx.getAngle());
+		else if (slowMode && !doubleSlowMode) this.drive.driveCartesian(0.5*xSpeed, 0.5*ySpeed, 0.3*zRotation, m_navx.getAngle());
+		else if (slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed, 0.28*ySpeed, (0.4 * 0.3)*zRotation, m_navx.getAngle());
+		else if (!slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed, 0.28*ySpeed, (0.4 * 0.3)*zRotation, m_navx.getAngle());
 		// if (!slowMode && !doubleSlowMode) this.drive.driveCartesian(0.7*xSpeed*xSpeed * Math.signum(xSpeed),0.7*ySpeed*ySpeed * Math.signum(ySpeed), 0.5*zRotation, m_navx.getAngle());
 		// else if (slowMode && !doubleSlowMode) this.drive.driveCartesian(0.5*xSpeed*xSpeed * Math.signum(xSpeed),0.5*ySpeed*ySpeed * Math.signum(ySpeed), 0.3*zRotation, m_navx.getAngle());
 		// else if (slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed*xSpeed * Math.signum(xSpeed),0.28*ySpeed*ySpeed * Math.signum(ySpeed), (0.4 * 0.3)*zRotation, m_navx.getAngle());
 		// else if (!slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed*xSpeed * Math.signum(xSpeed),0.28*ySpeed*ySpeed * Math.signum(ySpeed), (0.4 * 0.3)*zRotation, m_navx.getAngle());
 		//this.drive.driveCartesian(0,0.75, 0);
 
+	}
+
+	public void resetGyro() {
+		m_navx.reset();
 	}
 
 	/**
