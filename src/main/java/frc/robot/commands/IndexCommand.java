@@ -38,9 +38,8 @@ public class IndexCommand extends CommandBase {
       m_index.startIndex(false);
     } else if (RobotContainer.getController().getBumper(Hand.kRight)) {
       m_index.startIndex(true);
-      else if (RobotContainer.getController().getRightTrigger()>0){
-        m_index.startIndex(false);
-      }
+    }else if (RobotContainer.getController().getRightTrigger()>0){
+      m_index.startIndex(false);
     } else{
       m_index.stopIndex();
     }
