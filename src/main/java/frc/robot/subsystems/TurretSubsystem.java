@@ -4,6 +4,7 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -30,13 +31,8 @@ public class TurretSubsystem extends SubsystemBase {
 		m_turret.stopMotor();
 	}
 	//Starts turret motor
-	public void startTurret(double speed, boolean dir){
-		if(dir){
-			m_turret.set(speed);
-		}
-		else{
-			m_turret.set(-speed);
-		}
+	public void startTurret(double speed){
+		m_turret.set(ControlMode.PercentOutput, speed);
 		}
 	/**
 	 * @return Angle of the turret in relation to the robot.

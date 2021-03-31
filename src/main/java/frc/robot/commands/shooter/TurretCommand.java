@@ -42,10 +42,10 @@ public class TurretCommand extends CommandBase {
 	@Override
 	public void execute() {
 		if(RobotContainer.getController().getXButton()){
-			m_turret.startTurret(Constants.ShooterConstants.TURRET_SPEED, true);
+			m_turret.startTurret(Constants.ShooterConstants.TURRET_SPEED);
 		}
 		else if(RobotContainer.getController().getBButton()){
-			m_turret.startTurret(Constants.ShooterConstants.TURRET_SPEED, false);
+			m_turret.startTurret(-Constants.ShooterConstants.TURRET_SPEED);
 		}
 		// use PID Controller to adjust turret angle
 	}

@@ -54,40 +54,30 @@ public class AlignCommand extends CommandBase {
 		if (Limelight.getInstance().hasValidTarget()) {
 			double angle = -angleController.calculate(Limelight.getInstance().getXAngle());
 			double output = Constants.VisionConstants.ksVolts + angle;
-			m_turret.startTurret(output, true);
+			m_turret.startTurret(output);
 
 		} else if (!Limelight.getInstance().hasValidTarget()) {
             //PLACEHOLDER: figure out logic behind this
-			m_turret.startTurret(-0.5, true);
+			m_turret.startTurret(-0.1);
 		} else {
 			m_turret.stopTurret();
 
-		}
-
-		Map<String, Double> sticks = RobotContainer.getController().getSticks();
-		if (Math.abs(sticks.get("LSX")) > .2 || Math.abs(sticks.get("LSY")) > .2 || Math.abs(sticks.get("RSX")) > .2
-				|| Math.abs(sticks.get("RSY")) > .2) {
-			m_turret.setDriveMode(DriveModes.MANUAL);
-		}
+		}		
 
 	}
 
 	// Called once the command ends or is interrupted.
 	@Override
 	public void end(boolean interrupted) {
-		m_turret.stop();
+		m_turret.stopTurret();
 		angleController.reset();
-		m_turret.setDriveMode(DriveModes.MANUAL);
 		Constants.m_RobotState.setState(States.ALIGNED);
 	}
 
 	// Returns true when the command should end.
 	@Override
 	public boolean isFinished() {
-		if (m_turret.getDriveMode() == DriveModes.MANUAL) {
-			System.out.println("ENDED BC MANUAL");
-			return true;
-		} else if (angleController.atSetpoint() && Limelight.getInstance().hasValidTarget()) {
+		 if (angleController.atSetpoint() && Limelight.getInstance().hasValidTarget()) {
 			System.out.println("ENDED BC AT ANGLE");
 			return true;
 		} else {

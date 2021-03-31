@@ -36,9 +36,8 @@ public class IndexSubsystem extends SubsystemBase {
   /**
    * Starts index rotation.
    */
-  public void startIndex(boolean reversed) {
-    if (!reversed) m_index.set(ControlMode.PercentOutput, Constants.IndexConstants.INDEX_SPEED);
-    else if (reversed) m_index.set(ControlMode.PercentOutput, -Constants.IndexConstants.INDEX_SPEED);
+  public void startIndex(double speed) {
+    m_index.set(ControlMode.PercentOutput, speed);
   }
 
   /**

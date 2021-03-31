@@ -117,7 +117,7 @@ public class ShooterSubsystem extends SubsystemBase {
    * Starts the shooter and shooter-intake.
    */
   public void startShooter() {
-    m_shooterIntake.set(ShooterConstants.INTAKE_SPEED); // set shooter-intake to full speed (maybe)
+    m_shooterIntake.set(ControlMode.PercentOutput, Constants.ShooterConstants.INTAKE_SPEED); // set shooter-intake to full speed (maybe)
     //m_shooter.setVoltage(ShooterConstants.SHOOTER_VOLTAGE); // set shooter to full speed
   }
 

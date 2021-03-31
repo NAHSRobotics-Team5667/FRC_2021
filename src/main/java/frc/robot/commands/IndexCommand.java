@@ -2,6 +2,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
 import frc.robot.RobotContainer;
 import frc.robot.Constants.IntakeStates;
 import frc.robot.Constants.ShooterStates;
@@ -35,12 +36,12 @@ public class IndexCommand extends CommandBase {
   @Override
   public void execute() {
     if(RobotContainer.getController().getLeftTrigger() > 0) {
-      m_index.startIndex(false);
+      m_index.startIndex(-Constants.IndexConstants.INDEX_SPEED);
     } else if (RobotContainer.getController().getBumper(Hand.kRight)) {
-      m_index.startIndex(true);
+      m_index.startIndex(Constants.IndexConstants.INDEX_SPEED);
     }
       else if (RobotContainer.getController().getRightTrigger()>0){
-        m_index.startIndex(false);
+        m_index.startIndex(Constants.IndexConstants.INDEX_SPEED);
       }
      else{
       m_index.stopIndex();

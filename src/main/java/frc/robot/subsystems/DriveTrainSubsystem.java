@@ -20,6 +20,7 @@ import edu.wpi.first.wpilibj.kinematics.MecanumDriveKinematics;
 import edu.wpi.first.wpilibj.kinematics.MecanumDriveMotorVoltages;
 import edu.wpi.first.wpilibj.kinematics.MecanumDriveWheelSpeeds;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFXConfiguration;
@@ -187,10 +188,10 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	}
 
 	public void driveVoltage(MecanumDriveMotorVoltages voltages){
-		frontLeftMotor.set(voltages.frontLeftVoltage);
-		frontRightMotor.set(voltages.frontRightVoltage);
-		rearLeftMotor.set(voltages.rearLeftVoltage);
-		rearRightMotor.set(voltages.rearRightVoltage);
+		frontLeftMotor.setVoltage(voltages.frontLeftVoltage);
+		frontRightMotor.setVoltage(voltages.frontRightVoltage);
+		rearLeftMotor.setVoltage(voltages.rearLeftVoltage);
+		rearRightMotor.setVoltage(voltages.rearRightVoltage);
 		drive.feed();
 	}
 	
