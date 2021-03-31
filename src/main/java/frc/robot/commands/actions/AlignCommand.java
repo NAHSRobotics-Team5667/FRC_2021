@@ -11,26 +11,24 @@ import java.util.Map;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
-import frc.robot.Constants.DriveConstants;
 import frc.robot.RobotState.States;
 import frc.robot.RobotContainer;
-import frc.robot.subsystems.DriveTrainSubsystem;
-import frc.robot.subsystems.DriveTrainSubsystem.DriveModes;
+import frc.robot.subsystems.TurretSubsystem;
 import frc.robot.utils.Limelight;
 import frc.robot.utils.PIDFController;
 
 public class AlignCommand extends CommandBase {
-	private DriveTrainSubsystem m_drive;
+	private TurretSubsystem m_turret;
 	private PIDFController angleController = new PIDFController("Angle", Constants.VisionConstants.kP,
 			Constants.VisionConstants.kI, Constants.VisionConstants.kD, 0);
 
 	/**
 	 * Creates a new AlignCommand.
 	 */
-	public AlignCommand(DriveTrainSubsystem drive) {
+	public AlignCommand(TurretSubsystem m_turret) {
 		// Use addRequirements() here to declare subsystem dependencies.
-		m_drive = drive;
-		addRequirements(m_drive);
+		this.m_turret = m_turret;
+		addRequirements(m_turret);
 		angleController.setTolerance(1, 1);
 
 	}
@@ -39,7 +37,6 @@ public class AlignCommand extends CommandBase {
 	@Override
 	public void initialize() {
 		Limelight.getInstance().turnLightOn();
-		m_drive.setDriveMode(DriveTrainSubsystem.DriveModes.AUTO);
 		System.out.println("STARTING ALIGN COMMAND");
 		if (Limelight.getInstance().getPipeIndex() == 0) {
 			angleController.setPID(Constants.VisionConstants.kP, Constants.VisionConstants.kI,
@@ -54,25 +51,23 @@ public class AlignCommand extends CommandBase {
 	@Override
 	public void execute() {
 		Constants.m_RobotState.setState(States.ALIGNING);
-		if (m_drive.getDriveMode() == DriveTrainSubsystem.DriveModes.AUTO && Limelight.getInstance().hasValidTarget()) {
+		if (Limelight.getInstance().hasValidTarget()) {
 			double angle = -angleController.calculate(Limelight.getInstance().getXAngle());
-			double output = Constants.DriveConstants.ksVolts + angle;
-			m_drive.tankDriveVolts(output, -output);
-			m_drive.feedMotorSafety();
+			double output = Constants.VisionConstants.ksVolts + angle;
+			m_turret.startTurret(output, true);
 
 		} else if (!Limelight.getInstance().hasValidTarget()) {
             //PLACEHOLDER: figure out logic behind this
-			m_drive.driveCartesian(-0.5, 0 , 0, false, false);
+			m_turret.startTurret(-0.5, true);
 		} else {
-			m_drive.feedMotorSafety();
-			m_drive.stop();
+			m_turret.stopTurret();
 
 		}
 
 		Map<String, Double> sticks = RobotContainer.getController().getSticks();
 		if (Math.abs(sticks.get("LSX")) > .2 || Math.abs(sticks.get("LSY")) > .2 || Math.abs(sticks.get("RSX")) > .2
 				|| Math.abs(sticks.get("RSY")) > .2) {
-			m_drive.setDriveMode(DriveModes.MANUAL);
+			m_turret.setDriveMode(DriveModes.MANUAL);
 		}
 
 	}
@@ -80,16 +75,16 @@ public class AlignCommand extends CommandBase {
 	// Called once the command ends or is interrupted.
 	@Override
 	public void end(boolean interrupted) {
-		m_drive.stop();
+		m_turret.stop();
 		angleController.reset();
-		m_drive.setDriveMode(DriveModes.MANUAL);
+		m_turret.setDriveMode(DriveModes.MANUAL);
 		Constants.m_RobotState.setState(States.ALIGNED);
 	}
 
 	// Returns true when the command should end.
 	@Override
 	public boolean isFinished() {
-		if (m_drive.getDriveMode() == DriveModes.MANUAL) {
+		if (m_turret.getDriveMode() == DriveModes.MANUAL) {
 			System.out.println("ENDED BC MANUAL");
 			return true;
 		} else if (angleController.atSetpoint() && Limelight.getInstance().hasValidTarget()) {

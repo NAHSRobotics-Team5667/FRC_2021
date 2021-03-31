@@ -30,12 +30,12 @@ public class TurretSubsystem extends SubsystemBase {
 		m_turret.stopMotor();
 	}
 	//Starts turret motor
-	public void startTurret(boolean dir){
+	public void startTurret(double speed, boolean dir){
 		if(dir){
-			m_turret.set(ShooterConstants.TURRET_SPEED);
+			m_turret.set(speed);
 		}
 		else{
-			m_turret.set(-ShooterConstants.TURRET_SPEED);
+			m_turret.set(-speed);
 		}
 		}
 	/**
