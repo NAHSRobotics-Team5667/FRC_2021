@@ -69,19 +69,19 @@ public class Robot extends TimedRobot {
 	 * {@link RobotContainer} class.
 	 */
 	//@Override
-	// public void autonomousInit() {
-	// 	m_autonomousCommand = m_robotContainer.getAutonomousCommand(10);
+	public void autonomousInit() {
+		m_autonomousCommand = m_robotContainer.getAutonomousCommand(10);
 
-	// 	// schedule the autonomous command (example)
-	// 		m_autonomousCommand.schedule();
-	// }
+		// schedule the autonomous command (example)
+		m_autonomousCommand.schedule();
+	}
 
 	/** This function is called periodically during autonomous. */
-	// @Override
-	// public void autonomousPeriodic() {
-	// 	m_autonomousCommand.schedule();
-	// 	m_robotContainer.feedMotorSafety();
-	// }
+	@Override
+	public void autonomousPeriodic() {
+		m_autonomousCommand.schedule();
+		m_robotContainer.feedMotorSafety();
+	}
 
 	 @Override
 	public void teleopInit() {

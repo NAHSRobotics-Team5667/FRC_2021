@@ -53,6 +53,7 @@ public class RobotContainer {
 			PATHS.PathWeaver.getTrajectory("CLOSE_RENDEVOUS"), PATHS.PathWeaver.getTrajectory("BALL_THIEF"), null,
 			PATHS.PathWeaver.getTrajectory("MIDDLE_TRENCH_SIDE"), null, PATHS.STRAIGHT_TRAJECTORY_2M,
 			PATHS.S_TRAJECTORY };
+
 	/**
 	 * The container for the robot. Contains subsystems, OI devices, and commands.
 	 */
@@ -98,11 +99,9 @@ public class RobotContainer {
 		return controller;
 	}
 	public Command getAutonomousCommand(int selection) {
-			drivetrain.resetOdometry(paths[selection].getInitialPose());
-			return RunPath.getCommand(paths[selection], drivetrain, false).andThen(new RunCommand(drivetrain::stop));
-		
-		
-		}
+		drivetrain.resetOdometry(paths[selection].getInitialPose());
+		return RunPath.getCommand(paths[selection], drivetrain, false).andThen(new RunCommand(drivetrain::stop));
+	}
 	
 	public void setNeutralMode(NeutralMode mode){
 		drivetrain.setNeutralMode(mode);
