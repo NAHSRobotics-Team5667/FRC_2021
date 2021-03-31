@@ -4,10 +4,14 @@
 
 package frc.robot;
 
+import java.nio.file.FileSystem;
+import java.nio.file.Path;
+
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 import com.kauailabs.navx.frc.AHRS;
 
+import edu.wpi.first.wpilibj.Filesystem;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
@@ -29,6 +33,7 @@ import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 import frc.robot.autos.RunPath;
 import frc.robot.Constants.PATHS;
+import frc.robot.Constants.PATHS.PathWeaver;
 
 
 /**
@@ -52,7 +57,7 @@ public class RobotContainer {
 			PATHS.PathWeaver.getTrajectory("MIDDLE_RENDEVOUS"), PATHS.PathWeaver.getTrajectory("CLOSE_TRENCH"),
 			PATHS.PathWeaver.getTrajectory("CLOSE_RENDEVOUS"), PATHS.PathWeaver.getTrajectory("BALL_THIEF"), null,
 			PATHS.PathWeaver.getTrajectory("MIDDLE_TRENCH_SIDE"), null, PATHS.STRAIGHT_TRAJECTORY_2M,
-			PATHS.S_TRAJECTORY };
+			PATHS.S_TRAJECTORY, PathWeaver.getTrajectory("slalom") };
 
 	/**
 	 * The container for the robot. Contains subsystems, OI devices, and commands.

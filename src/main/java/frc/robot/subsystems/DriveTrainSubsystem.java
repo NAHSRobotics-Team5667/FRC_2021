@@ -4,7 +4,6 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
@@ -27,6 +26,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonFXConfiguration;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 import com.kauailabs.navx.frc.AHRS;
 
+import edu.wpi.first.hal.SimDevice;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
@@ -39,7 +39,6 @@ import frc.robot.Constants.DriveConstants;
 import java.lang.Math;
 
 public class DriveTrainSubsystem extends SubsystemBase {
-	RobotDrive robotDrive;
 	/** Creates a new DriveTrain. */
 	private WPI_TalonFX frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor;
 	MecanumDrive drive;
@@ -47,7 +46,6 @@ public class DriveTrainSubsystem extends SubsystemBase {
 
 	private boolean slowMode = false;
 	private boolean doubleSlowMode = false;
-
 
 	// The motors on the left side of the drive.
 	private final SpeedControllerGroup m_leftMotors;

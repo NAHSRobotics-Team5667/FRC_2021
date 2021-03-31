@@ -4,6 +4,6 @@
   "maxVelocity": 3.837432,
   "maxAcceleration": 0.8,
   "wheelBase": 0.1524,
-  "gameName": "Galactic Search A",
-  "outputDir": ""
+  "gameName": "Infinite Recharge",
+  "outputDir": "../src/main/deploy"
 }

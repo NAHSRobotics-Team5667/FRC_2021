@@ -190,14 +190,14 @@ public final class Constants {
 
         public static final class PathWeaver {
             public static Trajectory getTrajectory(String path) {
-                // try {
-                //     return TrajectoryUtil
-                //             .fromPathweaverJson(Paths.get("/home/lvuser/deploy/output/" + path + ".wpilib.json"));
-                // } catch (Exception e) {
-                //     System.out.println("CANNOT READ Trajectory - " + path);
-                //     System.out.println("WITH ERROR: " + e.toString());
-                     return null;
-                // }
+                try {
+                    return TrajectoryUtil
+                            .fromPathweaverJson(Paths.get("/home/lvuser/deploy/output/" + path + ".wpilib.json"));
+                } catch (Exception e) {
+                    System.out.println("CANNOT READ Trajectory - " + path);
+                    System.out.println("WITH ERROR: " + e.toString());
+                    return null;
+                }
             }
         }
     }
