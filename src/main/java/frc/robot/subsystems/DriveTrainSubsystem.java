@@ -45,6 +45,9 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	MecanumDrive drive;
 	private final AHRS m_navx;
 
+	private boolean slowMode = false;
+	private boolean doubleSlowMode = false;
+
 
 	// The motors on the left side of the drive.
 	private final SpeedControllerGroup m_leftMotors;
@@ -121,18 +124,20 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	 */
 	
 	public void driveCartesian(double ySpeed, double xSpeed, double zRotation, boolean slowMode, boolean doubleSlowMode) {
+		this.slowMode = slowMode;
+		this.doubleSlowMode = doubleSlowMode;
 		if (!slowMode && !doubleSlowMode) 
 			this.drive.driveCartesian(
 				0.7*ySpeed, 
 				0.7*xSpeed, 
-				0.5*zRotation, 
+				0.7*zRotation, 
 				-m_navx.getAngle()
 			);
 		else if (slowMode && !doubleSlowMode) 
 			this.drive.driveCartesian(
 				0.5*ySpeed, 
 				0.5*xSpeed, 
-				0.3*zRotation, 
+				0.5*zRotation, 
 				-m_navx.getAngle()
 			);
 		else if (slowMode && doubleSlowMode) 
@@ -316,5 +321,7 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		robotHeading.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getRotation().getRadians()));	
 
 		SmartDashboard.putNumber("gyro", m_navx.getAngle());
+		SmartDashboard.putBoolean("slow mode", slowMode);
+		SmartDashboard.putBoolean("double slow mode", doubleSlowMode);
 	}
 }
