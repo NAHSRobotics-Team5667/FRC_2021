@@ -11,10 +11,6 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.ShooterConstants;
 import frc.robot.Constants;
 
-import frc.robot.subsystems.DriveTrainSubsystem;
-
-import java.lang.Math;
-
 public class TurretSubsystem extends SubsystemBase {
 	private WPI_TalonFX m_turret;
 	private double turretAngle;
@@ -51,14 +47,14 @@ public class TurretSubsystem extends SubsystemBase {
 	 */
 	public void startTurret(double speed) {
 		if (getTurretAngle() < -87) {
-				m_turret.set(Constants.ShooterConstants.TURRET_SPEED); //check, might have to reverse
-			} else if (getTurretAngle() > 87) {
-				m_turret.set(-Constants.ShooterConstants.TURRET_SPEED);
-			}
-		 else {
+			m_turret.set(Constants.ShooterConstants.TURRET_SPEED); //check, might have to reverse
+		} else if (getTurretAngle() > 87) {
+			m_turret.set(-Constants.ShooterConstants.TURRET_SPEED);
+		} else {
 			m_turret.set(speed);
+		}
 	}
-}
+	
 	public void search(double speed) {
 		//will finish, committing for now.
 	}
