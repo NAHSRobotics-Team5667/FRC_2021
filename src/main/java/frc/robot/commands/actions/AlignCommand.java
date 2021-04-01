@@ -8,18 +8,19 @@
 package frc.robot.commands.actions;
 
 import java.util.Map;
+import java.lang.Math;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
-import frc.robot.Constants.DriveConstants;
 import frc.robot.RobotState.States;
 import frc.robot.RobotContainer;
+import frc.robot.subsystems.TurretSubsystem;
 import frc.robot.subsystems.DriveTrainSubsystem;
-import frc.robot.subsystems.DriveTrainSubsystem.DriveModes;
 import frc.robot.utils.Limelight;
 import frc.robot.utils.PIDFController;
 
 public class AlignCommand extends CommandBase {
+	private TurretSubsystem m_turret;
 	private DriveTrainSubsystem m_drive;
 	private PIDFController angleController = new PIDFController("Angle", Constants.VisionConstants.kP,
 			Constants.VisionConstants.kI, Constants.VisionConstants.kD, 0);
@@ -27,10 +28,11 @@ public class AlignCommand extends CommandBase {
 	/**
 	 * Creates a new AlignCommand.
 	 */
-	public AlignCommand(DriveTrainSubsystem drive) {
+	public AlignCommand(TurretSubsystem m_turret, DriveTrainSubsystem m_drive) {
 		// Use addRequirements() here to declare subsystem dependencies.
-		m_drive = drive;
-		addRequirements(m_drive);
+		this.m_turret = m_turret;
+		this.m_drive = m_drive;
+		addRequirements(m_turret, m_drive);
 		angleController.setTolerance(1, 1);
 
 	}
@@ -39,7 +41,6 @@ public class AlignCommand extends CommandBase {
 	@Override
 	public void initialize() {
 		Limelight.getInstance().turnLightOn();
-		m_drive.setDriveMode(DriveTrainSubsystem.DriveModes.AUTO);
 		System.out.println("STARTING ALIGN COMMAND");
 		if (Limelight.getInstance().getPipeIndex() == 0) {
 			angleController.setPID(Constants.VisionConstants.kP, Constants.VisionConstants.kI,
@@ -54,49 +55,43 @@ public class AlignCommand extends CommandBase {
 	@Override
 	public void execute() {
 		Constants.m_RobotState.setState(States.ALIGNING);
-		if (m_drive.getDriveMode() == DriveTrainSubsystem.DriveModes.AUTO && Limelight.getInstance().hasValidTarget()) {
+		if (Limelight.getInstance().hasValidTarget()) {
 			double angle = -angleController.calculate(Limelight.getInstance().getXAngle());
-			double output = Constants.DriveConstants.ksVolts + angle;
-			m_drive.tankDriveVolts(output, -output);
-			m_drive.feedMotorSafety();
+			double output = (angle>0 ? Constants.VisionConstants.ks + angle : -Constants.VisionConstants.ks + angle);
+			m_turret.startTurret(output);
 
 		} else if (!Limelight.getInstance().hasValidTarget()) {
-            //PLACEHOLDER: figure out logic behind this
-			m_drive.driveCartesian(-0.5, 0 , 0, false, false);
+			while(!Limelight.getInstance().hasValidTarget()){
+				double xPos = m_drive.getXDisplacement();
+				double yPos = m_drive.getYDisplacement();
+				double dtAngle = m_drive.getHeading();
+				double angleDeError = (180/Math.PI) * Math.atan((Constants.ShooterConstants.targetY - yPos)/(Constants.ShooterConstants.targetX - xPos))+dtAngle;
+				double PIDangle = -angleController.calculate(angleDeError);
+				double output = (PIDangle>0 ? Constants.VisionConstants.ks + PIDangle : -Constants.VisionConstants.ks + PIDangle);
+				m_turret.startTurret(output);
+
+				
+			}
+			//PLACEHOLDER: figure out logic behind this
+
 		} else {
-			m_drive.feedMotorSafety();
-			m_drive.stop();
+			m_turret.stopTurret();
 
-		}
-
-		Map<String, Double> sticks = RobotContainer.getController().getSticks();
-		if (Math.abs(sticks.get("LSX")) > .2 || Math.abs(sticks.get("LSY")) > .2 || Math.abs(sticks.get("RSX")) > .2
-				|| Math.abs(sticks.get("RSY")) > .2) {
-			m_drive.setDriveMode(DriveModes.MANUAL);
-		}
+		}		
 
 	}
 
 	// Called once the command ends or is interrupted.
 	@Override
 	public void end(boolean interrupted) {
-		m_drive.stop();
+		m_turret.stopTurret();
 		angleController.reset();
-		m_drive.setDriveMode(DriveModes.MANUAL);
-		Constants.m_RobotState.setState(States.ALIGNED);
 	}
 
 	// Returns true when the command should end.
 	@Override
 	public boolean isFinished() {
-		if (m_drive.getDriveMode() == DriveModes.MANUAL) {
-			System.out.println("ENDED BC MANUAL");
-			return true;
-		} else if (angleController.atSetpoint() && Limelight.getInstance().hasValidTarget()) {
-			System.out.println("ENDED BC AT ANGLE");
-			return true;
-		} else {
+		
 			return false;
-		}
 	}
 }

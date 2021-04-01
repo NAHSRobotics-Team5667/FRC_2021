@@ -220,6 +220,9 @@ public final class Constants {
         public static double TURRET_kP = 0.02; // placeholder
         public static double TURRET_kI = 0; // placeholder
         public static double TURRET_kD = 0; // placeholder
+
+        public static double targetY = 10; //placeholder -- fix
+        public static double targetX = 0; //placeholder -- fix
     }
 
     /* FIX ALL OF THIS -- HOOD SHOOTER SYSTEM WORKS DIFFERENTLY

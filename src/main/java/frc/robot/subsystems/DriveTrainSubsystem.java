@@ -280,16 +280,16 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		return -frontRightMotor.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT * 10
 				* DriveConstants.MAG;
 	} 
-	public float getYDisplacement() {
+	public double getYDisplacement() {
 		return m_navx.getDisplacementY();
 	}
-	public float getYVelocity(){
+	public double getYVelocity(){
 		return m_navx.getVelocityY();
 	}
-	public float getXDisplacement() {
+	public double getXDisplacement() {
 		return m_navx.getDisplacementX();
 	}
-	public float getXVelocity(){
+	public double getXVelocity(){
 		return m_navx.getVelocityY();
 	}
 	
@@ -313,10 +313,9 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	@Override
 	public void periodic() {
 		m_odometry.update(Rotation2d.fromDegrees(getHeading()), getWheelSpeeds());
-
 		robotX.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getTranslation().getX()));
 		robotY.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getTranslation().getY()));
-		robotHeading.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getRotation().getRadians()));	
+		robotHeading.setDouble((m_odometry.getPoseMeters().getRotation().getRadians()));	
 
 		SmartDashboard.putNumber("gyro", m_navx.getAngle());
 		SmartDashboard.putBoolean("slow mode", slowMode);
