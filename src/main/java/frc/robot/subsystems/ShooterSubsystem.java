@@ -11,17 +11,12 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
 public class ShooterSubsystem extends SubsystemBase {
-  private WPI_TalonFX m_hood, m_shooter, m_shooterIntake, m_turret;
+  private WPI_TalonFX m_hood, m_shooter, m_shooterIntake;
 
   private double initialHoodAngle;
   private double hoodAngle;
 
-  private double initialTurretAngle;
-  private double turretAngle;
-
   private ShooterStates m_shooterState = ShooterStates.IDLE;
-
-  private PIDController m_turretController;
 
   /**
    * @param hoodAngle   The initial angle of the hood.
@@ -29,34 +24,21 @@ public class ShooterSubsystem extends SubsystemBase {
    */
   public ShooterSubsystem(double hoodAngle, double turretAngle) {
     m_hood = new WPI_TalonFX(Constants.ShooterConstants.HOOD_ID);
-    //m_shooter = new WPI_TalonFX(Constants.ShooterConstants.SHOOTER_ID);
+    // m_shooter = new WPI_TalonFX(Constants.ShooterConstants.SHOOTER_ID);
     m_shooterIntake = new WPI_TalonFX(Constants.ShooterConstants.SHOOTER_INTAKE_ID);
-    m_turret = new WPI_TalonFX(Constants.ShooterConstants.TURRET_ID);
     // m_hood.setInverted(true); // positive makes the angle larger, negative makes the angle smaller
     // m_shooter.setInverted(true); // positive shoots power cells
-    // m_shooterIntake.setInverted(true); // positive intakes power cells
-    // m_turret.setInverted(true); // positive turns the shooter right
+    m_shooterIntake.setInverted(true); // positive intakes power cells
     m_hood.setNeutralMode(NeutralMode.Brake);
     //m_shooter.setNeutralMode(NeutralMode.Coast);
     m_shooterIntake.setNeutralMode(NeutralMode.Brake);
-    m_turret.setNeutralMode(NeutralMode.Brake);
 
     // m_hood.setVoltage(ShooterConstants.HOOD_VOLTAGE); // requires less voltage, may need more idk
     // m_shooter.setVoltage(ShooterConstants.SHOOTER_VOLTAGE); // requires more voltage to launch powercells idk
     // m_shooterIntake.setVoltage(ShooterConstants.INTAKE_VOLTAGE); // requires less voltage than shooter but more than turret
-    // m_turret.setVoltage(ShooterConstants.TURRET_VOLTAGE); // requires less voltage, may need more because of torque idk
 
     this.initialHoodAngle = hoodAngle;
     this.hoodAngle = hoodAngle;
-
-    this.initialTurretAngle = turretAngle;
-    this.turretAngle = turretAngle;
-
-    m_turretController = new PIDController(
-      Constants.ShooterConstants.TURRET_kP, 
-      Constants.ShooterConstants.TURRET_kI,
-      Constants.ShooterConstants.TURRET_kD
-    );
   }
 
   /**
@@ -72,13 +54,6 @@ public class ShooterSubsystem extends SubsystemBase {
   public void stopShooter() {
     m_shooterIntake.stopMotor();
     //m_shooter.stopMotor();
-  }
-
-  /**
-   * Stops the turret motor.
-   */
-  public void stopTurret() {
-    m_turret.stopMotor();
   }
 
   /**
@@ -108,11 +83,6 @@ public class ShooterSubsystem extends SubsystemBase {
     return ((Constants.FALCON_CPR * (1 / Constants.ShooterConstants.HOOD_GEAR_RATIO)) * (endDegrees - initialDegrees)) / 360;
   }
 
-  public void adjustTurret(double turretTicks, double tickTarget) {
-    double pidOutput = m_turretController.calculate(turretTicks, tickTarget);
-    m_turret.set(ControlMode.PercentOutput, pidOutput);
-  }
-
   /**
    * Starts the shooter and shooter-intake.
    */
@@ -128,22 +98,11 @@ public class ShooterSubsystem extends SubsystemBase {
     hoodAngle = ((hoodTicks * 360) / (Constants.FALCON_CPR * (1 / Constants.ShooterConstants.HOOD_GEAR_RATIO))) + initialHoodAngle;
   }
 
-  private void updateTurretAngle(double turretTicks) {
-    turretAngle = ((turretTicks * 360) / (Constants.FALCON_CPR * (1 / Constants.ShooterConstants.TURRET_GEAR_RATIO))) + initialTurretAngle;
-  }
-
   /**
    * @return Angle of the powercell in relation to the ground when it exits the shooter.
    */
   public double getHoodAngle() {
     return hoodAngle;
-  }
-
-  /**
-   * @return current turret angle based on turret motor ticks.
-   */
-  public double getTurretAngle() {
-    return turretAngle;
   }
 
   /**
@@ -156,6 +115,5 @@ public class ShooterSubsystem extends SubsystemBase {
   @Override
   public void periodic() {
     //updateHoodAngle(m_hood.getSelectedSensorPosition());
-    //updateTurretAngle(m_turret.getSelectedSensorPosition());
   }
 }
