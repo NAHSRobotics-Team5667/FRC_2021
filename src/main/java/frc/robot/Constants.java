@@ -235,6 +235,7 @@ public final class Constants {
         public static final double kP_far = 0.03;
         public static final double kI_far = kP_far / 4;
         public static final double kD_far = kD;
+        public static final double ks = 0.005;
 
     }
     public enum ShooterStates {
@@ -245,7 +246,7 @@ public final class Constants {
 
     public static final class IntakeConstants {
         public static final int INTAKE_ID = 5;
-        public static final int PISTON_ID = 1; // placeholder
+        public static final int PISTON_ID = 7; // placeholder
 
         public static final double INTAKE_SPEED = .45; // placeholder
     }
