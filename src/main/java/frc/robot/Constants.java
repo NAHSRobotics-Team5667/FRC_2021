@@ -237,7 +237,7 @@ public final class Constants {
 
         public static final double kP_far = 0.03;
         public static final double kI_far = kP_far / 4;
-        public static final double kD_far = kD;
+        public static final double kD_far = kD; 
         public static final double ks = 0.005;
 
     }

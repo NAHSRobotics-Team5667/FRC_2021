@@ -24,13 +24,13 @@ public class ShooterSubsystem extends SubsystemBase {
    */
   public ShooterSubsystem(double hoodAngle, double turretAngle) {
     m_hood = new WPI_TalonFX(Constants.ShooterConstants.HOOD_ID);
-    // m_shooter = new WPI_TalonFX(Constants.ShooterConstants.SHOOTER_ID);
+    m_shooter = new WPI_TalonFX(Constants.ShooterConstants.SHOOTER_ID);
     m_shooterIntake = new WPI_TalonFX(Constants.ShooterConstants.SHOOTER_INTAKE_ID);
     // m_hood.setInverted(true); // positive makes the angle larger, negative makes the angle smaller
     // m_shooter.setInverted(true); // positive shoots power cells
     m_shooterIntake.setInverted(true); // positive intakes power cells
     m_hood.setNeutralMode(NeutralMode.Brake);
-    //m_shooter.setNeutralMode(NeutralMode.Coast);
+    m_shooter.setNeutralMode(NeutralMode.Coast);
     m_shooterIntake.setNeutralMode(NeutralMode.Brake);
 
     // m_hood.setVoltage(ShooterConstants.HOOD_VOLTAGE); // requires less voltage, may need more idk

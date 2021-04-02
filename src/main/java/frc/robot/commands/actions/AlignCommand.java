@@ -57,11 +57,10 @@ public class AlignCommand extends CommandBase {
 		Constants.m_RobotState.setState(States.ALIGNING);
 		if (Limelight.getInstance().hasValidTarget()) {
 			double angle = -angleController.calculate(Limelight.getInstance().getXAngle());
-			double output = (angle>0 ? Constants.VisionConstants.ks + angle : -Constants.VisionConstants.ks + angle);
+			double output = (angle > 0) ? Constants.VisionConstants.ks + angle : -Constants.VisionConstants.ks + angle;
 			m_turret.startTurret(output);
-
 		} else if (!Limelight.getInstance().hasValidTarget()) {
-			while(!Limelight.getInstance().hasValidTarget()){
+			if (!Limelight.getInstance().hasValidTarget()){
 				double xPos = m_drive.getXDisplacement();
 				double yPos = m_drive.getYDisplacement();
 				double dtAngle = m_drive.getHeading();
@@ -69,16 +68,10 @@ public class AlignCommand extends CommandBase {
 				double PIDangle = -angleController.calculate(angleDeError);
 				double output = (PIDangle>0 ? Constants.VisionConstants.ks + PIDangle : -Constants.VisionConstants.ks + PIDangle);
 				m_turret.startTurret(output);
-
-				
 			}
-			//PLACEHOLDER: figure out logic behind this
-
 		} else {
 			m_turret.stopTurret();
-
 		}		
-
 	}
 
 	// Called once the command ends or is interrupted.
