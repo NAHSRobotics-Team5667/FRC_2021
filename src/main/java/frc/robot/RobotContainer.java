@@ -17,6 +17,7 @@ import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
+import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.commands.DriveTrainCommand;
 import frc.robot.commands.shooter.ShooterCommand;
 import frc.robot.commands.shooter.TurretCommand;
@@ -56,12 +57,12 @@ public class RobotContainer {
 	public static TurretSubsystem m_turret;
 	public static PowerDistributionPanel panel = new PowerDistributionPanel(0);
 
-	private Trajectory[] paths = new Trajectory[] { PATHS.PathWeaver.getTrajectory("FAR_TRENCH"),
-			PATHS.PathWeaver.getTrajectory("FAR_RENDEVOUS"), PATHS.PathWeaver.getTrajectory("MIDDLE_TRENCH"),
-			PATHS.PathWeaver.getTrajectory("MIDDLE_RENDEVOUS"), PATHS.PathWeaver.getTrajectory("CLOSE_TRENCH"),
-			PATHS.PathWeaver.getTrajectory("CLOSE_RENDEVOUS"), PATHS.PathWeaver.getTrajectory("BALL_THIEF"), null,
-			PATHS.PathWeaver.getTrajectory("MIDDLE_TRENCH_SIDE"), null, PATHS.STRAIGHT_TRAJECTORY_2M,
-			PATHS.S_TRAJECTORY, PathWeaver.getTrajectory("slalom") };
+	private Trajectory[] paths = new Trajectory[] { PATHS.STRAIGHT_TRAJECTORY_2M,
+			PATHS.S_TRAJECTORY, PathWeaver.getTrajectory("slalom"),
+			PathWeaver.getTrajectory("barrel_race"), PathWeaver.getTrajectory("bounce"),
+			PathWeaver.getTrajectory("bounce2"), PathWeaver.getTrajectory("bounce3"),
+			PathWeaver.getTrajectory("bounce4"), PathWeaver.getTrajectory("gs1"),
+			PathWeaver.getTrajectory("gs2") };
 
 	/**
 	 * The container for the robot. Contains subsystems, OI devices, and commands.
@@ -109,9 +110,18 @@ public class RobotContainer {
 	public static Controller getController() {
 		return controller;
 	}
-	public Command getAutonomousCommand(int selection) {
-		// drivetrain.resetOdometry(paths[selection].getInitialPose());
-		// return RunPath.getCommand(paths[selection], drivetrain, false).andThen(new RunCommand(drivetrain::stop));
+	public Command getAutonomousCommand(int selection) { // if selection == 4 call bounce sequential command
+		// if (selection != 4) {
+		// 	drivetrain.resetOdometry(paths[selection].getInitialPose());
+		// 	return RunPath.getCommand(paths[selection], drivetrain, false).andThen(new RunCommand(drivetrain::stop));
+		// } else {
+		// 	return new SequentialCommandGroup(new Command[] {
+		// 		new RunPath().getCommand(paths[4], drivetrain, false), 
+		// 		new RunPath().getCommand(paths[5], drivetrain, true),
+		// 		new RunPath().getCommand(paths[6], drivetrain, false),
+		// 		new RunPath().getCommand(paths[7], drivetrain, true)
+		// 	});
+		// }
 
 		return new AlignCommand(m_turret, drivetrain);
 	}
