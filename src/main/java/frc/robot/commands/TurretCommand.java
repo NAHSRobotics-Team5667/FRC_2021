@@ -5,6 +5,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.TurretSubsystem;
 
@@ -27,9 +28,9 @@ public class TurretCommand extends CommandBase {
   @Override
   public void execute() {
     if (RobotContainer.getController().getAButton()) {
-      m_turret.startTurret(0.01);
+      m_turret.startTurret(Constants.ShooterConstants.TURRET_SPEED);
     } else if (RobotContainer.getController().getBButton()) {
-      m_turret.startTurret(-0.01);
+      m_turret.startTurret(-Constants.ShooterConstants.TURRET_SPEED);
     }
   }
 

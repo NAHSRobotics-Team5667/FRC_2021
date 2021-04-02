@@ -212,7 +212,7 @@ public final class Constants {
         public static final double HOOD_SPEED = 6.0;
         public static final double SHOOTER_SPEED = 10.0;
         public static final double INTAKE_SPEED = 0.4;
-        public static final double TURRET_SPEED = 2.0;
+        public static final double TURRET_SPEED = 0.001;
 
         public static final double HOOD_GEAR_RATIO = 1 / 37.7777777777777777777777777777;
         public static final double TURRET_GEAR_RATIO = 1 / 53.3333333333333333333333333333;
