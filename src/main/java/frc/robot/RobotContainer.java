@@ -79,7 +79,7 @@ public class RobotContainer {
 		m_index.setDefaultCommand(new IndexCommand(m_index));
 		m_intake.setDefaultCommand(new IntakeCommand(m_intake));
 		m_shooter.setDefaultCommand(new ShooterCommand(m_shooter));
-		m_turret.setDefaultCommand(new TurretCommand(m_turret));
+		m_turret.setDefaultCommand(new TurretCommand(m_turret, m_shooter));
 	}
 
 	/**

@@ -209,7 +209,7 @@ public final class Constants {
         public static final int TURRET_ID = 8;
         public static final int SHOOTER_INTAKE_ID = 1;
 
-        public static final double HOOD_SPEED = 0.0001;
+        public static final double HOOD_SPEED = 0.09;
         public static final double SHOOTER_SPEED = 1;
         public static final double INTAKE_SPEED = 0.4;
         public static final double TURRET_SPEED = 0.1;
@@ -231,14 +231,17 @@ public final class Constants {
         public static final double H1 = Units.inchesToMeters(36); // Height of limelight from the ground
         public static final double H2 = Units.inchesToMeters(98.25); // Height of target
         public static final double A1 = 10; // Limelight mounting angle
-        public static final double kP = 0.001;
-        public static final double kI = kP / 3.7;
-        public static final double kD = 0.001;
+        public static final double Ku = 0.08;
+        public static final double Tu = 0.2;
+        public static final double kP = 0.1 * Ku;
+        public static final double kI = 0.06 * Ku/Tu;
+        public static final double kD = (3/40) * Ku * Tu;
 
         public static final double kP_far = 0.03;
         public static final double kI_far = kP_far / 4;
         public static final double kD_far = kD; 
         public static final double ks = 0.055;
+        public static final double kh = 0.022;
 
     }
     public enum ShooterStates {

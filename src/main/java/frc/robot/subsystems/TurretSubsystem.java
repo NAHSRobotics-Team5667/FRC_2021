@@ -15,6 +15,7 @@ public class TurretSubsystem extends SubsystemBase {
 	private WPI_TalonFX m_turret;
 	private double turretAngle;
 	private double initialTurretAngle;
+	private boolean lastContactedStop;
 
 	/**
 	 * Creates a new TurretSubsystem.
@@ -49,9 +50,11 @@ public class TurretSubsystem extends SubsystemBase {
 	public void startTurret(double speed) {
 		System.out.println(getTurretAngle());
 		if (getTurretAngle() < -85) {
-			m_turret.set(Constants.ShooterConstants.TURRET_SPEED); //check, might have to reverse
+			m_turret.set(Constants.ShooterConstants.TURRET_SPEED); 
+			lastContactedStop  = false;//check, might have to reverse
 		} else if (getTurretAngle() > 85) {
 			m_turret.set(-Constants.ShooterConstants.TURRET_SPEED);
+			lastContactedStop = true;
 		} else {
 			m_turret.set(speed);
 		}

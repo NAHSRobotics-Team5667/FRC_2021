@@ -58,6 +58,7 @@ public class AlignCommand extends CommandBase {
 		if (Limelight.getInstance().hasValidTarget()) {
 			double angle = -angleController.calculate(Limelight.getInstance().getXAngle());
 			double output = (angle > 0) ? Constants.VisionConstants.ks + angle : -Constants.VisionConstants.ks + angle;
+			output = (output>0) ? (Math.min(output, 0.16)) : (Math.max(output, -0.16));
 			m_turret.startTurret(output);
 		} else if (!Limelight.getInstance().hasValidTarget()) {
 			if (!Limelight.getInstance().hasValidTarget()){

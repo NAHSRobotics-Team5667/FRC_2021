@@ -1,6 +1,8 @@
 package frc.robot.commands.actions;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
+import frc.robot.RobotContainer;
 import frc.robot.subsystems.ShooterSubsystem;
 
 public class ShooterHoodCommand extends CommandBase {
@@ -31,7 +33,17 @@ public class ShooterHoodCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_shooter.setHood(m_shooter.degreesToHoodTicks(endDegrees, initialDegrees), 0.01);
+    //m_shooter.setHood(m_shooter.degreesToHoodTicks(endDegrees, initialDegrees), 0.01);
+    if(RobotContainer.controller.getYButton()){
+    m_shooter.startHood(Constants.ShooterConstants.HOOD_SPEED);
+    System.out.println("gotY");
+    }
+    else if(RobotContainer.controller.getAButton()){
+    m_shooter.startHood(-Constants.ShooterConstants.HOOD_SPEED);
+    }
+    else{
+      m_shooter.stopHood();
+    }
   }
 
   // Called once the command ends or is interrupted.

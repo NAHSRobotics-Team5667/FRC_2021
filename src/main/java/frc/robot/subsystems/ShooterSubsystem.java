@@ -91,6 +91,11 @@ public class ShooterSubsystem extends SubsystemBase {
     m_shooter.set(speed); // set shooter to full speed
   }
 
+  public void startHood(double speed){
+    m_hood.set(speed);
+    System.out.println(speed);
+  }
+
   /**
    * @param hoodTicks encoder count from Falcon 500.
    */

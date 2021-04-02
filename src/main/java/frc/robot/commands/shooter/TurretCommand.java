@@ -9,12 +9,14 @@ import edu.wpi.first.wpilibj.controller.PIDController;
 
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
+import frc.robot.subsystems.ShooterSubsystem;
 import frc.robot.subsystems.TurretSubsystem;
 
 public class TurretCommand extends CommandBase {
 	private double startAngle;
 	private double endAngle;
 	private TurretSubsystem m_turret;
+	private ShooterSubsystem m_shooter;
 
 	private PIDController m_controller = new PIDController(Constants.ShooterConstants.TURRET_kP,
 			Constants.ShooterConstants.TURRET_kI, Constants.ShooterConstants.TURRET_kD);
@@ -26,9 +28,11 @@ public class TurretCommand extends CommandBase {
 	 * @param endAngle   end degrees of the shooter hood.
 	 * @param m_shooter  shooter subsystem.
 	 */
-	public TurretCommand(TurretSubsystem m_turret) {
+	public TurretCommand(TurretSubsystem m_turret, ShooterSubsystem m_shooter) {
 		this.m_turret = m_turret;
+		this.m_shooter = m_shooter;
 		addRequirements(m_turret);
+		addRequirements(m_shooter);
 		// Use addRequirements() here to declare subsystem dependencies.
 	}
 
@@ -47,8 +51,16 @@ public class TurretCommand extends CommandBase {
 		else if(RobotContainer.getController().getBButton()){
 			m_turret.startTurret(-Constants.ShooterConstants.TURRET_SPEED);
 		}
+		else if(RobotContainer.controller.getYButton()){
+			m_shooter.startHood(Constants.ShooterConstants.HOOD_SPEED);
+			System.out.println("gotY");
+			}
+		  else if(RobotContainer.controller.getAButton()){
+			m_shooter.startHood(-Constants.ShooterConstants.HOOD_SPEED);
+			}
 		else{
 			m_turret.stopTurret();
+			m_shooter.stopHood();
 		}
 		// use PID Controller to adjust turret angle
 	}
