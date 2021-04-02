@@ -19,12 +19,15 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import frc.robot.commands.DriveTrainCommand;
 import frc.robot.commands.shooter.ShooterCommand;
+import frc.robot.commands.shooter.TurretCommand;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import frc.robot.subsystems.IndexSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.commands.IndexCommand;
 import frc.robot.commands.IntakeCommand;
+import frc.robot.commands.actions.AlignCommand;
 import frc.robot.subsystems.ShooterSubsystem;
+import frc.robot.subsystems.TurretSubsystem;
 import frc.robot.utils.Controller;
 
 import edu.wpi.first.wpilibj.trajectory.Trajectory;
@@ -50,6 +53,7 @@ public class RobotContainer {
 	public static IndexSubsystem m_index;
 	public static IntakeSubsystem m_intake;
 	public static ShooterSubsystem m_shooter;
+	public static TurretSubsystem m_turret;
 	public static PowerDistributionPanel panel = new PowerDistributionPanel(0);
 
 	private Trajectory[] paths = new Trajectory[] { PATHS.PathWeaver.getTrajectory("FAR_TRENCH"),
@@ -68,12 +72,14 @@ public class RobotContainer {
 		m_shooter = new ShooterSubsystem(0.0, 0.0);
 		m_intake = new IntakeSubsystem();
 		m_index = new IndexSubsystem();
+		m_turret = new TurretSubsystem(-20);
 		configureButtonBindings();
 		//Set default commands
 		drivetrain.setDefaultCommand(new DriveTrainCommand());
 		m_index.setDefaultCommand(new IndexCommand(m_index));
 		m_intake.setDefaultCommand(new IntakeCommand(m_intake));
 		m_shooter.setDefaultCommand(new ShooterCommand(m_shooter));
+		m_turret.setDefaultCommand(new TurretCommand(m_turret));
 	}
 
 	/**
@@ -104,8 +110,10 @@ public class RobotContainer {
 		return controller;
 	}
 	public Command getAutonomousCommand(int selection) {
-		drivetrain.resetOdometry(paths[selection].getInitialPose());
-		return RunPath.getCommand(paths[selection], drivetrain, false).andThen(new RunCommand(drivetrain::stop));
+		// drivetrain.resetOdometry(paths[selection].getInitialPose());
+		// return RunPath.getCommand(paths[selection], drivetrain, false).andThen(new RunCommand(drivetrain::stop));
+
+		return new AlignCommand(m_turret, drivetrain);
 	}
 	
 	public void setNeutralMode(NeutralMode mode){
