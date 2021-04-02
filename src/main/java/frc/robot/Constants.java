@@ -204,15 +204,15 @@ public final class Constants {
 
 
     public static final class ShooterConstants {
-        public static final int HOOD_ID = -1; // placeholder
-        public static final int SHOOTER_ID = 9; // placeholder
+        public static final int HOOD_ID = 9; // placeholder
+        public static final int SHOOTER_ID = 6; // placeholder
         public static final int TURRET_ID = 8;
         public static final int SHOOTER_INTAKE_ID = 1;
 
-        public static final double HOOD_SPEED = 6.0;
-        public static final double SHOOTER_SPEED = 10.0;
+        public static final double HOOD_SPEED = 0.0001;
+        public static final double SHOOTER_SPEED = 1;
         public static final double INTAKE_SPEED = 0.4;
-        public static final double TURRET_SPEED = 0.001;
+        public static final double TURRET_SPEED = 0.1;
 
         public static final double HOOD_GEAR_RATIO = 1 / 37.7777777777777777777777777777;
         public static final double TURRET_GEAR_RATIO = 1 / 53.3333333333333333333333333333;
@@ -231,14 +231,14 @@ public final class Constants {
         public static final double H1 = Units.inchesToMeters(36); // Height of limelight from the ground
         public static final double H2 = Units.inchesToMeters(98.25); // Height of target
         public static final double A1 = 10; // Limelight mounting angle
-        public static final double kP = 0.019;
+        public static final double kP = 0.001;
         public static final double kI = kP / 3.7;
-        public static final double kD = 0.01;
+        public static final double kD = 0.001;
 
         public static final double kP_far = 0.03;
         public static final double kI_far = kP_far / 4;
         public static final double kD_far = kD; 
-        public static final double ks = 0.005;
+        public static final double ks = 0.055;
 
     }
     public enum ShooterStates {
@@ -251,7 +251,7 @@ public final class Constants {
         public static final int INTAKE_ID = 5;
         public static final int PISTON_ID = 7; // placeholder
 
-        public static final double INTAKE_SPEED = .45; // placeholder
+        public static final double INTAKE_SPEED = -.45; // placeholder
     }
 
     public enum IntakeStates {

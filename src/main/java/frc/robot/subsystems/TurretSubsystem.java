@@ -24,6 +24,7 @@ public class TurretSubsystem extends SubsystemBase {
 	public TurretSubsystem(double turretAngle) {
 		m_turret = new WPI_TalonFX(ShooterConstants.TURRET_ID);
 		m_turret.setNeutralMode(NeutralMode.Brake);
+		m_turret.setSelectedSensorPosition(0);
 
 		// m_turret.setInverted(true); // positive is clockwise
 
@@ -46,9 +47,10 @@ public class TurretSubsystem extends SubsystemBase {
 	 * @param dir direction of the turret. (true is clockwise, false is counter-clockwise)
 	 */
 	public void startTurret(double speed) {
-		if (getTurretAngle() < -87) {
+		System.out.println(getTurretAngle());
+		if (getTurretAngle() < -85) {
 			m_turret.set(Constants.ShooterConstants.TURRET_SPEED); //check, might have to reverse
-		} else if (getTurretAngle() > 87) {
+		} else if (getTurretAngle() > 85) {
 			m_turret.set(-Constants.ShooterConstants.TURRET_SPEED);
 		} else {
 			m_turret.set(speed);

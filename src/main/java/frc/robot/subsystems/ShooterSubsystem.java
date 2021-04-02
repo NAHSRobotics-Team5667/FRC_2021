@@ -27,7 +27,7 @@ public class ShooterSubsystem extends SubsystemBase {
     m_shooter = new WPI_TalonFX(Constants.ShooterConstants.SHOOTER_ID);
     m_shooterIntake = new WPI_TalonFX(Constants.ShooterConstants.SHOOTER_INTAKE_ID);
     // m_hood.setInverted(true); // positive makes the angle larger, negative makes the angle smaller
-    // m_shooter.setInverted(true); // positive shoots power cells
+    m_shooter.setInverted(true); // positive shoots power cells
     m_shooterIntake.setInverted(true); // positive intakes power cells
     m_hood.setNeutralMode(NeutralMode.Brake);
     m_shooter.setNeutralMode(NeutralMode.Coast);
@@ -53,7 +53,7 @@ public class ShooterSubsystem extends SubsystemBase {
    */
   public void stopShooter() {
     m_shooterIntake.stopMotor();
-    //m_shooter.stopMotor();
+    m_shooter.stopMotor();
   }
 
   /**
@@ -86,9 +86,9 @@ public class ShooterSubsystem extends SubsystemBase {
   /**
    * Starts the shooter and shooter-intake.
    */
-  public void startShooter() {
+  public void startShooter(double speed) {
     m_shooterIntake.set(ShooterConstants.INTAKE_SPEED); // set shooter-intake to full speed (maybe)
-    //m_shooter.setVoltage(ShooterConstants.SHOOTER_VOLTAGE); // set shooter to full speed
+    m_shooter.set(speed); // set shooter to full speed
   }
 
   /**
@@ -114,6 +114,6 @@ public class ShooterSubsystem extends SubsystemBase {
 
   @Override
   public void periodic() {
-    //updateHoodAngle(m_hood.getSelectedSensorPosition());
+    updateHoodAngle(m_hood.getSelectedSensorPosition());
   }
 }

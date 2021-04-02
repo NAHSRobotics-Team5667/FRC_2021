@@ -72,7 +72,7 @@ public class RobotContainer {
 		m_shooter = new ShooterSubsystem(0.0, 0.0);
 		m_intake = new IntakeSubsystem();
 		m_index = new IndexSubsystem();
-		m_turret = new TurretSubsystem(-20);
+		m_turret = new TurretSubsystem(0);
 		configureButtonBindings();
 		//Set default commands
 		drivetrain.setDefaultCommand(new DriveTrainCommand());

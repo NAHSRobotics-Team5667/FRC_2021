@@ -2,6 +2,7 @@ package frc.robot.commands.shooter;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.ShooterSubsystem;
 
@@ -40,9 +41,10 @@ public class ShooterCommand extends CommandBase {
 
   @Override
   public void execute() {
-    
+      double frac = RobotContainer.controller.getRightTrigger();
       if(RobotContainer.controller.getRightTrigger()>0){
-      m_shooter.startShooter();
+      m_shooter.startShooter(frac * Constants.ShooterConstants.SHOOTER_SPEED);
+      System.out.println(frac);
       }
       else{
       m_shooter.stopShooter();

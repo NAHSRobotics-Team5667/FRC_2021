@@ -43,7 +43,7 @@ public class TurretCommand extends CommandBase {
 	public void execute() {
 		if(RobotContainer.getController().getXButton()){
 			m_turret.startTurret(Constants.ShooterConstants.TURRET_SPEED);
-		}
+				}
 		else if(RobotContainer.getController().getBButton()){
 			m_turret.startTurret(-Constants.ShooterConstants.TURRET_SPEED);
 		}

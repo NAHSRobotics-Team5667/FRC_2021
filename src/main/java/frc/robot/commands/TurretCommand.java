@@ -12,8 +12,8 @@ import frc.robot.subsystems.TurretSubsystem;
 public class TurretCommand extends CommandBase {
   private TurretSubsystem m_turret;
   /** Creates a new TurretCommand. */
-  public TurretCommand() {
-    m_turret = new TurretSubsystem(0);
+  public TurretCommand(TurretSubsystem m_turret) {
+    this.m_turret = m_turret;
     addRequirements(m_turret);
     // Use addRequirements() here to declare subsystem dependencies.
   }
@@ -34,6 +34,7 @@ public class TurretCommand extends CommandBase {
     }
     else{
       m_turret.stopTurret();
+      System.out.println("here");
     }
   }
 
