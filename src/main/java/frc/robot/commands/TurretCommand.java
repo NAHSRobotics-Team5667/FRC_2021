@@ -32,6 +32,9 @@ public class TurretCommand extends CommandBase {
     } else if (RobotContainer.getController().getBButton()) {
       m_turret.startTurret(-Constants.ShooterConstants.TURRET_SPEED);
     }
+    else{
+      m_turret.stopTurret();
+    }
   }
 
   // Called once the command ends or is interrupted.
