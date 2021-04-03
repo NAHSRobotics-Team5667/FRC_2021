@@ -79,8 +79,8 @@ public class RobotContainer {
 		drivetrain.setDefaultCommand(new DriveTrainCommand());
 		m_index.setDefaultCommand(new IndexCommand(m_index));
 		m_intake.setDefaultCommand(new IntakeCommand(m_intake));
-		m_shooter.setDefaultCommand(new ShooterCommand(m_shooter));
-		m_turret.setDefaultCommand(new TurretCommand(m_turret, m_shooter));
+		// m_shooter.setDefaultCommand(new ShooterCommand(m_shooter));
+		// m_turret.setDefaultCommand(new AlignCommand(m_turret));
 	}
 
 	/**
@@ -111,19 +111,19 @@ public class RobotContainer {
 		return controller;
 	}
 	public Command getAutonomousCommand(int selection) { // if selection == 4 call bounce sequential command
-		// if (selection != 4) {
-		// 	drivetrain.resetOdometry(paths[selection].getInitialPose());
-		// 	return RunPath.getCommand(paths[selection], drivetrain, false).andThen(new RunCommand(drivetrain::stop));
-		// } else {
-		// 	return new SequentialCommandGroup(new Command[] {
-		// 		new RunPath().getCommand(paths[4], drivetrain, false), 
-		// 		new RunPath().getCommand(paths[5], drivetrain, true),
-		// 		new RunPath().getCommand(paths[6], drivetrain, false),
-		// 		new RunPath().getCommand(paths[7], drivetrain, true)
-		// 	});
-		// }
+		if (selection != 4) {
+			drivetrain.resetOdometry(paths[selection].getInitialPose());
+			return RunPath.getCommand(paths[selection], drivetrain, false).andThen(new RunCommand(drivetrain::stop));
+		} else {
+			return new SequentialCommandGroup(new Command[] {
+				new RunPath().getCommand(paths[4], drivetrain, false), 
+				new RunPath().getCommand(paths[5], drivetrain, true),
+				new RunPath().getCommand(paths[6], drivetrain, false),
+				new RunPath().getCommand(paths[7], drivetrain, true)
+			});
+		}
 
-		return new AlignCommand(m_turret, drivetrain);
+		// return new AlignCommand(m_turret);
 	}
 	
 	public void setNeutralMode(NeutralMode mode){

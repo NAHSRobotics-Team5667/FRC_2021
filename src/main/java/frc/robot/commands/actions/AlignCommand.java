@@ -10,6 +10,7 @@ package frc.robot.commands.actions;
 import java.util.Map;
 import java.lang.Math;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.RobotState.States;
@@ -21,19 +22,17 @@ import frc.robot.utils.PIDFController;
 
 public class AlignCommand extends CommandBase {
 	private TurretSubsystem m_turret;
-	private DriveTrainSubsystem m_drive;
 	private PIDFController angleController = new PIDFController("Angle", Constants.VisionConstants.kP,
 			Constants.VisionConstants.kI, Constants.VisionConstants.kD, 0);
 
 	/**
 	 * Creates a new AlignCommand.
 	 */
-	public AlignCommand(TurretSubsystem m_turret, DriveTrainSubsystem m_drive) {
+	public AlignCommand(TurretSubsystem m_turret) {
 		// Use addRequirements() here to declare subsystem dependencies.
 		this.m_turret = m_turret;
-		this.m_drive = m_drive;
-		addRequirements(m_turret, m_drive);
-		angleController.setTolerance(1, 1);
+		addRequirements(m_turret);
+		angleController.setTolerance(1, 0.3);
 
 	}
 
@@ -54,26 +53,23 @@ public class AlignCommand extends CommandBase {
 	// Called every time the scheduler runs while the command is scheduled.
 	@Override
 	public void execute() {
+		SmartDashboard.putNumber("Error", angleController.getPositionError());
 		Constants.m_RobotState.setState(States.ALIGNING);
 		if (Limelight.getInstance().hasValidTarget()) {
 			double angle = -angleController.calculate(Limelight.getInstance().getXAngle());
-			double output = (angle > 0) ? Constants.VisionConstants.ks + angle : -Constants.VisionConstants.ks + angle;
+			double output = (angle > 0) ? -Constants.VisionConstants.ks + angle : Constants.VisionConstants.ks + angle;
 			output = (output>0) ? (Math.min(output, 0.16)) : (Math.max(output, -0.16));
 			m_turret.startTurret(output);
 		} else if (!Limelight.getInstance().hasValidTarget()) {
 			if (!Limelight.getInstance().hasValidTarget()){
-				double xPos = m_drive.getXDisplacement();
-				double yPos = m_drive.getYDisplacement();
-				double dtAngle = m_drive.getHeading();
-				double angleDeError = (180/Math.PI) * Math.atan((Constants.ShooterConstants.targetY - yPos)/(Constants.ShooterConstants.targetX - xPos))+dtAngle;
-				double PIDangle = -angleController.calculate(angleDeError);
-				double output = (PIDangle>0 ? Constants.VisionConstants.ks + PIDangle : -Constants.VisionConstants.ks + PIDangle);
-				m_turret.startTurret(output);
+				if(m_turret.getStop()){
+					m_turret.startTurret(-0.1);
+				} else {
+					m_turret.startTurret(0.1);
+				}
 			}
-		} else {
-			m_turret.stopTurret();
-		}		
-	}
+		}
+	} 		
 
 	// Called once the command ends or is interrupted.
 	@Override

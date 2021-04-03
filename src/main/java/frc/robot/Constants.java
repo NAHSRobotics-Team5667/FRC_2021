@@ -210,7 +210,7 @@ public final class Constants {
         public static final int SHOOTER_INTAKE_ID = 1;
 
         public static final double HOOD_SPEED = 0.09;
-        public static final double SHOOTER_SPEED = 1;
+        public static final double SHOOTER_SPEED = 0.7;
         public static final double INTAKE_SPEED = 0.4;
         public static final double TURRET_SPEED = 0.1;
 
@@ -233,9 +233,9 @@ public final class Constants {
         public static final double A1 = 10; // Limelight mounting angle
         public static final double Ku = 0.08;
         public static final double Tu = 0.2;
-        public static final double kP = 0.1 * Ku;
-        public static final double kI = 0.06 * Ku/Tu;
-        public static final double kD = (3/40) * Ku * Tu;
+        public static final double kP = 0.05;
+        public static final double kI = 0; // 0.06 * Ku/Tu
+        public static final double kD = 0; // (1/4) * Ku * Tu
 
         public static final double kP_far = 0.03;
         public static final double kI_far = kP_far / 4;
