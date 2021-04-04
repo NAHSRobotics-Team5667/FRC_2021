@@ -167,34 +167,6 @@ public final class Constants {
                 // Pass config
                 config);
 
-        public static final Trajectory OFF_LINE = TrajectoryGenerator.generateTrajectory(
-                // Start at the origin facing the +X direction
-                new Pose2d(0, 0, new Rotation2d(0)),
-                // Pass through these two interior waypoints
-                List.of(new Translation2d(1, 0)),
-                // End 3 meters straight ahead of where we started, facing forward
-                new Pose2d(2, 0, new Rotation2d(0)),
-                // Pass config
-                config);
-
-        public static final Trajectory TRENCH_LINE = TrajectoryGenerator.generateTrajectory(
-                // Start
-                new Pose2d(5.2, -0.7, new Rotation2d(0)),
-                // Pass through balls
-                List.of(new Translation2d(5.885, -0.7)),
-                // End at the end of the color wheel
-                new Pose2d(6.57, -0.7, new Rotation2d(0)), config);
-
-        public static final Trajectory SIDE_TRENCH = TrajectoryGenerator.generateTrajectory(
-                // Start
-                new Pose2d(6.244, -1.463, new Rotation2d(90)),
-                // Pass through balls
-                List.of(new Translation2d(6.244, -1.1)),
-                // End at the end of the color wheel
-                new Pose2d(6.244, -1, new Rotation2d(90)), config);
-
-        public static final Trajectory SIDE_FORWARD = PathWeaver.getTrajectory("TRENCH_LINE");
-
         public static final class PathWeaver {
             public static Trajectory getTrajectory(String path) {
                 try {

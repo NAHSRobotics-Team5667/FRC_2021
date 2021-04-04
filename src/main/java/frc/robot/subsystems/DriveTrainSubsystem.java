@@ -306,7 +306,8 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		robotY.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getTranslation().getY()));
 		robotHeading.setDouble((m_odometry.getPoseMeters().getRotation().getRadians()));	
 
-		SmartDashboard.putNumber("gyro", m_navx.getAngle());
-		SmartDashboard.putBoolean("slow mode", slowMode);
+		SmartDashboard.putNumber("Gyro", m_navx.getAngle());
+		SmartDashboard.putBoolean("Slow Mode", slowMode);
+		SmartDashboard.putBoolean("Movement", RobotContainer.movement);
 	}
 }
