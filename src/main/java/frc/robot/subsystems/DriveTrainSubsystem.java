@@ -217,8 +217,8 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		SmartDashboard.putNumber("raw_lv", leftVolts);
 		SmartDashboard.putNumber("raw_rv", -rightVolts);
 
-		m_leftMotors.set(-rightVolts);
-		m_rightMotors.set(leftVolts);
+		m_leftMotors.set(-leftVolts);
+		m_rightMotors.set(rightVolts);
 		drive.feed();
 	}
 	public void setNeutralMode(NeutralMode neutralMode) {
