@@ -60,6 +60,8 @@ public class RobotContainer {
 	public static TurretSubsystem m_turret;
 	public static PowerDistributionPanel panel = new PowerDistributionPanel(0);
 
+	public static boolean movement = true;
+
 	private Trajectory[] paths = new Trajectory[] { PATHS.STRAIGHT_TRAJECTORY_2M,
 			PATHS.S_TRAJECTORY, PathWeaver.getTrajectory("slalom"),
 			PathWeaver.getTrajectory("barrel_race"), PathWeaver.getTrajectory("bounce"),
@@ -80,7 +82,6 @@ public class RobotContainer {
 		configureButtonBindings();
 		//Set default commands
 		drivetrain.setDefaultCommand(new DriveTrainCommand(drivetrain));
-		//drivetrain.setDefaultCommand(new DriveTrainCommand(drivetrain));
 		m_index.setDefaultCommand(new IndexCommand(m_index));
 		m_intake.setDefaultCommand(new IntakeCommand(m_intake));
 		m_shooter.setDefaultCommand(new ShooterCommand(m_shooter));
@@ -120,10 +121,10 @@ public class RobotContainer {
 			return RunPath.getCommand(paths[selection], drivetrain, false).andThen(new RunCommand(drivetrain::stop));
 		} else {
 			return new SequentialCommandGroup(new Command[] {
-				new RunPath().getCommand(paths[4], drivetrain, false), 
-				new RunPath().getCommand(paths[5], drivetrain, true),
-				new RunPath().getCommand(paths[6], drivetrain, false),
-				new RunPath().getCommand(paths[7], drivetrain, true)
+				RunPath.getCommand(paths[4], drivetrain, false), 
+				RunPath.getCommand(paths[5], drivetrain, true),
+				RunPath.getCommand(paths[6], drivetrain, false),
+				RunPath.getCommand(paths[7], drivetrain, true)
 			});
 		}
 

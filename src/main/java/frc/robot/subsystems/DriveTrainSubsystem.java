@@ -45,7 +45,6 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	private final AHRS m_navx;
 
 	private boolean slowMode = false;
-	private boolean doubleSlowMode = false;
 
 	// The motors on the left side of the drive.
 	private final SpeedControllerGroup m_leftMotors;
@@ -121,35 +120,20 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	 * @param zRotation - The z axis (Rotation)
 	 */
 	
-	public void driveCartesian(double ySpeed, double xSpeed, double zRotation, boolean slowMode, boolean doubleSlowMode) {
+	public void driveCartesian(double ySpeed, double xSpeed, double zRotation, boolean slowMode) {
 		this.slowMode = slowMode;
-		this.doubleSlowMode = doubleSlowMode;
-		if (!slowMode && !doubleSlowMode) 
+		if (!slowMode) 
 			this.drive.driveCartesian(
 				0.7*ySpeed, 
 				0.7*xSpeed, 
 				0.7*zRotation, 
 				-m_navx.getAngle()
 			);
-		else if (slowMode && !doubleSlowMode) 
+		else
 			this.drive.driveCartesian(
 				0.5*ySpeed, 
 				0.5*xSpeed, 
 				0.5*zRotation, 
-				-m_navx.getAngle()
-			);
-		else if (slowMode && doubleSlowMode) 
-			this.drive.driveCartesian(
-				0.28*ySpeed, 
-				0.28*xSpeed, 
-				(0.4 * 0.3)*zRotation, 
-				-m_navx.getAngle()
-			);
-		else if (!slowMode && doubleSlowMode) 
-			this.drive.driveCartesian(
-				0.28*ySpeed,
-				0.28*xSpeed, 
-				(0.4 * 0.3)*zRotation, 
 				-m_navx.getAngle()
 			);
 		// if (!slowMode && !doubleSlowMode) this.drive.driveCartesian(0.7*xSpeed*xSpeed * Math.signum(xSpeed),0.7*ySpeed*ySpeed * Math.signum(ySpeed), 0.5*zRotation, m_navx.getAngle());
@@ -324,6 +308,5 @@ public class DriveTrainSubsystem extends SubsystemBase {
 
 		SmartDashboard.putNumber("gyro", m_navx.getAngle());
 		SmartDashboard.putBoolean("slow mode", slowMode);
-		SmartDashboard.putBoolean("double slow mode", doubleSlowMode);
 	}
 }

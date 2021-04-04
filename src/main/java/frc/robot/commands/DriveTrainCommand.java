@@ -14,7 +14,6 @@ import frc.robot.subsystems.DriveTrainSubsystem;
 public class DriveTrainCommand extends CommandBase {
 	private DriveTrainSubsystem drivetrain;
 	private boolean slowMode = false;
-	private boolean doubleSlowMode = false;
 
 	/** Creates a new DriveTrainCommand. */
 	public DriveTrainCommand(DriveTrainSubsystem drivetrain) {
@@ -35,11 +34,13 @@ public class DriveTrainCommand extends CommandBase {
 	@Override
 	public void execute() {
 		if (RobotContainer.getController().getStickButtonPressed(Hand.kLeft)) slowMode = !slowMode;
-		else if (RobotContainer.getController().getStickButtonPressed(Hand.kRight)) doubleSlowMode = !doubleSlowMode;
+		// else if (RobotContainer.getController().getStickButtonPressed(Hand.kRight)) doubleSlowMode = !doubleSlowMode;
 		Map<String, Double> sticks = RobotContainer.controller.getSticks();
-		drivetrain.driveCartesian(sticks.get("LSX"), sticks.get("LSY"), sticks.get("RSX"), slowMode, doubleSlowMode);
+		drivetrain.driveCartesian(sticks.get("LSX"), sticks.get("LSY"), sticks.get("RSX"), slowMode);
 
 		if (RobotContainer.getController().getAButtonPressed()) drivetrain.resetGyro();
+
+		if (RobotContainer.getController().getStickButtonPressed(Hand.kRight)) RobotContainer.movement = !RobotContainer.movement;
 	}
 
 	// Called once the command ends or is interrupted.

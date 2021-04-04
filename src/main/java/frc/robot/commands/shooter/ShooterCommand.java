@@ -43,27 +43,29 @@ public class ShooterCommand extends CommandBase {
 
   @Override
   public void execute() {
-    m_shooter.startShooter(Constants.ShooterConstants.SHOOTER_SPEED);
-    double frac = RobotContainer.controller.getRightTrigger();
-    if(RobotContainer.controller.getRightTrigger()>0){
-      m_shooter.startShooterIntake(true);
-      System.out.println(frac);
-    } else if (RobotContainer.controller.getBumper(Hand.kLeft)) {
-      m_shooter.startShooterIntake(false);
-    } else {
-      m_shooter.stopShooterIntake();
-    }
+    if (!RobotContainer.movement) {
+      m_shooter.startShooter(Constants.ShooterConstants.SHOOTER_SPEED);
+      double frac = RobotContainer.controller.getRightTrigger();
+      if(RobotContainer.controller.getRightTrigger()>0){
+        m_shooter.startShooterIntake(true);
+        System.out.println(frac);
+      } else if (RobotContainer.controller.getBumper(Hand.kLeft)) {
+        m_shooter.startShooterIntake(false);
+      } else {
+        m_shooter.stopShooterIntake();
+      }
 
-    if (RobotContainer.controller.getXButton()) {
-      m_shooter.startHood(Constants.ShooterConstants.HOOD_SPEED);
-      System.out.println("gotY");
-    } else if (RobotContainer.controller.getBButton()) {
-      m_shooter.startHood(-Constants.ShooterConstants.HOOD_SPEED);
-    } else{
-      m_shooter.stopHood();
-    }
+      if (RobotContainer.controller.getXButton()) {
+        m_shooter.startHood(Constants.ShooterConstants.HOOD_SPEED);
+        System.out.println("gotY");
+      } else if (RobotContainer.controller.getBButton()) {
+        m_shooter.startHood(-Constants.ShooterConstants.HOOD_SPEED);
+      } else{
+        m_shooter.stopHood();
+      }
 
-    if (RobotContainer.getController().getYButtonPressed()) m_shooter.zeroHood();
+      if (RobotContainer.getController().getYButtonPressed()) m_shooter.zeroHood();
+    }
   }
   
   @Override

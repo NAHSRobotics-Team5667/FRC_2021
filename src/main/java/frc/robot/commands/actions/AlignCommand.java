@@ -13,6 +13,7 @@ import java.lang.Math;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
+import frc.robot.Robot;
 import frc.robot.RobotState.States;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.TurretSubsystem;
@@ -53,22 +54,24 @@ public class AlignCommand extends CommandBase {
 	// Called every time the scheduler runs while the command is scheduled.
 	@Override
 	public void execute() {
-		SmartDashboard.putNumber("Error", angleController.getPositionError());
-		Constants.m_RobotState.setState(States.ALIGNING);
-		if (Limelight.getInstance().hasValidTarget()) {
-			double angle = -angleController.calculate(Limelight.getInstance().getXAngle());
-			double output = (angle > 0) ? -Constants.VisionConstants.ks + angle : Constants.VisionConstants.ks + angle;
-			output = (output>0) ? (Math.min(output, 0.16)) : (Math.max(output, -0.16));
-			m_turret.startTurret(output);
-		} else if (!Limelight.getInstance().hasValidTarget()) {
-			if(m_turret.getStop()){
-				m_turret.startTurret(-0.1);
-			} else {
-				m_turret.startTurret(0.1);
+		if (!RobotContainer.movement) {
+			SmartDashboard.putNumber("Error", angleController.getPositionError());
+			Constants.m_RobotState.setState(States.ALIGNING);
+			if (Limelight.getInstance().hasValidTarget()) {
+				double angle = -angleController.calculate(Limelight.getInstance().getXAngle());
+				double output = (angle > 0) ? -Constants.VisionConstants.ks + angle : Constants.VisionConstants.ks + angle;
+				output = (output>0) ? (Math.min(output, 0.16)) : (Math.max(output, -0.16));
+				m_turret.startTurret(output);
+			} else if (!Limelight.getInstance().hasValidTarget()) {
+				if(m_turret.getStop()){
+					m_turret.startTurret(-0.1);
+				} else {
+					m_turret.startTurret(0.1);
+				}
 			}
-		}
 
-		SmartDashboard.putNumber("Area", Limelight.getInstance().getArea());
+			SmartDashboard.putNumber("Area", Limelight.getInstance().getArea());
+		}
 	} 		
 
 	// Called once the command ends or is interrupted.
@@ -81,7 +84,6 @@ public class AlignCommand extends CommandBase {
 	// Returns true when the command should end.
 	@Override
 	public boolean isFinished() {
-		
-			return false;
+		return false;
 	}
 }
