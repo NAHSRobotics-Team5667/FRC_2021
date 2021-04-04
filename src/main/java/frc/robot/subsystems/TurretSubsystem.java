@@ -7,6 +7,7 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.ShooterConstants;
 import frc.robot.Constants;
@@ -57,11 +58,9 @@ public class TurretSubsystem extends SubsystemBase {
 	public void startTurret(double speed) {
 		updateTurretAngle(m_turret.getSelectedSensorPosition());
 		if (getTurretAngle() < -85) {
-			m_turret.set(Constants.ShooterConstants.TURRET_SPEED); 
-			lastContactedStop  = false;//check, might have to reverse
+			m_turret.set(Constants.ShooterConstants.TURRET_SPEED);
 		} else if (getTurretAngle() > 85) {
 			m_turret.set(-Constants.ShooterConstants.TURRET_SPEED);
-			lastContactedStop = true;
 		} else {
 			m_turret.set(speed);
 		}
@@ -81,5 +80,6 @@ public class TurretSubsystem extends SubsystemBase {
 	@Override
 	public void periodic() {
 		updateTurretAngle(m_turret.getSelectedSensorPosition());
+		SmartDashboard.putNumber("Turret Angle", turretAngle);
 	}
 }

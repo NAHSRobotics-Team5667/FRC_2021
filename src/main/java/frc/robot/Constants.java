@@ -74,10 +74,10 @@ public final class Constants {
     public final static class DriveConstants {
         public static final double WHEEL_DIAMETER = Units.inchesToMeters(6);
         public static final double WHEEL_CIRCUMFERENCE_METERS = WHEEL_DIAMETER * Math.PI;
-        public static final double ENCODER_EDGES_PER_REV = 21934;
-        public static final double GEAR_RATIO = 10.71;
+        public static final double ENCODER_EDGES_PER_REV = 2048;
+        public static final double GEAR_RATIO = 10.75;
         public static double MAG = -1;
-        public static final double ENCODER_CONSTANT = MAG * (1 / ENCODER_EDGES_PER_REV) * WHEEL_DIAMETER * Math.PI;
+        public static final double ENCODER_CONSTANT = (1 / ENCODER_EDGES_PER_REV) * WHEEL_DIAMETER * Math.PI;
         public static final boolean kGyroReversed = true;
 
         public static final double MAX_SPEED_TELE = 3.25;
@@ -96,13 +96,13 @@ public final class Constants {
         public static final double kTracklengthMeters = Units.inchesToMeters(20.36);
         public static final DifferentialDriveKinematics kDiffKinematics = new DifferentialDriveKinematics(
                 kTrackwidthMeters);
-        public static final MecanumDriveKinematics kDriveKinematics = new MecanumDriveKinematics(new Translation2d(kTrackwidthMeters, kTracklengthMeters),
-        new Translation2d(kTrackwidthMeters, -kTracklengthMeters), new Translation2d(-kTrackwidthMeters, kTracklengthMeters), new Translation2d(-kTrackwidthMeters, -kTracklengthMeters));
+        public static final MecanumDriveKinematics kDriveKinematics = new MecanumDriveKinematics(new Translation2d(kTrackwidthMeters/2, kTracklengthMeters/2),
+        new Translation2d(kTrackwidthMeters/2, -kTracklengthMeters/2), new Translation2d(-kTrackwidthMeters/2, kTracklengthMeters/2), new Translation2d(-kTrackwidthMeters/2, -kTracklengthMeters/2));
 
         public static double startY = 1.0;
         public static double startX = 13.5;
 
-        public static double kP = 0.2; // 7.43;
+        public static double kP = 0.02; // 7.43;
         public static double kI = 0.0; // 0.01; // 7.43;
         public static double kD = 0; // 0.01; // 7.43;
 
@@ -111,8 +111,8 @@ public final class Constants {
     public final static class AutoConstants {
         public static final double kRamseteB = 2;
         public static final double kRamseteZeta = 0.7;
-        public static final double kMaxSpeedMetersPerSecond = 1.3;
-        public static final double kMaxAccelerationMetersPerSecondSquared = .5;
+        public static final double kMaxSpeedMetersPerSecond = 0.5;
+        public static final double kMaxAccelerationMetersPerSecondSquared = 0.2;
         public static final PIDController xController = new PIDController(DriveConstants.kP, DriveConstants.kI,
                 DriveConstants.kD);
         public static final PIDController yController = new PIDController(DriveConstants.kP, DriveConstants.kI,
@@ -125,10 +125,12 @@ public final class Constants {
                 DriveConstants.kD);
         public static final PIDController RR_CONTROLLER = new PIDController(DriveConstants.kP, DriveConstants.kD,
                 DriveConstants.kD);
-        public static final PIDController L_CONTROLLER = new PIDController(DriveConstants.kP, DriveConstants.kI,
+        public static PIDController L_CONTROLLER = new PIDController(DriveConstants.kP, DriveConstants.kI,
                 DriveConstants.kD);
-        public static final PIDController R_CONTROLLER = new PIDController(DriveConstants.kP, DriveConstants.kD,
+        public static PIDController R_CONTROLLER = new PIDController(DriveConstants.kP, DriveConstants.kD,
                 DriveConstants.kD);
+
+
         public static final Constraints theta_constraints = new Constraints(kMaxSpeedMetersPerSecond, kMaxAccelerationMetersPerSecondSquared);
         public static final ProfiledPIDController THET_CONTROLLER = new ProfiledPIDController(DriveConstants.kP, DriveConstants.kI, DriveConstants.kD, theta_constraints);
 
@@ -189,7 +191,7 @@ public final class Constants {
         public static final int SHOOTER_INTAKE_ID = 1;
 
         public static final double HOOD_SPEED = 0.09;
-        public static final double SHOOTER_SPEED = 1;
+        public static final double SHOOTER_SPEED = 0.65;
         public static final double INTAKE_SPEED = 0.4;
         public static final double TURRET_SPEED = 0.1;
 
@@ -233,7 +235,7 @@ public final class Constants {
         public static final int INTAKE_ID = 5;
         public static final int PISTON_ID = 7; // placeholder
 
-        public static final double INTAKE_SPEED = -.45; // placeholder
+        public static final double INTAKE_SPEED = 0.45; // placeholder
     }
 
     public enum IntakeStates {

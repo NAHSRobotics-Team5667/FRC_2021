@@ -10,6 +10,7 @@ package frc.robot.subsystems;
 import java.util.function.DoubleSupplier;
 import java.util.function.Supplier;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFXConfiguration;
@@ -24,6 +25,8 @@ import edu.wpi.first.wpilibj.geometry.Pose2d;
 import edu.wpi.first.wpilibj.geometry.Rotation2d;
 import edu.wpi.first.wpilibj.kinematics.DifferentialDriveOdometry;
 import edu.wpi.first.wpilibj.kinematics.DifferentialDriveWheelSpeeds;
+import edu.wpi.first.wpilibj.kinematics.MecanumDriveOdometry;
+import edu.wpi.first.wpilibj.kinematics.MecanumDriveWheelSpeeds;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -31,6 +34,7 @@ import edu.wpi.first.wpilibj.util.Units;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import frc.robot.Constants.DriveConstants;
+import java.lang.Math;
 
 public class DifferentialDriveSubsystem extends SubsystemBase {
 
@@ -40,8 +44,10 @@ public class DifferentialDriveSubsystem extends SubsystemBase {
 
 	private final AHRS m_gyro;
 
-	private DifferentialDriveOdometry m_odometry;
+	private Pose2d m_robotPose;
 
+	//private DifferentialDriveOdometry m_odometry;
+	private MecanumDriveOdometry m_odometry;
 	private DriveModes m_driveMode = DriveModes.MANUAL;
 
 	private ShuffleboardTab graphTab = Shuffleboard.getTab("Graphs");
@@ -89,6 +95,9 @@ public class DifferentialDriveSubsystem extends SubsystemBase {
 		m_leftMaster.configFactoryDefault();
 		m_leftSlave.configFactoryDefault();
 
+		 m_rightMaster.setInverted(true);
+		 m_rightSlave.setInverted(true);
+
 		TalonFXConfiguration falconConfig = new TalonFXConfiguration();
 		falconConfig.primaryPID.selectedFeedbackSensor = FeedbackDevice.IntegratedSensor;
 		falconConfig.openloopRamp = .8;
@@ -96,34 +105,65 @@ public class DifferentialDriveSubsystem extends SubsystemBase {
 		m_leftMaster.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
 		m_rightMaster.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
 
-		setNeutralMode(NeutralMode.Coast);
+		setNeutralMode(NeutralMode.Brake);
 
 		m_rightMaster.configAllSettings(falconConfig);
 		m_leftMaster.configAllSettings(falconConfig);
 
 		m_leftSlave.follow(m_leftMaster);
-
 		m_rightSlave.follow(m_rightMaster);
 
 		m_drive = new DifferentialDrive(m_leftMaster, m_rightMaster);
 
 		m_gyro = gyro;
 
-		m_odometry = new DifferentialDriveOdometry(Rotation2d.fromDegrees(getHeading()));
+		//m_odometry = new DifferentialDriveOdometry(Rotation2d.fromDegrees(getHeading()));
+		m_odometry = new MecanumDriveOdometry(Constants.DriveConstants.kDriveKinematics,new Rotation2d(getHeading()) , new Pose2d(Constants.DriveConstants.startY, Constants.DriveConstants.startX, new Rotation2d()));
 		reverseEncoders();
 		resetOdometry(new Pose2d());
+
+		m_robotPose = new Pose2d();
 		// outputTelemetry();
 	}
-
+	public double getRearLeftEncoderRate() {
+		return m_leftSlave.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT;
+	}
+	public double getRearRightEncoderRate() {
+		return -m_rightSlave.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT;
+	} 
 	@Override
 	public void periodic() {
 		// Update the odometry in the periodic block
-		m_odometry.update(Rotation2d.fromDegrees(getHeading()), getLeftEncoderPosition(), getRightEncoderPosition());
+		m_odometry.update(Rotation2d.fromDegrees(getHeading()), new MecanumDriveWheelSpeeds(getLeftEncoderRate(), getRightEncoderRate(), getRearLeftEncoderRate(), getRearRightEncoderRate()));
+
+		// updatePose();
+
+		// m_odometry.update(
+		// 	Rotation2d.fromDegrees(getHeading()), 
+		// 	Units.inchesToMeters(getLeftEncoderPosition()),
+		// 	Units.inchesToMeters(getRightEncoderPosition())
+		// );
 
 		robotX.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getTranslation().getX()));
 		robotY.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getTranslation().getY()));
 		robotHeading.setDouble(Units.metersToFeet(m_odometry.getPoseMeters().getRotation().getRadians()));
+
+		SmartDashboard.putNumber("Gyro", getHeading());
+		SmartDashboard.putNumber("X", getPose().getX());
+		SmartDashboard.putNumber("Y", getPose().getY());
 	}
+
+	private void updatePose() {
+		m_robotPose = new Pose2d(
+			m_robotPose.getX() + (m_gyro.getVelocityY() * Math.cos(getHeading())),
+			m_robotPose.getY() + (m_gyro.getVelocityY() * Math.sin(getHeading())),
+			Rotation2d.fromDegrees(getHeading())
+		);
+	}
+
+	// public Pose2d getPose() {
+	// 	return m_robotPose;
+	// }
 
 	/**
 	 * Sets the neutral mode for the drive train
@@ -185,6 +225,10 @@ public class DifferentialDriveSubsystem extends SubsystemBase {
 		return m_odometry.getPoseMeters();
 	}
 
+	public void resetGyro() {
+		m_gyro.reset();
+	}
+
 	/**
 	 * Returns the current wheel speeds of the robot.
 	 *
@@ -213,10 +257,11 @@ public class DifferentialDriveSubsystem extends SubsystemBase {
 	 */
 	public void tankDriveVolts(double leftVolts, double rightVolts) {
 		SmartDashboard.putNumber("raw_lv", leftVolts);
-		SmartDashboard.putNumber("raw_rv", -rightVolts);
+		SmartDashboard.putNumber("raw_rv", rightVolts);
 
-		m_leftMaster.set(leftVolts);
-		m_rightMaster.set(-rightVolts);
+		m_leftMaster.setVoltage(leftVolts);
+		m_rightMaster.setVoltage(rightVolts);
+		m_drive.feed();
 	}
 
 	/**
@@ -227,12 +272,16 @@ public class DifferentialDriveSubsystem extends SubsystemBase {
 	 */
 	public void tankDriveVoltsReverse(double leftVolts, double rightVolts) {
 		SmartDashboard.putNumber("raw_lv", leftVolts);
-		SmartDashboard.putNumber("raw_rv", -rightVolts);
+		SmartDashboard.putNumber("raw_rv", rightVolts);
 
-		m_leftMaster.set(-rightVolts);
-		m_rightMaster.set(leftVolts);
+		m_leftMaster.setVoltage(rightVolts);
+		m_rightMaster.setVoltage(leftVolts);
 	}
-
+	public void bsDrive(double left, double right){
+		m_leftMaster.set(ControlMode.PercentOutput, left);
+		m_rightMaster.set(ControlMode.PercentOutput, right);
+		m_drive.feed();
+	}
 	/**
 	 * Resets the drive encoders to currently read a position of 0.
 	 */
@@ -257,14 +306,27 @@ public class DifferentialDriveSubsystem extends SubsystemBase {
 		m_gyro.reset();
 	}
 
+	public double getYDisplacement() {
+		return m_gyro.getDisplacementY();
+	}
+	public double getYVelocity(){
+		return m_gyro.getVelocityY();
+	}
+	public double getXDisplacement() {
+		return m_gyro.getDisplacementX();
+	}
+	public double getXVelocity(){
+		return m_gyro.getVelocityY();
+	}
 	/**
 	 * returns left encoder position
 	 * 
 	 * @return left encoder position
 	 */
 	public double getLeftEncoderPosition() {
-		return m_leftMaster.getSelectedSensorPosition(0) * Constants.DriveConstants.ENCODER_CONSTANT
+		return m_leftMaster.getSelectedSensorPosition() * Constants.DriveConstants.ENCODER_CONSTANT
 				* DriveConstants.MAG;
+		// return ((m_leftMaster.getSelectedSensorPosition() + m_leftSlave.getSelectedSensorPosition()) / 2) * ((6 * Math.PI) / 2048);
 	}
 
 	/**
@@ -273,8 +335,10 @@ public class DifferentialDriveSubsystem extends SubsystemBase {
 	 * @return right encoder position
 	 */
 	public double getRightEncoderPosition() {
-		return -m_rightMaster.getSelectedSensorPosition(0) * DriveConstants.ENCODER_CONSTANT
-				* Constants.DriveConstants.MAG;
+		return m_rightMaster.getSelectedSensorPosition() * DriveConstants.ENCODER_CONSTANT
+				//* Constants.DriveConstants.MAG
+				;
+		// return ((m_rightMaster.getSelectedSensorPosition() + m_rightSlave.getSelectedSensorPosition()) / 2) * ((6 * Math.PI) / 2048);
 	}
 
 	/**
@@ -283,8 +347,7 @@ public class DifferentialDriveSubsystem extends SubsystemBase {
 	 * @return Get the left encoder velocity in m/s
 	 */
 	public double getLeftEncoderRate() {
-		return m_leftMaster.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT * 10
-				* Constants.DriveConstants.MAG;
+		return m_leftMaster.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT;
 	}
 
 	/**
@@ -293,8 +356,7 @@ public class DifferentialDriveSubsystem extends SubsystemBase {
 	 * @return Get the right encoder velocity in m/s
 	 */
 	public double getRightEncoderRate() {
-		return -m_rightMaster.getSelectedSensorVelocity(0) * Constants.DriveConstants.ENCODER_CONSTANT * 10
-				* DriveConstants.MAG;
+		return m_rightMaster.getSelectedSensorVelocity(0) * Constants.DriveConstants.ENCODER_CONSTANT;
 	}
 
 	/**

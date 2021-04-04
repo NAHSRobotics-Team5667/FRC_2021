@@ -8,6 +8,7 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
@@ -70,7 +71,7 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		m_autonomousCommand = m_robotContainer.getAutonomousCommand(2); // currently slalom, 3 for barrel race
+		m_autonomousCommand = m_robotContainer.getAutonomousCommand(12); // currently slalom, 3 for barrel race
 
 		// schedule the autonomous command (example)
 		m_autonomousCommand.schedule();
@@ -80,6 +81,10 @@ public class Robot extends TimedRobot {
 	@Override
 	public void autonomousPeriodic() {
 		m_autonomousCommand.schedule();
+
+		SmartDashboard.putData("PID Left", Constants.AutoConstants.L_CONTROLLER);
+		SmartDashboard.putData("PID Right", Constants.AutoConstants.R_CONTROLLER);
+
 		m_robotContainer.feedMotorSafety();
 	}
 

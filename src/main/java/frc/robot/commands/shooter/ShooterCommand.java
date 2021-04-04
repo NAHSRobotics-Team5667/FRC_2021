@@ -65,6 +65,8 @@ public class ShooterCommand extends CommandBase {
       }
 
       if (RobotContainer.getController().getYButtonPressed()) m_shooter.zeroHood();
+    } else {
+      m_shooter.stopShooter();
     }
   }
   

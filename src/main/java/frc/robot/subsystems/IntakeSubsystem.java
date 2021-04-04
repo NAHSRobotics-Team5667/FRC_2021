@@ -18,7 +18,7 @@ public class IntakeSubsystem extends SubsystemBase {
   public IntakeSubsystem() {
     m_intake = new WPI_TalonFX(Constants.IntakeConstants.INTAKE_ID);
     m_piston = new Solenoid(Constants.IntakeConstants.PISTON_ID); // ???: Piston ID
-    //m_intake.setInverted(true); // if inverted (inwards is positive)
+    m_intake.setInverted(true); // if inverted (inwards is positive)
     m_intake.setNeutralMode(NeutralMode.Brake);
   }
 
@@ -59,7 +59,7 @@ public class IntakeSubsystem extends SubsystemBase {
   /**
    * Starts the intake. If the intake is not extended, the intake extends.
    */
-  public void startIntake(double triggerVal) {
+  public void startIntake() {
      if (!(m_intakeState == IntakeStates.EXTENDED)) {
       extendIntake();
      }

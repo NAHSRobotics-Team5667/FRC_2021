@@ -34,14 +34,14 @@ public class IndexCommand extends CommandBase {
 
   @Override
   public void execute() {
-    if(RobotContainer.getController().getLeftTrigger() > 0) {
-      m_index.startIndex(false);
-    } else if (RobotContainer.getController().getBumper(Hand.kRight)) {
-      m_index.startIndex(true);
-    }else if (RobotContainer.getController().getRightTrigger()>0){
-      m_index.startIndex(false);
-    } else{
-      m_index.stopIndex();
+    if (!RobotContainer.movement) {
+      if(RobotContainer.getController().getLeftTrigger() > 0 || RobotContainer.getController().getRightTrigger() > 0) {
+        m_index.startIndex(false);
+      } else if (RobotContainer.getController().getBumper(Hand.kRight)) {
+        m_index.startIndex(true);
+      } else  {
+        m_index.stopIndex();
+      }
     }
   }
 

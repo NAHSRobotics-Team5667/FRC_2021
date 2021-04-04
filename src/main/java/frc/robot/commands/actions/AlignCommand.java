@@ -71,8 +71,10 @@ public class AlignCommand extends CommandBase {
 			}
 
 			SmartDashboard.putNumber("Area", Limelight.getInstance().getArea());
+		} else {
+			m_turret.stopTurret();
 		}
-	} 		
+	}
 
 	// Called once the command ends or is interrupted.
 	@Override

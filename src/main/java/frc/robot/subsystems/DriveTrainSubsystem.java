@@ -149,7 +149,8 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	}
 
 	public void resetGyro() {
-		m_navx.setAngleAdjustment(180);
+		m_navx.reset();
+		// m_navx.setAngleAdjustment(180);
 	}
 
 	/**
@@ -176,10 +177,10 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		// frontRightMotor.set(voltages.frontRightVoltage);
 		// rearLeftMotor.set(voltages.rearLeftVoltage);
 		// rearRightMotor.set(voltages.rearRightVoltage);
-		frontLeftMotor.set(-voltages.frontRightVoltage);
-		frontRightMotor.set(-voltages.frontLeftVoltage);
-		rearLeftMotor.set(-voltages.rearRightVoltage);
-		rearRightMotor.set(-voltages.rearLeftVoltage);
+		frontLeftMotor.set(voltages.frontLeftVoltage);
+		frontRightMotor.set(voltages.frontRightVoltage);
+		rearLeftMotor.set(voltages.rearLeftVoltage);
+		rearRightMotor.set(voltages.rearRightVoltage);
 		drive.feed();
 	}
 	
@@ -254,20 +255,16 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		return new MecanumDriveWheelSpeeds(getLeftEncoderRate(), getRightEncoderRate(), getRearLeftEncoderRate(), getRearRightEncoderRate());
 	}
 	public double getLeftEncoderRate() {
-		return frontLeftMotor.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT * 10
-				*DriveConstants.MAG;
+		return frontLeftMotor.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT;
 	}
 	public double getRearLeftEncoderRate() {
-		return rearLeftMotor.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT * 10
-				*DriveConstants.MAG;
+		return rearLeftMotor.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT;
 	}
 	public double getRightEncoderRate() {
-		return -frontRightMotor.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT * 10
-				* DriveConstants.MAG;
+		return -frontRightMotor.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT;
 	} 
 	public double getRearRightEncoderRate() {
-		return -frontRightMotor.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT * 10
-				* DriveConstants.MAG;
+		return -frontRightMotor.getSelectedSensorVelocity(0) * DriveConstants.ENCODER_CONSTANT;
 	} 
 	public double getYDisplacement() {
 		return m_navx.getDisplacementY();

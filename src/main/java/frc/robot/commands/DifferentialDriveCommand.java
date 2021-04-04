@@ -9,10 +9,12 @@ package frc.robot.commands;
 
 import java.util.Map;
 
+import edu.wpi.first.wpilibj.geometry.Pose2d;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
+import frc.robot.Constants.DriveConstants;
 import frc.robot.Constants.VisionConstants;
 import frc.robot.RobotState.States;
 import frc.robot.subsystems.DriveTrainSubsystem;
@@ -24,8 +26,8 @@ import frc.robot.utils.PIDFController;
 public class DifferentialDriveCommand extends CommandBase {
 
 	private DifferentialDriveSubsystem m_drive;
-	private PIDFController angleController = new PIDFController("Angle", VisionConstants.kP, VisionConstants.kI,
-			VisionConstants.kD, 0);
+	private PIDFController angleController = new PIDFController("Angle", DriveConstants.kP, DriveConstants.kI,
+			DriveConstants.kD, 0);
 
 	/**
 	 * Create a Drive Train Subsystem
@@ -53,11 +55,12 @@ public class DifferentialDriveCommand extends CommandBase {
 		if (m_drive.getDriveMode() == DriveModes.MANUAL) {
 			m_drive.setDriveMode(DriveModes.MANUAL);
 			// Drive using joysticks
-
 			m_drive.drive(sticks.get("LSY"), sticks.get("RSX"),
 					RobotContainer.getController().getStickButtonPressed(RobotContainer.getController().getLeftHand()));
-
 		}
+		
+
+		if (RobotContainer.getController().getAButtonPressed()) m_drive.resetOdometry(new Pose2d());
 	}
 
 	// Called once the command ends or is interrupted.
