@@ -14,7 +14,6 @@ import edu.wpi.first.wpilibj.geometry.Rotation2d;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.kinematics.MecanumDriveOdometry;
 import edu.wpi.first.wpilibj.kinematics.MecanumDriveKinematics;
 import edu.wpi.first.wpilibj.kinematics.MecanumDriveMotorVoltages;
@@ -42,6 +41,7 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	/** Creates a new DriveTrain. */
 	private WPI_TalonFX frontLeftMotor, rearLeftMotor, frontRightMotor, rearRightMotor;
 	MecanumDrive drive;
+
 	private final AHRS m_navx;
 
 	private boolean slowMode = false;
@@ -156,7 +156,7 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		// else if (slowMode && !doubleSlowMode) this.drive.driveCartesian(0.5*xSpeed*xSpeed * Math.signum(xSpeed),0.5*ySpeed*ySpeed * Math.signum(ySpeed), 0.3*zRotation, m_navx.getAngle());
 		// else if (slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed*xSpeed * Math.signum(xSpeed),0.28*ySpeed*ySpeed * Math.signum(ySpeed), (0.4 * 0.3)*zRotation, m_navx.getAngle());
 		// else if (!slowMode && doubleSlowMode) this.drive.driveCartesian(0.28*xSpeed*xSpeed * Math.signum(xSpeed),0.28*ySpeed*ySpeed * Math.signum(ySpeed), (0.4 * 0.3)*zRotation, m_navx.getAngle());
-		//this.drive.driveCartesian(0,0.75, 0);
+		// this.drive.driveCartesian(0,0.75, 0);
 
 	}
 
@@ -165,7 +165,7 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	}
 
 	public void resetGyro() {
-		m_navx.reset();
+		m_navx.setAngleAdjustment(180);
 	}
 
 	/**
@@ -186,11 +186,16 @@ public class DriveTrainSubsystem extends SubsystemBase {
 		m_driveMode = mode;
 	}
 
-	public void driveVoltage(MecanumDriveMotorVoltages voltages){
-		frontLeftMotor.set(voltages.frontLeftVoltage);
-		frontRightMotor.set(voltages.frontRightVoltage);
-		rearLeftMotor.set(voltages.rearLeftVoltage);
-		rearRightMotor.set(voltages.rearRightVoltage);
+	public void driveVolts(MecanumDriveMotorVoltages voltages){
+		// this is bad practice I apologize
+		// frontLeftMotor.set(voltages.frontLeftVoltage);
+		// frontRightMotor.set(voltages.frontRightVoltage);
+		// rearLeftMotor.set(voltages.rearLeftVoltage);
+		// rearRightMotor.set(voltages.rearRightVoltage);
+		frontLeftMotor.set(-voltages.frontRightVoltage);
+		frontRightMotor.set(-voltages.frontLeftVoltage);
+		rearLeftMotor.set(-voltages.rearRightVoltage);
+		rearRightMotor.set(-voltages.rearLeftVoltage);
 		drive.feed();
 	}
 	

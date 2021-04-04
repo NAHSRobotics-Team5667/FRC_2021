@@ -34,10 +34,10 @@ public class ShooterHoodCommand extends CommandBase {
   @Override
   public void execute() {
     //m_shooter.setHood(m_shooter.degreesToHoodTicks(endDegrees, initialDegrees), 0.01);
-    if (RobotContainer.controller.getXButton()) {
+    if (RobotContainer.controller.getDPad() == 90) {
       m_shooter.startHood(Constants.ShooterConstants.HOOD_SPEED);
       System.out.println("gotY");
-    } else if(RobotContainer.controller.getBButton()){
+    } else if(RobotContainer.controller.getDPad() == 270){
       m_shooter.startHood(-Constants.ShooterConstants.HOOD_SPEED);
     } else{
       m_shooter.stopHood();

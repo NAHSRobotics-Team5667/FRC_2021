@@ -18,10 +18,12 @@ import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
+import frc.robot.commands.DifferentialDriveCommand;
 import frc.robot.commands.DriveTrainCommand;
 import frc.robot.commands.shooter.ShooterCommand;
 import frc.robot.commands.shooter.TurretCommand;
 import frc.robot.subsystems.DriveTrainSubsystem;
+import frc.robot.subsystems.DifferentialDriveSubsystem;
 import frc.robot.subsystems.IndexSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.commands.IndexCommand;
@@ -36,6 +38,7 @@ import edu.wpi.first.wpilibj2.command.button.Button;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 import frc.robot.autos.RunPath;
+import frc.robot.autos.RunPathDiff;
 import frc.robot.Constants.PATHS;
 import frc.robot.Constants.PATHS.PathWeaver;
 
@@ -76,11 +79,12 @@ public class RobotContainer {
 		m_turret = new TurretSubsystem(0);
 		configureButtonBindings();
 		//Set default commands
-		drivetrain.setDefaultCommand(new DriveTrainCommand());
+		drivetrain.setDefaultCommand(new DriveTrainCommand(drivetrain));
+		//drivetrain.setDefaultCommand(new DriveTrainCommand(drivetrain));
 		m_index.setDefaultCommand(new IndexCommand(m_index));
 		m_intake.setDefaultCommand(new IntakeCommand(m_intake));
-		// m_shooter.setDefaultCommand(new ShooterCommand(m_shooter));
-		// m_turret.setDefaultCommand(new AlignCommand(m_turret));
+		m_shooter.setDefaultCommand(new ShooterCommand(m_shooter));
+		m_turret.setDefaultCommand(new AlignCommand(m_turret));
 	}
 
 	/**

@@ -32,7 +32,7 @@ public class AlignCommand extends CommandBase {
 		// Use addRequirements() here to declare subsystem dependencies.
 		this.m_turret = m_turret;
 		addRequirements(m_turret);
-		angleController.setTolerance(1, 0.3);
+		angleController.setTolerance(1);
 
 	}
 
@@ -61,14 +61,14 @@ public class AlignCommand extends CommandBase {
 			output = (output>0) ? (Math.min(output, 0.16)) : (Math.max(output, -0.16));
 			m_turret.startTurret(output);
 		} else if (!Limelight.getInstance().hasValidTarget()) {
-			if (!Limelight.getInstance().hasValidTarget()){
-				if(m_turret.getStop()){
-					m_turret.startTurret(-0.1);
-				} else {
-					m_turret.startTurret(0.1);
-				}
+			if(m_turret.getStop()){
+				m_turret.startTurret(-0.1);
+			} else {
+				m_turret.startTurret(0.1);
 			}
 		}
+
+		SmartDashboard.putNumber("Area", Limelight.getInstance().getArea());
 	} 		
 
 	// Called once the command ends or is interrupted.

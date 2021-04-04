@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.geometry.Pose2d;
 import edu.wpi.first.wpilibj.geometry.Rotation2d;
 import edu.wpi.first.wpilibj.geometry.Translation2d;
 import edu.wpi.first.wpilibj.kinematics.MecanumDriveKinematics;
+import edu.wpi.first.wpilibj.kinematics.DifferentialDriveKinematics;
 import edu.wpi.first.wpilibj.trajectory.Trajectory;
 import edu.wpi.first.wpilibj.trajectory.TrajectoryConfig;
 import edu.wpi.first.wpilibj.trajectory.TrajectoryGenerator;
@@ -87,20 +88,22 @@ public final class Constants {
         public static final int RR = 4;
         public static final int RL = 7;
 
-        public static final double ksVolts = 0.0869 / 10;
-        public static final double kvVoltSecondsPerMeter = 2.46 / 10;
+        public static final double ksVolts = 0.057;
+        public static final double kvVoltSecondsPerMeter = 1.7 / 10;
         public static final double kaVoltSecondsSquaredPerMeter = 0.185 / 10; // 1.9356652467050692
 
         public static final double kTrackwidthMeters = Units.inchesToMeters(20.36);
         public static final double kTracklengthMeters = Units.inchesToMeters(20.36);
+        public static final DifferentialDriveKinematics kDiffKinematics = new DifferentialDriveKinematics(
+                kTrackwidthMeters);
         public static final MecanumDriveKinematics kDriveKinematics = new MecanumDriveKinematics(new Translation2d(kTrackwidthMeters, kTracklengthMeters),
         new Translation2d(kTrackwidthMeters, -kTracklengthMeters), new Translation2d(-kTrackwidthMeters, kTracklengthMeters), new Translation2d(-kTrackwidthMeters, -kTracklengthMeters));
 
         public static double startY = 1.0;
         public static double startX = 13.5;
 
-        public static double kP = 0.01; // 7.43;
-        public static double kI = 0; // 0.01; // 7.43;
+        public static double kP = 0.2; // 7.43;
+        public static double kI = 0.0; // 0.01; // 7.43;
         public static double kD = 0; // 0.01; // 7.43;
 
     }
@@ -108,7 +111,7 @@ public final class Constants {
     public final static class AutoConstants {
         public static final double kRamseteB = 2;
         public static final double kRamseteZeta = 0.7;
-        public static final double kMaxSpeedMetersPerSecond = .8;
+        public static final double kMaxSpeedMetersPerSecond = 1.3;
         public static final double kMaxAccelerationMetersPerSecondSquared = .5;
         public static final PIDController xController = new PIDController(DriveConstants.kP, DriveConstants.kI,
                 DriveConstants.kD);
@@ -121,6 +124,10 @@ public final class Constants {
                 public static final PIDController RL_CONTROLLER = new PIDController(DriveConstants.kP, DriveConstants.kI,
                 DriveConstants.kD);
         public static final PIDController RR_CONTROLLER = new PIDController(DriveConstants.kP, DriveConstants.kD,
+                DriveConstants.kD);
+        public static final PIDController L_CONTROLLER = new PIDController(DriveConstants.kP, DriveConstants.kI,
+                DriveConstants.kD);
+        public static final PIDController R_CONTROLLER = new PIDController(DriveConstants.kP, DriveConstants.kD,
                 DriveConstants.kD);
         public static final Constraints theta_constraints = new Constraints(kMaxSpeedMetersPerSecond, kMaxAccelerationMetersPerSecondSquared);
         public static final ProfiledPIDController THET_CONTROLLER = new ProfiledPIDController(DriveConstants.kP, DriveConstants.kI, DriveConstants.kD, theta_constraints);
@@ -210,7 +217,7 @@ public final class Constants {
         public static final int SHOOTER_INTAKE_ID = 1;
 
         public static final double HOOD_SPEED = 0.09;
-        public static final double SHOOTER_SPEED = 0.7;
+        public static final double SHOOTER_SPEED = 1;
         public static final double INTAKE_SPEED = 0.4;
         public static final double TURRET_SPEED = 0.1;
 
@@ -234,7 +241,7 @@ public final class Constants {
         public static final double Ku = 0.08;
         public static final double Tu = 0.2;
         public static final double kP = 0.05;
-        public static final double kI = 0; // 0.06 * Ku/Tu
+        public static final double kI = 0.05; // 0.06 * Ku/Tu
         public static final double kD = 0; // (1/4) * Ku * Tu
 
         public static final double kP_far = 0.03;

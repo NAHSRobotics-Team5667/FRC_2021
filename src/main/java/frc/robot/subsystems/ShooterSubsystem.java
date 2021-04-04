@@ -1,6 +1,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.controller.PIDController;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import frc.robot.Constants.ShooterConstants;
@@ -26,12 +27,14 @@ public class ShooterSubsystem extends SubsystemBase {
     m_hood = new WPI_TalonFX(Constants.ShooterConstants.HOOD_ID);
     m_shooter = new WPI_TalonFX(Constants.ShooterConstants.SHOOTER_ID);
     m_shooterIntake = new WPI_TalonFX(Constants.ShooterConstants.SHOOTER_INTAKE_ID);
-    // m_hood.setInverted(true); // positive makes the angle larger, negative makes the angle smaller
+    m_hood.setInverted(true); // positive makes the angle larger, negative makes the angle smaller
     m_shooter.setInverted(true); // positive shoots power cells
     m_shooterIntake.setInverted(true); // positive intakes power cells
     m_hood.setNeutralMode(NeutralMode.Brake);
     m_shooter.setNeutralMode(NeutralMode.Coast);
     m_shooterIntake.setNeutralMode(NeutralMode.Brake);
+
+    m_hood.setSelectedSensorPosition(0);
 
     // m_hood.setVoltage(ShooterConstants.HOOD_VOLTAGE); // requires less voltage, may need more idk
     // m_shooter.setVoltage(ShooterConstants.SHOOTER_VOLTAGE); // requires more voltage to launch powercells idk
@@ -90,8 +93,9 @@ public class ShooterSubsystem extends SubsystemBase {
     m_shooter.set(speed); // set shooter to full speed
   }
 
-  public void startShooterIntake() {
-    m_shooterIntake.set(ShooterConstants.INTAKE_SPEED); // set shooter-intake to full speed (maybe)
+  public void startShooterIntake(boolean dir) {
+    if (dir) m_shooterIntake.set(ShooterConstants.INTAKE_SPEED); // set shooter-intake to full speed (maybe)
+    else m_shooterIntake.set(-ShooterConstants.INTAKE_SPEED);
   }
 
   public void stopShooterIntake() {
@@ -124,8 +128,14 @@ public class ShooterSubsystem extends SubsystemBase {
     return m_shooterState;
   }
 
+  public void zeroHood() {
+    m_hood.setSelectedSensorPosition(0);
+  }
+
   @Override
   public void periodic() {
     updateHoodAngle(m_hood.getSelectedSensorPosition());
+
+    SmartDashboard.putNumber("Hood", hoodAngle);
   }
 }
