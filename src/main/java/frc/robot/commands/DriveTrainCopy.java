@@ -20,6 +20,7 @@ import edu.wpi.first.wpilibj.Timer;
 
 public class DriveTrainCopy extends CommandBase {
 	private DriveTrainSubsystem drivetrain;
+	private boolean open = true;
 	private boolean slowMode = false;
 	File file;
 	FileWriter writer;
@@ -55,19 +56,30 @@ public class DriveTrainCopy extends CommandBase {
 		if (RobotContainer.getController().getStickButtonPressed(Hand.kLeft)) slowMode = !slowMode;
 		// else if (RobotContainer.getController().getStickButtonPressed(Hand.kRight)) doubleSlowMode = !doubleSlowMode;
 		Map<String, Double> sticks = RobotContainer.controller.getSticks();
-		String outstring = sticks.get("LSX").toString() + "," + sticks.get("LSY").toString() + "," + sticks.get("RSX").toString()+"\n";
+		if(open){
+		String outstring = sticks.get("LSX").toString() + "," + sticks.get("LSY").toString() + "," + sticks.get("RSX").toString() +"\n";
 		try {
 			writer.write(outstring);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
 		drivetrain.driveCartesian(sticks.get("LSX"), sticks.get("LSY"), sticks.get("RSX"), slowMode);
 
 		if (RobotContainer.getController().getAButtonPressed()) drivetrain.resetGyro();
 
 		if (RobotContainer.getController().getStickButtonPressed(Hand.kRight)) RobotContainer.movement = !RobotContainer.movement;
-		Timer.delay(tStep)
+		Timer.delay(tStep);
+		if(RobotContainer.getController().getDPad() == 180){
+			open = false;
+			try{
+			writer.close();
+			}
+			catch(IOException e){
+				e.printStackTrace();
+			}
+		}
 	}
 
 	// Called once the command ends or is interrupted.
