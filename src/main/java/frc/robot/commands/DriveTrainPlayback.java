@@ -29,6 +29,16 @@ public class DriveTrainPlayback extends CommandBase {
 	double inputLSY;
 	double inputRSX;
 	private final double tStep = 0.005;
+	private final String[] bs = {"0.0,0.0,0.16535432636737823", "0.0,0.0,0.18897637724876404", "0.0,0.0,0.21259842813014984", "0.0,0.0,0.23622047901153564", "0.0,0.0,0.24409449100494385", "0.0,0.0,0.25196850299835205", "0.0,0.0,0.25984251499176025", "0.0,0.0,0.25984251499176025", "0.0,0.0,0.26771652698516846", "0.0,0.0,0.26771652698516846", "0.0,0.0,0.26771652698516846", "0.0,0.0,0.26771652698516846", 
+	"0.0,0.0,0.26771652698516846", "0.0,0.0,0.26771652698516846", "0.0,0.0,0.26771652698516846", "0.0,0.0,0.26771652698516846", "0.0,0.0,0.25196850299835205", "0.0,0.0,0.18110236525535583", "0.0,0.0,0.14173229038715363", "0.0,0.0,0.12598425149917603", "0.0,0.0,0.11023622006177902", "0.0,0.0,0.11023622006177902", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", 
+	"0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", 
+	"0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0"
+, "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.0,0.0,0.0", "0.375,0.0,0.0", "0.4375,0.1328125,0.0", "0.7421875,0.2109375,0.0"
+	, "1.0,0.2578125,0.0", "1.0,0.2578125,0.0", "1.0,0.3125,0.0", "1.0,0.3203125,0.0", "1.0,0.328125,0.0", "1.0,0.3203125,0.0", "1.0,0.3046875,0.0", "1.0,0.3046875,0.0", "1.0,0.3046875,0.0",
+	"1.0,0.2890625,0.0", "1.0,0.2890625,0.0", "1.0,0.2890625,0.0", "1.0,0.2890625,0.0", "1.0,0.2734375,0.0", "1.0,0.265625,0.0", "1.0,0.2421875,0.0", "1.0,0.2421875,0.0", "1.0,0.2265625,0.0", 
+	"1.0,0.21875,0.0", "1.0,0.21875,0.0", "1.0,0.21875,0.0", "1.0,0.21875,0.0", "1.0,0.21875,0.0", "1.0,0.2109375,0.0", "1.0,0.2109375,0.0", "1.0,0.2109375,0.0", "1.0,0.2265625,0.0", "1.0,0.234375,0.0", "1.0,0.2421875,0.0", "1.0,0.25,0.0", "1.0,0.2578125,0.0", "1.0,0.265625,0.0", "1.0,0.2734375,0.0", "1.0,0.2734375,0.0", "1.0,0.28125,0.0", "1.0,0.28125,0.0", "1.0,0.28125,0.0", "1.0,0.28125,0.0"
+, "1.0,0.28125,0.0", "1.0,0.234375,0.0", "1.0,0.0,0.0", "1.0,0.0,0.0", "0.1640625,0.0,0.0", "0.1640625,0.0,0.0"};
+	int gajraare = bs.length;
 
 
 	/** Creates a new DriveTrainCommand. */
@@ -36,14 +46,14 @@ public class DriveTrainPlayback extends CommandBase {
 		// Use addRequirements() here to declare subsystem dependencies.
 		this.drivetrain = drivetrain;
 		addRequirements(drivetrain);
-		try {
-			br = new BufferedReader(new FileReader(command + ".txt"));
-		    sb = new StringBuilder();
-			line = br.readLine();
-	}
-		catch(IOException e){
-			e.printStackTrace();
-		}
+	// 	try {
+	// 		br = new BufferedReader(new FileReader(command + ".txt"));
+	// 	    sb = new StringBuilder();
+	// 		line = br.readLine();
+	// }
+	// 	catch(IOException e){
+	// 		e.printStackTrace();
+	// 	}
 	}
 	// Called when the command is initially scheduled.
 	@Override
@@ -58,7 +68,7 @@ public class DriveTrainPlayback extends CommandBase {
 	public void execute() {
 		if (RobotContainer.getController().getStickButtonPressed(Hand.kLeft)) slowMode = !slowMode;
 		// else if (RobotContainer.getController().getStickButtonPressed(Hand.kRight)) doubleSlowMode = !doubleSlowMode;
-		while(line!=null){
+		for(int j = 0; j<gajraare; j++){
 		int prev = -1;
 		int curr;
 		curr = line.indexOf(",", prev+1);
@@ -70,27 +80,16 @@ public class DriveTrainPlayback extends CommandBase {
 		curr = line.indexOf(",", prev+1);
 		inputRSX = Double.parseDouble(line.substring(prev+1, curr));
 		drivetrain.driveCartesian(inputLSX, inputLSY, inputRSX, slowMode);
-		try{
-		line = br.readLine();
 		}
-		catch(IOException e){
-			e.printStackTrace();
-		}
+		
 		Timer.delay(tStep);
 		if (RobotContainer.getController().getAButtonPressed()) drivetrain.resetGyro();
 
 		if (RobotContainer.getController().getStickButtonPressed(Hand.kRight)) RobotContainer.movement = !RobotContainer.movement;
-		if(RobotContainer.getController().getDPad() == 0){
-			try{
-				br.close();
-		}
-		catch(IOException e){
-			e.printStackTrace();
-		}
-	}
+		
 }
 
-	}
+	
 
 	// Called once the command ends or is interrupted.
 	@Override
