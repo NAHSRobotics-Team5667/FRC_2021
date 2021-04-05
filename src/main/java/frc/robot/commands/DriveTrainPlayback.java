@@ -72,6 +72,13 @@ public class DriveTrainPlayback extends CommandBase {
 		if (RobotContainer.getController().getAButtonPressed()) drivetrain.resetGyro();
 
 		if (RobotContainer.getController().getStickButtonPressed(Hand.kRight)) RobotContainer.movement = !RobotContainer.movement;
+		try{
+		line = br.readLine();
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
+		Timer.delay(tStep);
 	}
 
 	// Called once the command ends or is interrupted.
