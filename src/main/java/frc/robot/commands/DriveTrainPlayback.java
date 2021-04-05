@@ -6,6 +6,7 @@ package frc.robot.commands;
 
 import java.util.Map;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
@@ -57,6 +58,7 @@ public class DriveTrainPlayback extends CommandBase {
 	public void execute() {
 		if (RobotContainer.getController().getStickButtonPressed(Hand.kLeft)) slowMode = !slowMode;
 		// else if (RobotContainer.getController().getStickButtonPressed(Hand.kRight)) doubleSlowMode = !doubleSlowMode;
+		while(line!=null){
 		int prev = -1;
 		int curr;
 		curr = line.indexOf(",", prev+1);
@@ -68,10 +70,6 @@ public class DriveTrainPlayback extends CommandBase {
 		curr = line.indexOf(",", prev+1);
 		inputRSX = Double.parseDouble(line.substring(prev+1, curr));
 		drivetrain.driveCartesian(inputLSX, inputLSY, inputRSX, slowMode);
-
-		if (RobotContainer.getController().getAButtonPressed()) drivetrain.resetGyro();
-
-		if (RobotContainer.getController().getStickButtonPressed(Hand.kRight)) RobotContainer.movement = !RobotContainer.movement;
 		try{
 		line = br.readLine();
 		}
@@ -79,6 +77,19 @@ public class DriveTrainPlayback extends CommandBase {
 			e.printStackTrace();
 		}
 		Timer.delay(tStep);
+		if (RobotContainer.getController().getAButtonPressed()) drivetrain.resetGyro();
+
+		if (RobotContainer.getController().getStickButtonPressed(Hand.kRight)) RobotContainer.movement = !RobotContainer.movement;
+		if(RobotContainer.getController().getDPad() == 0){
+			try{
+				br.close();
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+}
+
 	}
 
 	// Called once the command ends or is interrupted.
