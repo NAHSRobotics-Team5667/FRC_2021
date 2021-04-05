@@ -12,6 +12,7 @@ import frc.robot.Constants;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -23,7 +24,7 @@ public class DriveTrainCopy extends CommandBase {
 	private boolean open = true;
 	private boolean slowMode = false;
 	File file;
-	FileWriter writer;
+	BufferedWriter bw;
 	Timer timer;
 	private final double tStep = 0.005;
 
@@ -32,11 +33,12 @@ public class DriveTrainCopy extends CommandBase {
 		// Use addRequirements() here to declare subsystem dependencies.
 		this.drivetrain = drivetrain;
 		addRequirements(drivetrain);
+		this.timer = new Timer();
+
 		try{
-        file = new File("/copypaths/" + pathname + ".txt");
-        file.createNewFile();
-		writer = new FileWriter(file);
-		timer = new Timer();
+		this.file = new File(pathname + ".txt");
+		this.bw = new BufferedWriter(new FileWriter(file));
+		System.out.println("accessing the file work");
 		}
 	catch(IOException e){
 		e.printStackTrace();
@@ -53,18 +55,24 @@ public class DriveTrainCopy extends CommandBase {
 	// Called every time the scheduler runs while the command is scheduled.
 	@Override
 	public void execute() {
-		if (RobotContainer.getController().getStickButtonPressed(Hand.kLeft)) slowMode = !slowMode;
+		if (RobotContainer.getController().getStickButtonPressed(Hand.kLeft)){ slowMode = !slowMode;}
 		// else if (RobotContainer.getController().getStickButtonPressed(Hand.kRight)) doubleSlowMode = !doubleSlowMode;
 		Map<String, Double> sticks = RobotContainer.controller.getSticks();
+		String outstring = "0,0,0";
 		if(open){
-		String outstring = sticks.get("LSX").toString() + "," + sticks.get("LSY").toString() + "," + sticks.get("RSX").toString() +"\n";
-		try {
-			writer.write(outstring);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+		outstring = sticks.get("LSX").toString() + "," + sticks.get("LSY").toString() + "," + sticks.get("RSX").toString();
+		System.out.println(outstring);
+	// 	if(bw!=null){
+	// 	try {
+	// 		bw.write(outstring);
+	// 	} catch (IOException e) {
+	// 		// TODO Auto-generated catch block
+	// 		e.printStackTrace();
+	// 	}
+	// }
+	// 	else{
+	// 	}
+}
 		drivetrain.driveCartesian(sticks.get("LSX"), sticks.get("LSY"), sticks.get("RSX"), slowMode);
 
 		if (RobotContainer.getController().getAButtonPressed()) drivetrain.resetGyro();
@@ -74,7 +82,7 @@ public class DriveTrainCopy extends CommandBase {
 		if(RobotContainer.getController().getDPad() == 180){
 			open = false;
 			try{
-			writer.close();
+			bw.close();
 			}
 			catch(IOException e){
 				e.printStackTrace();

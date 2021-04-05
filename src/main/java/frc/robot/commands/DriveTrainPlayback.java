@@ -37,7 +37,7 @@ public class DriveTrainPlayback extends CommandBase {
 		this.drivetrain = drivetrain;
 		addRequirements(drivetrain);
 		try {
-			br = new BufferedReader(new FileReader("/copypaths/" + command + ".txt"));
+			br = new BufferedReader(new FileReader(command + ".txt"));
 		    sb = new StringBuilder();
 			line = br.readLine();
 	}
