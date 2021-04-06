@@ -53,7 +53,7 @@ public class DriveTrainPlayback extends CommandBase {
 		this.drivetrain = drivetrain;
 		addRequirements(drivetrain);
 		try {
-			br = new BufferedReader(new FileReader("/home/lvuser/main/deploy/output/" + ".txt"));
+			br = new BufferedReader(new FileReader("/home/lvuser/main/deploy/output/" + ".json"));
 			JSONArray data = (JSONArray) parser.parse(br);
 			for(Object o : data){
 				JSONObject output = (JSONObject) o;
@@ -62,8 +62,8 @@ public class DriveTrainPlayback extends CommandBase {
 				directions.add(direction);
 				//times.add(time);
 			}
-		    sb = new StringBuilder();
-			line = br.readLine();
+		    // sb = new StringBuilder();
+			// line = br.readLine();
 	}
 		catch(IOException e){
 			e.printStackTrace();
