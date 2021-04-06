@@ -20,6 +20,8 @@ import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.commands.DifferentialDriveCommand;
 import frc.robot.commands.DriveTrainCommand;
+import frc.robot.commands.DriveTrainCopy;
+import frc.robot.commands.DriveTrainPlayback;
 import frc.robot.commands.shooter.ShooterCommand;
 import frc.robot.commands.shooter.TurretCommand;
 import frc.robot.subsystems.DriveTrainSubsystem;
@@ -75,17 +77,19 @@ public class RobotContainer {
 	 * The container for the robot. Contains subsystems, OI devices, and commands.
 	 */
 	public RobotContainer() {
-		//drivetrain = new DriveTrainSubsystem(new AHRS(SPI.Port.kMXP), new WPI_TalonFX(Constants.DriveConstants.FR), new WPI_TalonFX(Constants.DriveConstants.FL), new WPI_TalonFX(Constants.DriveConstants.RR), new WPI_TalonFX(Constants.DriveConstants.RL));
+		drivetrain = new DriveTrainSubsystem(new AHRS(SPI.Port.kMXP), new WPI_TalonFX(Constants.DriveConstants.FR), new WPI_TalonFX(Constants.DriveConstants.FL), new WPI_TalonFX(Constants.DriveConstants.RR), new WPI_TalonFX(Constants.DriveConstants.RL));
 		// XXX: these are placeholders!!
 		m_shooter = new ShooterSubsystem(0.0, 0.0);
 		m_intake = new IntakeSubsystem();
 		m_index = new IndexSubsystem();
 		m_turret = new TurretSubsystem(0);
-		m_diffDrive = new DifferentialDriveSubsystem(new AHRS(SPI.Port.kMXP), new WPI_TalonFX(Constants.DriveConstants.FR), new WPI_TalonFX(Constants.DriveConstants.FL), new WPI_TalonFX(Constants.DriveConstants.RR), new WPI_TalonFX(Constants.DriveConstants.RL));
+		//m_diffDrive = new DifferentialDriveSubsystem(new AHRS(SPI.Port.kMXP), new WPI_TalonFX(Constants.DriveConstants.FR), new WPI_TalonFX(Constants.DriveConstants.FL), new WPI_TalonFX(Constants.DriveConstants.RR), new WPI_TalonFX(Constants.DriveConstants.RL));
 		configureButtonBindings();
 		//Set default commands
-		m_diffDrive.setDefaultCommand(new DifferentialDriveCommand(m_diffDrive));
-		// drivetrain.setDefaultCommand(new DriveTrainCommand(drivetrain));
+		//m_diffDrive.setDefaultCommand(new DifferentialDriveCommand(m_diffDrive));
+		drivetrain.setDefaultCommand(new DriveTrainCommand(drivetrain));
+		//drivetrain.setDefaultCommand(new DriveTrainPlayback(drivetrain, "firsttest"));
+		//drivetrain.setDefaultCommand(new DriveTrainCopy(drivetrain, "firsttest"));
 		m_index.setDefaultCommand(new IndexCommand(m_index));
 		m_intake.setDefaultCommand(new IntakeCommand(m_intake));
 		m_shooter.setDefaultCommand(new ShooterCommand(m_shooter));
@@ -146,10 +150,10 @@ public class RobotContainer {
 	
 	public void setNeutralMode(NeutralMode mode){
 		// drivetrain.setNeutralMode(mode);
-		m_diffDrive.setNeutralMode(mode);;
+		drivetrain.setNeutralMode(mode);;
 	}	
 	public void feedMotorSafety() {
 		// drivetrain.feedMotorSafety();
-		m_diffDrive.feedMotorSafety();;
+		drivetrain.feedMotorSafety();;
 	}
 }
