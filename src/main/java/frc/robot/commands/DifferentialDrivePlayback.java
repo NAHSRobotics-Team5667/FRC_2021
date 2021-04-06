@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
+import frc.robot.subsystems.DifferentialDriveSubsystem;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import java.io.BufferedReader;
 import java.io.File;
@@ -25,8 +26,8 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 
-public class DriveTrainPlayback extends CommandBase {
-	private DriveTrainSubsystem drivetrain;
+public class DifferentialDrivePlayback extends CommandBase {
+	private DifferentialDriveSubsystem drivetrain;
 	private boolean slowMode = true;
 	private File file;
 	BufferedReader br;
@@ -48,7 +49,7 @@ public class DriveTrainPlayback extends CommandBase {
 	 * 
 	 * @throws ParseException
 	 */
-	public DriveTrainPlayback(DriveTrainSubsystem drivetrain, String command) {
+	public DifferentialDrivePlayback(DifferentialDriveSubsystem drivetrain, String command) {
 		// Use addRequirements() here to declare subsystem dependencies.
 		this.drivetrain = drivetrain;
 		addRequirements(drivetrain);
@@ -59,13 +60,15 @@ public class DriveTrainPlayback extends CommandBase {
 				JSONObject output = (JSONObject) o;
 				String direction = (String) output.get("line");
 				//int time = (Integer) output.get("timestamp");
-				if(direction.charAt(direction.length()-1) == ',')
-				directions.add(direction);
-				//times.add(time);
+				if(direction.charAt(direction.length()-1) == ','){
+					directions.add(direction);
+					//times.add(time);
+				}
 			}
+		}
 		    // sb = new StringBuilder();
 			// line = br.readLine();
-	}
+	
 		catch(IOException e){
 			e.printStackTrace();
 		}
@@ -106,14 +109,11 @@ public class DriveTrainPlayback extends CommandBase {
 		int prev = -1;
 		int curr;
 		curr = line.indexOf(",", prev+1);
-		inputLSX = Double.parseDouble(line.substring(prev+1, curr));
-		prev = curr;
-		curr = line.indexOf(",", prev+1);
 		inputLSY = Double.parseDouble(line.substring(prev+1, curr));
 		prev = curr;
 		curr = line.indexOf(",", prev+1);
 		inputRSX = Double.parseDouble(line.substring(prev+1, curr));
-		drivetrain.driveCartesian(inputLSX, inputLSY, inputRSX, slowMode);
+		drivetrain.drive(0.75*inputLSY, 0.75*inputRSX, false);
 		count ++;
 
 		

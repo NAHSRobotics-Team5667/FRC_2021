@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
+import frc.robot.subsystems.DifferentialDriveSubsystem;
 import frc.robot.subsystems.DriveTrainSubsystem;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -19,8 +20,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import edu.wpi.first.wpilibj.Timer;
 
-public class DriveTrainCopy extends CommandBase {
-	private DriveTrainSubsystem drivetrain;
+public class DifferentialDriveCopy extends CommandBase {
+	private DifferentialDriveSubsystem drivetrain;
 	private boolean open = true;
 	private boolean slowMode = true;
 	File file;
@@ -29,7 +30,7 @@ public class DriveTrainCopy extends CommandBase {
 	private final double tStep = 0.005;
 
 	/** Creates a new DriveTrainCommand. */
-	public DriveTrainCopy(DriveTrainSubsystem drivetrain, String pathname) {
+	public DifferentialDriveCopy(DifferentialDriveSubsystem drivetrain) {
 		// Use addRequirements() here to declare subsystem dependencies.
 		this.drivetrain = drivetrain;
 		addRequirements(drivetrain);
@@ -58,9 +59,9 @@ public class DriveTrainCopy extends CommandBase {
 		if (RobotContainer.getController().getStickButtonPressed(Hand.kLeft)){ slowMode = !slowMode;}
 		// else if (RobotContainer.getController().getStickButtonPressed(Hand.kRight)) doubleSlowMode = !doubleSlowMode;
 		Map<String, Double> sticks = RobotContainer.controller.getSticks();
-		String outstring = "0,0,0,";
+		String outstring = "0,0,\n";
 		if(open){
-		outstring = sticks.get("LSX").toString() + "," + sticks.get("LSY").toString() + "," + sticks.get("RSX").toString()+",\n";
+		outstring = sticks.get("LSY").toString() + "," + sticks.get("RSX").toString() + ",\n";
 		System.out.print(outstring);
 	// 	if(bw!=null){
 	// 	try {
@@ -73,7 +74,8 @@ public class DriveTrainCopy extends CommandBase {
 	// 	else{
 	// 	}
 }
-		drivetrain.driveCartesian(sticks.get("LSX"), sticks.get("LSY"), sticks.get("RSX"), slowMode);
+		drivetrain.drive(0.75*sticks.get("LSY"), 0.75*sticks.get("RSX"),
+		RobotContainer.getController().getStickButtonPressed(RobotContainer.getController().getLeftHand()));
 
 		if (RobotContainer.getController().getAButtonPressed()){
 					 drivetrain.resetGyro();

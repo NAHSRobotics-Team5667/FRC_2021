@@ -96,7 +96,7 @@ public class DifferentialDriveSubsystem extends SubsystemBase {
 		m_leftMaster.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
 		m_rightMaster.configSelectedFeedbackSensor(FeedbackDevice.IntegratedSensor, 0, 10);
 
-		setNeutralMode(NeutralMode.Coast);
+		setNeutralMode(NeutralMode.Brake);
 
 		m_rightMaster.configAllSettings(falconConfig);
 		m_leftMaster.configAllSettings(falconConfig);
@@ -174,6 +174,14 @@ public class DifferentialDriveSubsystem extends SubsystemBase {
 	 */
 	public void stop() {
 		m_drive.stopMotor();
+	}
+	public void calibrateGyro() {
+		m_gyro.calibrate();
+	}
+
+	public void resetGyro() {
+		m_gyro.reset();
+		//m_navx.setAngleAdjustment(180);
 	}
 
 	/**

@@ -149,7 +149,8 @@ public class DriveTrainSubsystem extends SubsystemBase {
 	}
 
 	public void resetGyro() {
-		m_navx.setAngleAdjustment(180);
+		m_navx.reset();
+		//m_navx.setAngleAdjustment(180);
 	}
 
 	/**
