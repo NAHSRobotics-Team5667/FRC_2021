@@ -35,14 +35,14 @@ public class DriveTrainCopy extends CommandBase {
 		addRequirements(drivetrain);
 		this.timer = new Timer();
 
-		try{
-		this.file = new File(pathname + ".txt");
-		this.bw = new BufferedWriter(new FileWriter(file));
-		System.out.println("accessing the file work");
-		}
-	catch(IOException e){
-		e.printStackTrace();
-	}
+	// 	try{
+	// 	this.file = new File("/home/lvuser/main/deploy/output/" + pathname +".txt");
+	// 	this.bw = new BufferedWriter(new FileWriter(file));
+	// 	System.out.println("accessing the file work");
+	// 	}
+	// catch(IOException e){
+	// 	e.printStackTrace();
+	// }
 	}
 	// Called when the command is initially scheduled.
 	@Override
@@ -60,8 +60,8 @@ public class DriveTrainCopy extends CommandBase {
 		Map<String, Double> sticks = RobotContainer.controller.getSticks();
 		String outstring = "0,0,0";
 		if(open){
-		outstring = sticks.get("LSX").toString() + "," + sticks.get("LSY").toString() + "," + sticks.get("RSX").toString();
-		System.out.println(outstring);
+		outstring = sticks.get("LSX").toString() + "," + sticks.get("LSY").toString() + "," + sticks.get("RSX").toString()+",\n";
+		System.out.print(outstring);
 	// 	if(bw!=null){
 	// 	try {
 	// 		bw.write(outstring);
@@ -78,7 +78,7 @@ public class DriveTrainCopy extends CommandBase {
 		if (RobotContainer.getController().getAButtonPressed()) drivetrain.resetGyro();
 
 		if (RobotContainer.getController().getStickButtonPressed(Hand.kRight)) RobotContainer.movement = !RobotContainer.movement;
-		Timer.delay(tStep);
+		//Timer.delay(tStep);
 		if(RobotContainer.getController().getDPad() == 180){
 			open = false;
 			try{
