@@ -11,7 +11,6 @@ import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.DifferentialDriveSubsystem;
-import frc.robot.subsystems.DriveTrainSubsystem;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -39,7 +38,7 @@ public class DifferentialDrivePlayback extends CommandBase {
 	private final double tStep = 0.0;
 	Timer timer = new Timer();
 	private ArrayList<String> directions= new ArrayList<String>();
-	//private ArrayList<Integer> times = new ArrayList<Integer>();
+	//private ArrayList<Double> times = new ArrayList<Double>();
 	JSONParser parser = new JSONParser();
 	int count = 0;
 
@@ -60,11 +59,18 @@ public class DifferentialDrivePlayback extends CommandBase {
 				JSONObject output = (JSONObject) o;
 				String direction = (String) output.get("line");
 				//int time = (Integer) output.get("timestamp");
-				if(direction.charAt(direction.length()-1) == ','){
+				//System.out.println(direction);
+				if(direction!=null){
+					if(direction.length()>0){
+					if(direction.charAt(direction.length()-1) == ','){
 					directions.add(direction);
+					//double time = (Double) output.get("timestamp");
 					//times.add(time);
+					//times.add(time);
+					}
 				}
 			}
+		}
 		}
 		    // sb = new StringBuilder();
 			// line = br.readLine();
@@ -113,7 +119,7 @@ public class DifferentialDrivePlayback extends CommandBase {
 		prev = curr;
 		curr = line.indexOf(",", prev+1);
 		inputRSX = Double.parseDouble(line.substring(prev+1, curr));
-		drivetrain.drive(0.75*inputLSY, 0.75*inputRSX, false);
+		drivetrain.drive(0.7*inputLSY, 0.7*inputRSX, false);
 		count ++;
 
 		

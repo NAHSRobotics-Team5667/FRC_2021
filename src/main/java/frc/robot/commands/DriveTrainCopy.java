@@ -26,10 +26,10 @@ public class DriveTrainCopy extends CommandBase {
 	File file;
 	BufferedWriter bw;
 	Timer timer;
-	private final double tStep = 0.005;
+	//private final double tStep = 0.005;
 
 	/** Creates a new DriveTrainCommand. */
-	public DriveTrainCopy(DriveTrainSubsystem drivetrain, String pathname) {
+	public DriveTrainCopy(DriveTrainSubsystem drivetrain) {
 		// Use addRequirements() here to declare subsystem dependencies.
 		this.drivetrain = drivetrain;
 		addRequirements(drivetrain);

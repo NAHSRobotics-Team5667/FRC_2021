@@ -1,0 +1,5582 @@
+[
+    {
+        "messageType": 2,
+        "timestamp": 545.72119140625,
+        "seqNumber": -26328,
+        "line": "STARTING ALIGN COMMAND"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 545.740966796875,
+        "seqNumber": -26327,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 545.7607421875,
+        "seqNumber": -26326,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 545.78076171875,
+        "seqNumber": -26325,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 545.801025390625,
+        "seqNumber": -26324,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 545.82080078125,
+        "seqNumber": -26323,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 545.8408203125,
+        "seqNumber": -26322,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 545.86083984375,
+        "seqNumber": -26321,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 545.880859375,
+        "seqNumber": -26320,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 545.900634765625,
+        "seqNumber": -26319,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 545.9208984375,
+        "seqNumber": -26318,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 545.94091796875,
+        "seqNumber": -26317,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 545.9609375,
+        "seqNumber": -26316,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 545.98095703125,
+        "seqNumber": -26315,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.0009765625,
+        "seqNumber": -26314,
+        "line": "0.1484375,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.02099609375,
+        "seqNumber": -26313,
+        "line": "0.4765625,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.040771484375,
+        "seqNumber": -26312,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.06103515625,
+        "seqNumber": -26311,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.08154296875,
+        "seqNumber": -26310,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.10107421875,
+        "seqNumber": -26309,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.120849609375,
+        "seqNumber": -26308,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.14111328125,
+        "seqNumber": -26307,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.161376953125,
+        "seqNumber": -26306,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.180908203125,
+        "seqNumber": -26305,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.200927734375,
+        "seqNumber": -26304,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.220947265625,
+        "seqNumber": -26303,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.24072265625,
+        "seqNumber": -26302,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.260986328125,
+        "seqNumber": -26301,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.28076171875,
+        "seqNumber": -26300,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.30078125,
+        "seqNumber": -26299,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.32080078125,
+        "seqNumber": -26298,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.3408203125,
+        "seqNumber": -26297,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.36083984375,
+        "seqNumber": -26296,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.381103515625,
+        "seqNumber": -26295,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.40087890625,
+        "seqNumber": -26294,
+        "line": "1.0,-0.3125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.421142578125,
+        "seqNumber": -26293,
+        "line": "1.0,-0.3125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.44091796875,
+        "seqNumber": -26292,
+        "line": "1.0,-0.6328125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.461181640625,
+        "seqNumber": -26291,
+        "line": "1.0,-0.6328125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.48095703125,
+        "seqNumber": -26290,
+        "line": "1.0,-0.6796875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.501220703125,
+        "seqNumber": -26289,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.52099609375,
+        "seqNumber": -26288,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.541015625,
+        "seqNumber": -26287,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.56103515625,
+        "seqNumber": -26286,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.581298828125,
+        "seqNumber": -26285,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.600830078125,
+        "seqNumber": -26284,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.620849609375,
+        "seqNumber": -26283,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.640869140625,
+        "seqNumber": -26282,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.660888671875,
+        "seqNumber": -26281,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.68115234375,
+        "seqNumber": -26280,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.70068359375,
+        "seqNumber": -26279,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.720947265625,
+        "seqNumber": -26278,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.74072265625,
+        "seqNumber": -26277,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.7607421875,
+        "seqNumber": -26276,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.78076171875,
+        "seqNumber": -26275,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.80078125,
+        "seqNumber": -26274,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.82080078125,
+        "seqNumber": -26273,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.84130859375,
+        "seqNumber": -26272,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.861328125,
+        "seqNumber": -26271,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.880859375,
+        "seqNumber": -26270,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.90087890625,
+        "seqNumber": -26269,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.921142578125,
+        "seqNumber": -26268,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.941162109375,
+        "seqNumber": -26267,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.960693359375,
+        "seqNumber": -26266,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 546.980712890625,
+        "seqNumber": -26265,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.0009765625,
+        "seqNumber": -26264,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.020751953125,
+        "seqNumber": -26263,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.041015625,
+        "seqNumber": -26262,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.060791015625,
+        "seqNumber": -26261,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.0810546875,
+        "seqNumber": -26260,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.100830078125,
+        "seqNumber": -26259,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.120849609375,
+        "seqNumber": -26258,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.140869140625,
+        "seqNumber": -26257,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.16064453125,
+        "seqNumber": -26256,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.180908203125,
+        "seqNumber": -26255,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.200927734375,
+        "seqNumber": -26254,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.220947265625,
+        "seqNumber": -26253,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.240966796875,
+        "seqNumber": -26252,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.2607421875,
+        "seqNumber": -26251,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.28076171875,
+        "seqNumber": -26250,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.30078125,
+        "seqNumber": -26249,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.32080078125,
+        "seqNumber": -26248,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.3408203125,
+        "seqNumber": -26247,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.361083984375,
+        "seqNumber": -26246,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.380859375,
+        "seqNumber": -26245,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.40087890625,
+        "seqNumber": -26244,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.4208984375,
+        "seqNumber": -26243,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.44091796875,
+        "seqNumber": -26242,
+        "line": "0.890625,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.4609375,
+        "seqNumber": -26241,
+        "line": "0.890625,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.48095703125,
+        "seqNumber": -26240,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.500732421875,
+        "seqNumber": -26239,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.52099609375,
+        "seqNumber": -26238,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.541015625,
+        "seqNumber": -26237,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.560791015625,
+        "seqNumber": -26236,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.580810546875,
+        "seqNumber": -26235,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.600830078125,
+        "seqNumber": -26234,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.620849609375,
+        "seqNumber": -26233,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.640869140625,
+        "seqNumber": -26232,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.6611328125,
+        "seqNumber": -26231,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.680908203125,
+        "seqNumber": -26230,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.700927734375,
+        "seqNumber": -26229,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.720947265625,
+        "seqNumber": -26228,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.74072265625,
+        "seqNumber": -26227,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.760986328125,
+        "seqNumber": -26226,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.78076171875,
+        "seqNumber": -26225,
+        "line": "0.5078125,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.80078125,
+        "seqNumber": -26224,
+        "line": "0.5078125,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.82080078125,
+        "seqNumber": -26223,
+        "line": "0.5078125,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.841064453125,
+        "seqNumber": -26222,
+        "line": "1.0,0.28346458077430725,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.861083984375,
+        "seqNumber": -26221,
+        "line": "1.0,0.13385826349258423,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.881103515625,
+        "seqNumber": -26220,
+        "line": "1.0,-0.2265625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.90087890625,
+        "seqNumber": -26219,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.9208984375,
+        "seqNumber": -26218,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.94091796875,
+        "seqNumber": -26217,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.9609375,
+        "seqNumber": -26216,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 547.980712890625,
+        "seqNumber": -26215,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.001220703125,
+        "seqNumber": -26214,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.020751953125,
+        "seqNumber": -26213,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.040771484375,
+        "seqNumber": -26212,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.06103515625,
+        "seqNumber": -26211,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.080810546875,
+        "seqNumber": -26210,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.100830078125,
+        "seqNumber": -26209,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.120849609375,
+        "seqNumber": -26208,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.140869140625,
+        "seqNumber": -26207,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.160888671875,
+        "seqNumber": -26206,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.180908203125,
+        "seqNumber": -26205,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.20068359375,
+        "seqNumber": -26204,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.220703125,
+        "seqNumber": -26203,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.240966796875,
+        "seqNumber": -26202,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.2607421875,
+        "seqNumber": -26201,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.28076171875,
+        "seqNumber": -26200,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.301025390625,
+        "seqNumber": -26199,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.32080078125,
+        "seqNumber": -26198,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.3408203125,
+        "seqNumber": -26197,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.36083984375,
+        "seqNumber": -26196,
+        "line": "0.4140625,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.381103515625,
+        "seqNumber": -26195,
+        "line": "0.15625,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.40087890625,
+        "seqNumber": -26194,
+        "line": "0.15625,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.421142578125,
+        "seqNumber": -26193,
+        "line": "-0.15748031437397003,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.44091796875,
+        "seqNumber": -26192,
+        "line": "-0.8582677245140076,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.460693359375,
+        "seqNumber": -26191,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.48095703125,
+        "seqNumber": -26190,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.500732421875,
+        "seqNumber": -26189,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.520751953125,
+        "seqNumber": -26188,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.541015625,
+        "seqNumber": -26187,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.560791015625,
+        "seqNumber": -26186,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.580810546875,
+        "seqNumber": -26185,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.60107421875,
+        "seqNumber": -26184,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.620849609375,
+        "seqNumber": -26183,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.640869140625,
+        "seqNumber": -26182,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.6611328125,
+        "seqNumber": -26181,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.680908203125,
+        "seqNumber": -26180,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.70068359375,
+        "seqNumber": -26179,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.720947265625,
+        "seqNumber": -26178,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.74072265625,
+        "seqNumber": -26177,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.760986328125,
+        "seqNumber": -26176,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.781005859375,
+        "seqNumber": -26175,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.80078125,
+        "seqNumber": -26174,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.82080078125,
+        "seqNumber": -26173,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.8408203125,
+        "seqNumber": -26172,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.86083984375,
+        "seqNumber": -26171,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.881103515625,
+        "seqNumber": -26170,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.90087890625,
+        "seqNumber": -26169,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.920654296875,
+        "seqNumber": -26168,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.941162109375,
+        "seqNumber": -26167,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.960693359375,
+        "seqNumber": -26166,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 548.980712890625,
+        "seqNumber": -26165,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.001220703125,
+        "seqNumber": -26164,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.020751953125,
+        "seqNumber": -26163,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.040771484375,
+        "seqNumber": -26162,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.060791015625,
+        "seqNumber": -26161,
+        "line": "-1.0,-0.3671875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.080810546875,
+        "seqNumber": -26160,
+        "line": "-1.0,-0.625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.100830078125,
+        "seqNumber": -26159,
+        "line": "-1.0,-0.671875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.120849609375,
+        "seqNumber": -26158,
+        "line": "-1.0,-0.671875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.140869140625,
+        "seqNumber": -26157,
+        "line": "-1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.160888671875,
+        "seqNumber": -26156,
+        "line": "-1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.1806640625,
+        "seqNumber": -26155,
+        "line": "-1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.200927734375,
+        "seqNumber": -26154,
+        "line": "-1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.220703125,
+        "seqNumber": -26153,
+        "line": "-1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.240966796875,
+        "seqNumber": -26152,
+        "line": "-1.0,-0.9140625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.2607421875,
+        "seqNumber": -26151,
+        "line": "-1.0,-0.625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.28076171875,
+        "seqNumber": -26150,
+        "line": "-1.0,-0.296875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.301025390625,
+        "seqNumber": -26149,
+        "line": "-1.0,-0.296875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.321044921875,
+        "seqNumber": -26148,
+        "line": "-1.0,-0.296875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.3408203125,
+        "seqNumber": -26147,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.360595703125,
+        "seqNumber": -26146,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.381103515625,
+        "seqNumber": -26145,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.40087890625,
+        "seqNumber": -26144,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.4208984375,
+        "seqNumber": -26143,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.44091796875,
+        "seqNumber": -26142,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.4609375,
+        "seqNumber": -26141,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.48095703125,
+        "seqNumber": -26140,
+        "line": "-1.0,-0.140625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.5009765625,
+        "seqNumber": -26139,
+        "line": "-1.0,-0.3828125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.521240234375,
+        "seqNumber": -26138,
+        "line": "-1.0,-0.3828125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.540771484375,
+        "seqNumber": -26137,
+        "line": "-1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.560791015625,
+        "seqNumber": -26136,
+        "line": "-1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.580810546875,
+        "seqNumber": -26135,
+        "line": "-1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.60107421875,
+        "seqNumber": -26134,
+        "line": "-1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.621337890625,
+        "seqNumber": -26133,
+        "line": "-1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.641357421875,
+        "seqNumber": -26132,
+        "line": "-1.0,-0.9375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.660888671875,
+        "seqNumber": -26131,
+        "line": "-1.0,0.4173228442668915,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.680908203125,
+        "seqNumber": -26130,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.700927734375,
+        "seqNumber": -26129,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.72119140625,
+        "seqNumber": -26128,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.74072265625,
+        "seqNumber": -26127,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.760986328125,
+        "seqNumber": -26126,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.781005859375,
+        "seqNumber": -26125,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.80078125,
+        "seqNumber": -26124,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.821533203125,
+        "seqNumber": -26123,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.841064453125,
+        "seqNumber": -26122,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.86083984375,
+        "seqNumber": -26121,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.880859375,
+        "seqNumber": -26120,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.901123046875,
+        "seqNumber": -26119,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.9208984375,
+        "seqNumber": -26118,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.94091796875,
+        "seqNumber": -26117,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.9609375,
+        "seqNumber": -26116,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 549.98095703125,
+        "seqNumber": -26115,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.000732421875,
+        "seqNumber": -26114,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.020751953125,
+        "seqNumber": -26113,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.04150390625,
+        "seqNumber": -26112,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.060791015625,
+        "seqNumber": -26111,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.080810546875,
+        "seqNumber": -26110,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.100830078125,
+        "seqNumber": -26109,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.12109375,
+        "seqNumber": -26108,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.140869140625,
+        "seqNumber": -26107,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.160888671875,
+        "seqNumber": -26106,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.18115234375,
+        "seqNumber": -26105,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.200927734375,
+        "seqNumber": -26104,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.220947265625,
+        "seqNumber": -26103,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.24072265625,
+        "seqNumber": -26102,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.260986328125,
+        "seqNumber": -26101,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.28076171875,
+        "seqNumber": -26100,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.301025390625,
+        "seqNumber": -26099,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.32080078125,
+        "seqNumber": -26098,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.3408203125,
+        "seqNumber": -26097,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.36083984375,
+        "seqNumber": -26096,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.380859375,
+        "seqNumber": -26095,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.4013671875,
+        "seqNumber": -26094,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.4208984375,
+        "seqNumber": -26093,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.44091796875,
+        "seqNumber": -26092,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.4609375,
+        "seqNumber": -26091,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.48095703125,
+        "seqNumber": -26090,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.5009765625,
+        "seqNumber": -26089,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.521240234375,
+        "seqNumber": -26088,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.541015625,
+        "seqNumber": -26087,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.560791015625,
+        "seqNumber": -26086,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.5810546875,
+        "seqNumber": -26085,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.60107421875,
+        "seqNumber": -26084,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.62109375,
+        "seqNumber": -26083,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.640869140625,
+        "seqNumber": -26082,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.660888671875,
+        "seqNumber": -26081,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.68115234375,
+        "seqNumber": -26080,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.700927734375,
+        "seqNumber": -26079,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.720947265625,
+        "seqNumber": -26078,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.740966796875,
+        "seqNumber": -26077,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.7607421875,
+        "seqNumber": -26076,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.78076171875,
+        "seqNumber": -26075,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.801025390625,
+        "seqNumber": -26074,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.821044921875,
+        "seqNumber": -26073,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.8408203125,
+        "seqNumber": -26072,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.86083984375,
+        "seqNumber": -26071,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.880859375,
+        "seqNumber": -26070,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.90087890625,
+        "seqNumber": -26069,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.9208984375,
+        "seqNumber": -26068,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.940673828125,
+        "seqNumber": -26067,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.9609375,
+        "seqNumber": -26066,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 550.98095703125,
+        "seqNumber": -26065,
+        "line": "-1.0,0.14173229038715363,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.0009765625,
+        "seqNumber": -26064,
+        "line": "-1.0,0.4330708682537079,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.021240234375,
+        "seqNumber": -26063,
+        "line": "-0.6062992215156555,0.5196850299835205,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.040771484375,
+        "seqNumber": -26062,
+        "line": "-0.25196850299835205,0.7952755689620972,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.060791015625,
+        "seqNumber": -26061,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.081298828125,
+        "seqNumber": -26060,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.10107421875,
+        "seqNumber": -26059,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.120849609375,
+        "seqNumber": -26058,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.140869140625,
+        "seqNumber": -26057,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.1611328125,
+        "seqNumber": -26056,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.180908203125,
+        "seqNumber": -26055,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.201171875,
+        "seqNumber": -26054,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.220947265625,
+        "seqNumber": -26053,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.24072265625,
+        "seqNumber": -26052,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.2607421875,
+        "seqNumber": -26051,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.28076171875,
+        "seqNumber": -26050,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.301025390625,
+        "seqNumber": -26049,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.321044921875,
+        "seqNumber": -26048,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.3408203125,
+        "seqNumber": -26047,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.36083984375,
+        "seqNumber": -26046,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.38134765625,
+        "seqNumber": -26045,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.400634765625,
+        "seqNumber": -26044,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.4208984375,
+        "seqNumber": -26043,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.441162109375,
+        "seqNumber": -26042,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.460693359375,
+        "seqNumber": -26041,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.48095703125,
+        "seqNumber": -26040,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.5009765625,
+        "seqNumber": -26039,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.52099609375,
+        "seqNumber": -26038,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.540771484375,
+        "seqNumber": -26037,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.561279296875,
+        "seqNumber": -26036,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.580810546875,
+        "seqNumber": -26035,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.60107421875,
+        "seqNumber": -26034,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.620849609375,
+        "seqNumber": -26033,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.640869140625,
+        "seqNumber": -26032,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.660888671875,
+        "seqNumber": -26031,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.680908203125,
+        "seqNumber": -26030,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.700927734375,
+        "seqNumber": -26029,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.720703125,
+        "seqNumber": -26028,
+        "line": "0.3359375,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.740966796875,
+        "seqNumber": -26027,
+        "line": "0.609375,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.760986328125,
+        "seqNumber": -26026,
+        "line": "0.875,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.78076171875,
+        "seqNumber": -26025,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.801025390625,
+        "seqNumber": -26024,
+        "line": "1.0,0.9763779640197754,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.821044921875,
+        "seqNumber": -26023,
+        "line": "1.0,0.7165354490280151,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.8408203125,
+        "seqNumber": -26022,
+        "line": "1.0,0.3937007784843445,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.86083984375,
+        "seqNumber": -26021,
+        "line": "1.0,0.3937007784843445,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.880859375,
+        "seqNumber": -26020,
+        "line": "1.0,0.29921260476112366,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.9013671875,
+        "seqNumber": -26019,
+        "line": "1.0,0.29921260476112366,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.921142578125,
+        "seqNumber": -26018,
+        "line": "1.0,0.19685038924217224,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.94091796875,
+        "seqNumber": -26017,
+        "line": "1.0,0.19685038924217224,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.961181640625,
+        "seqNumber": -26016,
+        "line": "1.0,0.13385826349258423,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 551.98095703125,
+        "seqNumber": -26015,
+        "line": "1.0,0.11811023950576782,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.001220703125,
+        "seqNumber": -26014,
+        "line": "1.0,0.11023622006177902,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.02099609375,
+        "seqNumber": -26013,
+        "line": "1.0,0.10236220806837082,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.040771484375,
+        "seqNumber": -26012,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.061279296875,
+        "seqNumber": -26011,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.0810546875,
+        "seqNumber": -26010,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.10107421875,
+        "seqNumber": -26009,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.12109375,
+        "seqNumber": -26008,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.143310546875,
+        "seqNumber": -26007,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.16064453125,
+        "seqNumber": -26006,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.180908203125,
+        "seqNumber": -26005,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.200927734375,
+        "seqNumber": -26004,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.220703125,
+        "seqNumber": -26003,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.24072265625,
+        "seqNumber": -26002,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.26123046875,
+        "seqNumber": -26001,
+        "line": "1.0,-0.3046875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.281005859375,
+        "seqNumber": -26000,
+        "line": "1.0,-0.625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.301025390625,
+        "seqNumber": -25999,
+        "line": "1.0,-0.8671875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.321044921875,
+        "seqNumber": -25998,
+        "line": "1.0,-0.8671875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.3408203125,
+        "seqNumber": -25997,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.36083984375,
+        "seqNumber": -25996,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.380859375,
+        "seqNumber": -25995,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.40087890625,
+        "seqNumber": -25994,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.4208984375,
+        "seqNumber": -25993,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.441162109375,
+        "seqNumber": -25992,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.460693359375,
+        "seqNumber": -25991,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.48095703125,
+        "seqNumber": -25990,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.500732421875,
+        "seqNumber": -25989,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.520751953125,
+        "seqNumber": -25988,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.540771484375,
+        "seqNumber": -25987,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.56103515625,
+        "seqNumber": -25986,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.580810546875,
+        "seqNumber": -25985,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.600830078125,
+        "seqNumber": -25984,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.620849609375,
+        "seqNumber": -25983,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.64111328125,
+        "seqNumber": -25982,
+        "line": "1.0,-0.9140625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.6611328125,
+        "seqNumber": -25981,
+        "line": "1.0,-0.859375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.68115234375,
+        "seqNumber": -25980,
+        "line": "1.0,-0.828125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.700927734375,
+        "seqNumber": -25979,
+        "line": "1.0,-0.7890625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.72119140625,
+        "seqNumber": -25978,
+        "line": "1.0,-0.734375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.740966796875,
+        "seqNumber": -25977,
+        "line": "1.0,-0.4609375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.760986328125,
+        "seqNumber": -25976,
+        "line": "1.0,-0.1953125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.78125,
+        "seqNumber": -25975,
+        "line": "1.0,-0.1953125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.801025390625,
+        "seqNumber": -25974,
+        "line": "1.0,-0.6640625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.821044921875,
+        "seqNumber": -25973,
+        "line": "1.0,-0.7265625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.8408203125,
+        "seqNumber": -25972,
+        "line": "1.0,-0.7265625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.86083984375,
+        "seqNumber": -25971,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.881103515625,
+        "seqNumber": -25970,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.90087890625,
+        "seqNumber": -25969,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.9208984375,
+        "seqNumber": -25968,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.94091796875,
+        "seqNumber": -25967,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.9609375,
+        "seqNumber": -25966,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 552.98095703125,
+        "seqNumber": -25965,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.0009765625,
+        "seqNumber": -25964,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.02099609375,
+        "seqNumber": -25963,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.040771484375,
+        "seqNumber": -25962,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.06103515625,
+        "seqNumber": -25961,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.080810546875,
+        "seqNumber": -25960,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.100830078125,
+        "seqNumber": -25959,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.120849609375,
+        "seqNumber": -25958,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.14111328125,
+        "seqNumber": -25957,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.160888671875,
+        "seqNumber": -25956,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.18115234375,
+        "seqNumber": -25955,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.200927734375,
+        "seqNumber": -25954,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.220947265625,
+        "seqNumber": -25953,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.240966796875,
+        "seqNumber": -25952,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.2607421875,
+        "seqNumber": -25951,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.28125,
+        "seqNumber": -25950,
+        "line": "1.0,-0.8359375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.301025390625,
+        "seqNumber": -25949,
+        "line": "1.0,-0.2265625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.32080078125,
+        "seqNumber": -25948,
+        "line": "1.0,-0.2265625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.3408203125,
+        "seqNumber": -25947,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.36083984375,
+        "seqNumber": -25946,
+        "line": "1.0,-0.2109375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.381103515625,
+        "seqNumber": -25945,
+        "line": "1.0,-0.25,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.401123046875,
+        "seqNumber": -25944,
+        "line": "1.0,-0.78125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.421142578125,
+        "seqNumber": -25943,
+        "line": "1.0,-0.78125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.44091796875,
+        "seqNumber": -25942,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.4609375,
+        "seqNumber": -25941,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.481201171875,
+        "seqNumber": -25940,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.501220703125,
+        "seqNumber": -25939,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.520751953125,
+        "seqNumber": -25938,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.541015625,
+        "seqNumber": -25937,
+        "line": "1.0,-0.625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.56103515625,
+        "seqNumber": -25936,
+        "line": "1.0,-0.6015625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.58154296875,
+        "seqNumber": -25935,
+        "line": "1.0,-0.5078125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.60107421875,
+        "seqNumber": -25934,
+        "line": "1.0,0.13385826349258423,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.620849609375,
+        "seqNumber": -25933,
+        "line": "1.0,0.10236220806837082,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.640869140625,
+        "seqNumber": -25932,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.660888671875,
+        "seqNumber": -25931,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.680908203125,
+        "seqNumber": -25930,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.701416015625,
+        "seqNumber": -25929,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.720947265625,
+        "seqNumber": -25928,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.740966796875,
+        "seqNumber": -25927,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.7607421875,
+        "seqNumber": -25926,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.781005859375,
+        "seqNumber": -25925,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.80126953125,
+        "seqNumber": -25924,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.82080078125,
+        "seqNumber": -25923,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.8408203125,
+        "seqNumber": -25922,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.86083984375,
+        "seqNumber": -25921,
+        "line": "1.0,0.32283464074134827,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.881103515625,
+        "seqNumber": -25920,
+        "line": "1.0,0.3858267664909363,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.901123046875,
+        "seqNumber": -25919,
+        "line": "1.0,0.6220472455024719,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.9208984375,
+        "seqNumber": -25918,
+        "line": "1.0,0.6535432934761047,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.94140625,
+        "seqNumber": -25917,
+        "line": "1.0,0.7007874250411987,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.9609375,
+        "seqNumber": -25916,
+        "line": "1.0,0.7952755689620972,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 553.981201171875,
+        "seqNumber": -25915,
+        "line": "1.0,0.8661417365074158,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.00146484375,
+        "seqNumber": -25914,
+        "line": "1.0,0.8976377844810486,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.02099609375,
+        "seqNumber": -25913,
+        "line": "1.0,0.8976377844810486,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.041015625,
+        "seqNumber": -25912,
+        "line": "1.0,0.9291338324546814,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.061279296875,
+        "seqNumber": -25911,
+        "line": "1.0,0.9370078444480896,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.080810546875,
+        "seqNumber": -25910,
+        "line": "1.0,0.874015748500824,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.100830078125,
+        "seqNumber": -25909,
+        "line": "1.0,0.874015748500824,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.12109375,
+        "seqNumber": -25908,
+        "line": "1.0,0.22047244012355804,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.14111328125,
+        "seqNumber": -25907,
+        "line": "1.0,0.17322835326194763,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.160888671875,
+        "seqNumber": -25906,
+        "line": "1.0,0.14173229038715363,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.180908203125,
+        "seqNumber": -25905,
+        "line": "1.0,0.11811023950576782,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.200927734375,
+        "seqNumber": -25904,
+        "line": "1.0,0.11811023950576782,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.22119140625,
+        "seqNumber": -25903,
+        "line": "1.0,0.11023622006177902,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.240966796875,
+        "seqNumber": -25902,
+        "line": "1.0,0.10236220806837082,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.260986328125,
+        "seqNumber": -25901,
+        "line": "1.0,0.10236220806837082,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.281005859375,
+        "seqNumber": -25900,
+        "line": "1.0,0.10236220806837082,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.30078125,
+        "seqNumber": -25899,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.32080078125,
+        "seqNumber": -25898,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.3408203125,
+        "seqNumber": -25897,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.36083984375,
+        "seqNumber": -25896,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.380859375,
+        "seqNumber": -25895,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.40087890625,
+        "seqNumber": -25894,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.4208984375,
+        "seqNumber": -25893,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.44091796875,
+        "seqNumber": -25892,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.4609375,
+        "seqNumber": -25891,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.480712890625,
+        "seqNumber": -25890,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.5009765625,
+        "seqNumber": -25889,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.520751953125,
+        "seqNumber": -25888,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.540771484375,
+        "seqNumber": -25887,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.560791015625,
+        "seqNumber": -25886,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.580810546875,
+        "seqNumber": -25885,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.600830078125,
+        "seqNumber": -25884,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.620849609375,
+        "seqNumber": -25883,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.640869140625,
+        "seqNumber": -25882,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.660888671875,
+        "seqNumber": -25881,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.68115234375,
+        "seqNumber": -25880,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.70068359375,
+        "seqNumber": -25879,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.720947265625,
+        "seqNumber": -25878,
+        "line": "0.4375,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.7412109375,
+        "seqNumber": -25877,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.760986328125,
+        "seqNumber": -25876,
+        "line": "-0.27559053897857666,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.781005859375,
+        "seqNumber": -25875,
+        "line": "-0.6456692814826965,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.801025390625,
+        "seqNumber": -25874,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.82080078125,
+        "seqNumber": -25873,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.8408203125,
+        "seqNumber": -25872,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.86083984375,
+        "seqNumber": -25871,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.880859375,
+        "seqNumber": -25870,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.90087890625,
+        "seqNumber": -25869,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.921142578125,
+        "seqNumber": -25868,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.94091796875,
+        "seqNumber": -25867,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.9609375,
+        "seqNumber": -25866,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 554.981201171875,
+        "seqNumber": -25865,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.0009765625,
+        "seqNumber": -25864,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.02099609375,
+        "seqNumber": -25863,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.041015625,
+        "seqNumber": -25862,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.06103515625,
+        "seqNumber": -25861,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.080810546875,
+        "seqNumber": -25860,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.10107421875,
+        "seqNumber": -25859,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.120849609375,
+        "seqNumber": -25858,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.140869140625,
+        "seqNumber": -25857,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.160888671875,
+        "seqNumber": -25856,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.180908203125,
+        "seqNumber": -25855,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.200927734375,
+        "seqNumber": -25854,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.220947265625,
+        "seqNumber": -25853,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.24072265625,
+        "seqNumber": -25852,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.2607421875,
+        "seqNumber": -25851,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.28076171875,
+        "seqNumber": -25850,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.30078125,
+        "seqNumber": -25849,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.321044921875,
+        "seqNumber": -25848,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.341064453125,
+        "seqNumber": -25847,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.36083984375,
+        "seqNumber": -25846,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.381103515625,
+        "seqNumber": -25845,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.40087890625,
+        "seqNumber": -25844,
+        "line": "-1.0,-0.125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.4208984375,
+        "seqNumber": -25843,
+        "line": "-1.0,-0.171875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.441162109375,
+        "seqNumber": -25842,
+        "line": "-1.0,-0.234375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.4609375,
+        "seqNumber": -25841,
+        "line": "-1.0,-0.265625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.48095703125,
+        "seqNumber": -25840,
+        "line": "-1.0,-0.28125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.5009765625,
+        "seqNumber": -25839,
+        "line": "-1.0,-0.28125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.52099609375,
+        "seqNumber": -25838,
+        "line": "-1.0,-0.28125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.541015625,
+        "seqNumber": -25837,
+        "line": "-1.0,-0.234375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.56103515625,
+        "seqNumber": -25836,
+        "line": "-1.0,-0.21875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.5810546875,
+        "seqNumber": -25835,
+        "line": "-1.0,-0.2109375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.60107421875,
+        "seqNumber": -25834,
+        "line": "-1.0,-0.203125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.62109375,
+        "seqNumber": -25833,
+        "line": "-1.0,-0.203125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.640869140625,
+        "seqNumber": -25832,
+        "line": "-1.0,-0.203125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.660888671875,
+        "seqNumber": -25831,
+        "line": "-1.0,-0.203125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.680908203125,
+        "seqNumber": -25830,
+        "line": "-1.0,-0.203125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.700927734375,
+        "seqNumber": -25829,
+        "line": "-1.0,-0.21875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.720947265625,
+        "seqNumber": -25828,
+        "line": "-1.0,-0.28125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.740966796875,
+        "seqNumber": -25827,
+        "line": "-1.0,-0.5234375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.760986328125,
+        "seqNumber": -25826,
+        "line": "-1.0,-0.578125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.781005859375,
+        "seqNumber": -25825,
+        "line": "-1.0,-0.6484375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.801025390625,
+        "seqNumber": -25824,
+        "line": "-1.0,-0.6640625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.82080078125,
+        "seqNumber": -25823,
+        "line": "-1.0,-0.6328125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.841064453125,
+        "seqNumber": -25822,
+        "line": "-1.0,-0.359375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.861083984375,
+        "seqNumber": -25821,
+        "line": "-1.0,-0.296875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.881103515625,
+        "seqNumber": -25820,
+        "line": "-1.0,-0.25,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.90087890625,
+        "seqNumber": -25819,
+        "line": "-1.0,-0.203125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.9208984375,
+        "seqNumber": -25818,
+        "line": "-1.0,-0.1875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.941162109375,
+        "seqNumber": -25817,
+        "line": "-1.0,-0.171875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.960693359375,
+        "seqNumber": -25816,
+        "line": "-1.0,-0.1640625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 555.98095703125,
+        "seqNumber": -25815,
+        "line": "-1.0,-0.1640625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.0009765625,
+        "seqNumber": -25814,
+        "line": "-1.0,-0.1640625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.02099609375,
+        "seqNumber": -25813,
+        "line": "-1.0,-0.1796875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.041015625,
+        "seqNumber": -25812,
+        "line": "-1.0,-0.1953125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.06103515625,
+        "seqNumber": -25811,
+        "line": "-1.0,-0.203125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.0810546875,
+        "seqNumber": -25810,
+        "line": "-1.0,-0.171875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.10107421875,
+        "seqNumber": -25809,
+        "line": "-1.0,-0.1484375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.120849609375,
+        "seqNumber": -25808,
+        "line": "-1.0,-0.109375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.140869140625,
+        "seqNumber": -25807,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.160888671875,
+        "seqNumber": -25806,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.180908203125,
+        "seqNumber": -25805,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.200927734375,
+        "seqNumber": -25804,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.220947265625,
+        "seqNumber": -25803,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.24072265625,
+        "seqNumber": -25802,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.260986328125,
+        "seqNumber": -25801,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.28125,
+        "seqNumber": -25800,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.30078125,
+        "seqNumber": -25799,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.32080078125,
+        "seqNumber": -25798,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.341064453125,
+        "seqNumber": -25797,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.36083984375,
+        "seqNumber": -25796,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.380859375,
+        "seqNumber": -25795,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.40087890625,
+        "seqNumber": -25794,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.4208984375,
+        "seqNumber": -25793,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.44091796875,
+        "seqNumber": -25792,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.460693359375,
+        "seqNumber": -25791,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.480712890625,
+        "seqNumber": -25790,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.5009765625,
+        "seqNumber": -25789,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.52099609375,
+        "seqNumber": -25788,
+        "line": "-1.0,0.16535432636737823,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.541015625,
+        "seqNumber": -25787,
+        "line": "-1.0,0.4173228442668915,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.56103515625,
+        "seqNumber": -25786,
+        "line": "-1.0,0.4566929042339325,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.5810546875,
+        "seqNumber": -25785,
+        "line": "-1.0,0.5196850299835205,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.600830078125,
+        "seqNumber": -25784,
+        "line": "-1.0,0.5669291615486145,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.62109375,
+        "seqNumber": -25783,
+        "line": "-1.0,0.5669291615486145,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.640869140625,
+        "seqNumber": -25782,
+        "line": "-1.0,0.9055117964744568,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.6611328125,
+        "seqNumber": -25781,
+        "line": "-0.9055117964744568,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.6806640625,
+        "seqNumber": -25780,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.700927734375,
+        "seqNumber": -25779,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.720703125,
+        "seqNumber": -25778,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.74072265625,
+        "seqNumber": -25777,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.7607421875,
+        "seqNumber": -25776,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.78076171875,
+        "seqNumber": -25775,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.80078125,
+        "seqNumber": -25774,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.82080078125,
+        "seqNumber": -25773,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.8408203125,
+        "seqNumber": -25772,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.86083984375,
+        "seqNumber": -25771,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.880859375,
+        "seqNumber": -25770,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.90087890625,
+        "seqNumber": -25769,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.921142578125,
+        "seqNumber": -25768,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.94091796875,
+        "seqNumber": -25767,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.9609375,
+        "seqNumber": -25766,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 556.981201171875,
+        "seqNumber": -25765,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.000732421875,
+        "seqNumber": -25764,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.020751953125,
+        "seqNumber": -25763,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.041015625,
+        "seqNumber": -25762,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.06103515625,
+        "seqNumber": -25761,
+        "line": "0.125,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.0810546875,
+        "seqNumber": -25760,
+        "line": "0.1953125,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.10107421875,
+        "seqNumber": -25759,
+        "line": "0.2265625,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.120849609375,
+        "seqNumber": -25758,
+        "line": "0.2265625,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.141357421875,
+        "seqNumber": -25757,
+        "line": "0.1875,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.16162109375,
+        "seqNumber": -25756,
+        "line": "0.140625,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.180908203125,
+        "seqNumber": -25755,
+        "line": "0.140625,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.200927734375,
+        "seqNumber": -25754,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.22119140625,
+        "seqNumber": -25753,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.24072265625,
+        "seqNumber": -25752,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.260986328125,
+        "seqNumber": -25751,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.281005859375,
+        "seqNumber": -25750,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.301025390625,
+        "seqNumber": -25749,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.32080078125,
+        "seqNumber": -25748,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.3408203125,
+        "seqNumber": -25747,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.361328125,
+        "seqNumber": -25746,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.380859375,
+        "seqNumber": -25745,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.40087890625,
+        "seqNumber": -25744,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.420654296875,
+        "seqNumber": -25743,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.441650390625,
+        "seqNumber": -25742,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.4609375,
+        "seqNumber": -25741,
+        "line": "0.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.48095703125,
+        "seqNumber": -25740,
+        "line": "0.1171875,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.501220703125,
+        "seqNumber": -25739,
+        "line": "0.4765625,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.52099609375,
+        "seqNumber": -25738,
+        "line": "0.8359375,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.541015625,
+        "seqNumber": -25737,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.56103515625,
+        "seqNumber": -25736,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.5810546875,
+        "seqNumber": -25735,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.600830078125,
+        "seqNumber": -25734,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.62109375,
+        "seqNumber": -25733,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.64111328125,
+        "seqNumber": -25732,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.6611328125,
+        "seqNumber": -25731,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.680908203125,
+        "seqNumber": -25730,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.700927734375,
+        "seqNumber": -25729,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.720947265625,
+        "seqNumber": -25728,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.7412109375,
+        "seqNumber": -25727,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.7607421875,
+        "seqNumber": -25726,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.78076171875,
+        "seqNumber": -25725,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.801025390625,
+        "seqNumber": -25724,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.821044921875,
+        "seqNumber": -25723,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.841064453125,
+        "seqNumber": -25722,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.861328125,
+        "seqNumber": -25721,
+        "line": "1.0,1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.881103515625,
+        "seqNumber": -25720,
+        "line": "1.0,0.9448819160461426,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.9013671875,
+        "seqNumber": -25719,
+        "line": "1.0,0.4094488322734833,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.9208984375,
+        "seqNumber": -25718,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.94091796875,
+        "seqNumber": -25717,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.96142578125,
+        "seqNumber": -25716,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 557.98095703125,
+        "seqNumber": -25715,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.0009765625,
+        "seqNumber": -25714,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.02099609375,
+        "seqNumber": -25713,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.041015625,
+        "seqNumber": -25712,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.060791015625,
+        "seqNumber": -25711,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.080810546875,
+        "seqNumber": -25710,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.100830078125,
+        "seqNumber": -25709,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.120849609375,
+        "seqNumber": -25708,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.14111328125,
+        "seqNumber": -25707,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.160888671875,
+        "seqNumber": -25706,
+        "line": "1.0,-0.3125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.18115234375,
+        "seqNumber": -25705,
+        "line": "1.0,-0.3515625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.200927734375,
+        "seqNumber": -25704,
+        "line": "1.0,-0.3515625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.220947265625,
+        "seqNumber": -25703,
+        "line": "1.0,-0.3203125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.240966796875,
+        "seqNumber": -25702,
+        "line": "1.0,-0.3203125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.260986328125,
+        "seqNumber": -25701,
+        "line": "1.0,-0.25,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.28125,
+        "seqNumber": -25700,
+        "line": "1.0,-0.203125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.30126953125,
+        "seqNumber": -25699,
+        "line": "1.0,-0.1875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.321044921875,
+        "seqNumber": -25698,
+        "line": "1.0,-0.1875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.341064453125,
+        "seqNumber": -25697,
+        "line": "1.0,-0.2109375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.36083984375,
+        "seqNumber": -25696,
+        "line": "1.0,-0.34375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.381103515625,
+        "seqNumber": -25695,
+        "line": "1.0,-0.34375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.401123046875,
+        "seqNumber": -25694,
+        "line": "1.0,-0.34375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.4208984375,
+        "seqNumber": -25693,
+        "line": "1.0,-0.4296875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.44091796875,
+        "seqNumber": -25692,
+        "line": "1.0,-0.4375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.4609375,
+        "seqNumber": -25691,
+        "line": "1.0,-0.4453125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.48095703125,
+        "seqNumber": -25690,
+        "line": "1.0,-0.453125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.5009765625,
+        "seqNumber": -25689,
+        "line": "1.0,-0.453125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.52099609375,
+        "seqNumber": -25688,
+        "line": "1.0,-0.453125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.541259765625,
+        "seqNumber": -25687,
+        "line": "1.0,-0.453125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.56103515625,
+        "seqNumber": -25686,
+        "line": "1.0,-0.5,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.580810546875,
+        "seqNumber": -25685,
+        "line": "1.0,-0.5546875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.601318359375,
+        "seqNumber": -25684,
+        "line": "1.0,-0.5546875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.620849609375,
+        "seqNumber": -25683,
+        "line": "1.0,-0.5546875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.640869140625,
+        "seqNumber": -25682,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.6611328125,
+        "seqNumber": -25681,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.680908203125,
+        "seqNumber": -25680,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.700927734375,
+        "seqNumber": -25679,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.720947265625,
+        "seqNumber": -25678,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.740966796875,
+        "seqNumber": -25677,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.7607421875,
+        "seqNumber": -25676,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.78125,
+        "seqNumber": -25675,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.801025390625,
+        "seqNumber": -25674,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.82080078125,
+        "seqNumber": -25673,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.8408203125,
+        "seqNumber": -25672,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.86083984375,
+        "seqNumber": -25671,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.881103515625,
+        "seqNumber": -25670,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.901123046875,
+        "seqNumber": -25669,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.921142578125,
+        "seqNumber": -25668,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.94091796875,
+        "seqNumber": -25667,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.96142578125,
+        "seqNumber": -25666,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 558.980712890625,
+        "seqNumber": -25665,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.001220703125,
+        "seqNumber": -25664,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.02099609375,
+        "seqNumber": -25663,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.040771484375,
+        "seqNumber": -25662,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.06103515625,
+        "seqNumber": -25661,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.0810546875,
+        "seqNumber": -25660,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.10107421875,
+        "seqNumber": -25659,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.120849609375,
+        "seqNumber": -25658,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.140869140625,
+        "seqNumber": -25657,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.160888671875,
+        "seqNumber": -25656,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.18115234375,
+        "seqNumber": -25655,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.201171875,
+        "seqNumber": -25654,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.220947265625,
+        "seqNumber": -25653,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.2412109375,
+        "seqNumber": -25652,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.2607421875,
+        "seqNumber": -25651,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.281005859375,
+        "seqNumber": -25650,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.30078125,
+        "seqNumber": -25649,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.32080078125,
+        "seqNumber": -25648,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.3408203125,
+        "seqNumber": -25647,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.361083984375,
+        "seqNumber": -25646,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.380859375,
+        "seqNumber": -25645,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.40087890625,
+        "seqNumber": -25644,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.4208984375,
+        "seqNumber": -25643,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.440673828125,
+        "seqNumber": -25642,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.461181640625,
+        "seqNumber": -25641,
+        "line": "0.8828125,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.48095703125,
+        "seqNumber": -25640,
+        "line": "0.28125,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.500732421875,
+        "seqNumber": -25639,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.520751953125,
+        "seqNumber": -25638,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.541015625,
+        "seqNumber": -25637,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.560791015625,
+        "seqNumber": -25636,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.5810546875,
+        "seqNumber": -25635,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.60107421875,
+        "seqNumber": -25634,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.620849609375,
+        "seqNumber": -25633,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.640869140625,
+        "seqNumber": -25632,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.6611328125,
+        "seqNumber": -25631,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.680908203125,
+        "seqNumber": -25630,
+        "line": "0.1328125,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.700927734375,
+        "seqNumber": -25629,
+        "line": "0.4453125,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.72119140625,
+        "seqNumber": -25628,
+        "line": "0.78125,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.740966796875,
+        "seqNumber": -25627,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.760986328125,
+        "seqNumber": -25626,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.781005859375,
+        "seqNumber": -25625,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.80078125,
+        "seqNumber": -25624,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.8212890625,
+        "seqNumber": -25623,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.841064453125,
+        "seqNumber": -25622,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.86083984375,
+        "seqNumber": -25621,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.881103515625,
+        "seqNumber": -25620,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.901123046875,
+        "seqNumber": -25619,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.921142578125,
+        "seqNumber": -25618,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.941162109375,
+        "seqNumber": -25617,
+        "line": "1.0,-0.890625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.9609375,
+        "seqNumber": -25616,
+        "line": "1.0,-0.4375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 559.981201171875,
+        "seqNumber": -25615,
+        "line": "1.0,-0.4140625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.0009765625,
+        "seqNumber": -25614,
+        "line": "1.0,-0.359375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.02099609375,
+        "seqNumber": -25613,
+        "line": "1.0,-0.359375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.041015625,
+        "seqNumber": -25612,
+        "line": "1.0,-0.3359375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.060791015625,
+        "seqNumber": -25611,
+        "line": "1.0,-0.3046875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.0810546875,
+        "seqNumber": -25610,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.100830078125,
+        "seqNumber": -25609,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.120849609375,
+        "seqNumber": -25608,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.140869140625,
+        "seqNumber": -25607,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.160888671875,
+        "seqNumber": -25606,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.180908203125,
+        "seqNumber": -25605,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.20068359375,
+        "seqNumber": -25604,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.220947265625,
+        "seqNumber": -25603,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.24072265625,
+        "seqNumber": -25602,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.2607421875,
+        "seqNumber": -25601,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.281005859375,
+        "seqNumber": -25600,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.301025390625,
+        "seqNumber": -25599,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.32080078125,
+        "seqNumber": -25598,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.341064453125,
+        "seqNumber": -25597,
+        "line": "1.0,-0.53125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.361083984375,
+        "seqNumber": -25596,
+        "line": "1.0,-0.625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.380859375,
+        "seqNumber": -25595,
+        "line": "1.0,-0.84375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.40087890625,
+        "seqNumber": -25594,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.4208984375,
+        "seqNumber": -25593,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.441162109375,
+        "seqNumber": -25592,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.4609375,
+        "seqNumber": -25591,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.48095703125,
+        "seqNumber": -25590,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.5009765625,
+        "seqNumber": -25589,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.52099609375,
+        "seqNumber": -25588,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.541015625,
+        "seqNumber": -25587,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.560791015625,
+        "seqNumber": -25586,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.5810546875,
+        "seqNumber": -25585,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.601318359375,
+        "seqNumber": -25584,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.620849609375,
+        "seqNumber": -25583,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.640869140625,
+        "seqNumber": -25582,
+        "line": "1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.6611328125,
+        "seqNumber": -25581,
+        "line": "1.0,-0.9296875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.680908203125,
+        "seqNumber": -25580,
+        "line": "1.0,-0.6953125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.701171875,
+        "seqNumber": -25579,
+        "line": "1.0,-0.390625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.720947265625,
+        "seqNumber": -25578,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.74072265625,
+        "seqNumber": -25577,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.760986328125,
+        "seqNumber": -25576,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.78076171875,
+        "seqNumber": -25575,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.801025390625,
+        "seqNumber": -25574,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.821044921875,
+        "seqNumber": -25573,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.8408203125,
+        "seqNumber": -25572,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.86083984375,
+        "seqNumber": -25571,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.880859375,
+        "seqNumber": -25570,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.901123046875,
+        "seqNumber": -25569,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.92138671875,
+        "seqNumber": -25568,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.94091796875,
+        "seqNumber": -25567,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.9609375,
+        "seqNumber": -25566,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 560.98095703125,
+        "seqNumber": -25565,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.001220703125,
+        "seqNumber": -25564,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.020751953125,
+        "seqNumber": -25563,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.040771484375,
+        "seqNumber": -25562,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.060791015625,
+        "seqNumber": -25561,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.0810546875,
+        "seqNumber": -25560,
+        "line": "1.0,-0.3359375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.100830078125,
+        "seqNumber": -25559,
+        "line": "1.0,-0.3671875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.121337890625,
+        "seqNumber": -25558,
+        "line": "1.0,-0.3671875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.14111328125,
+        "seqNumber": -25557,
+        "line": "1.0,-0.3671875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.1611328125,
+        "seqNumber": -25556,
+        "line": "1.0,-0.4765625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.18115234375,
+        "seqNumber": -25555,
+        "line": "1.0,-0.484375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.201171875,
+        "seqNumber": -25554,
+        "line": "1.0,-0.484375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.22119140625,
+        "seqNumber": -25553,
+        "line": "1.0,-0.4765625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.24072265625,
+        "seqNumber": -25552,
+        "line": "1.0,-0.453125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.260986328125,
+        "seqNumber": -25551,
+        "line": "1.0,-0.453125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.28076171875,
+        "seqNumber": -25550,
+        "line": "1.0,-0.4453125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.301025390625,
+        "seqNumber": -25549,
+        "line": "1.0,-0.5078125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.321044921875,
+        "seqNumber": -25548,
+        "line": "1.0,-0.75,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.341064453125,
+        "seqNumber": -25547,
+        "line": "1.0,-0.8046875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.361083984375,
+        "seqNumber": -25546,
+        "line": "1.0,-0.8515625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.380859375,
+        "seqNumber": -25545,
+        "line": "1.0,-0.8671875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.401123046875,
+        "seqNumber": -25544,
+        "line": "1.0,-0.875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.4208984375,
+        "seqNumber": -25543,
+        "line": "1.0,-0.875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.441162109375,
+        "seqNumber": -25542,
+        "line": "1.0,-0.84375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.4609375,
+        "seqNumber": -25541,
+        "line": "1.0,-0.796875,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.4814453125,
+        "seqNumber": -25540,
+        "line": "1.0,0.21259842813014984,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.5009765625,
+        "seqNumber": -25539,
+        "line": "1.0,-0.109375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.52099609375,
+        "seqNumber": -25538,
+        "line": "1.0,-0.109375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.541015625,
+        "seqNumber": -25537,
+        "line": "1.0,-0.109375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.561279296875,
+        "seqNumber": -25536,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.5810546875,
+        "seqNumber": -25535,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.600830078125,
+        "seqNumber": -25534,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.62109375,
+        "seqNumber": -25533,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.640869140625,
+        "seqNumber": -25532,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.660888671875,
+        "seqNumber": -25531,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.680908203125,
+        "seqNumber": -25530,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.700927734375,
+        "seqNumber": -25529,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.720947265625,
+        "seqNumber": -25528,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.740966796875,
+        "seqNumber": -25527,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.760986328125,
+        "seqNumber": -25526,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.781005859375,
+        "seqNumber": -25525,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.80078125,
+        "seqNumber": -25524,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.821044921875,
+        "seqNumber": -25523,
+        "line": "1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.8427734375,
+        "seqNumber": -25522,
+        "line": "0.9453125,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.86083984375,
+        "seqNumber": -25521,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.880859375,
+        "seqNumber": -25520,
+        "line": "-0.4015747904777527,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.901123046875,
+        "seqNumber": -25519,
+        "line": "-0.8425197005271912,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.9208984375,
+        "seqNumber": -25518,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.94091796875,
+        "seqNumber": -25517,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.9609375,
+        "seqNumber": -25516,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 561.981201171875,
+        "seqNumber": -25515,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.001220703125,
+        "seqNumber": -25514,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.021240234375,
+        "seqNumber": -25513,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.040771484375,
+        "seqNumber": -25512,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.060791015625,
+        "seqNumber": -25511,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.0810546875,
+        "seqNumber": -25510,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.100830078125,
+        "seqNumber": -25509,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.120849609375,
+        "seqNumber": -25508,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.140869140625,
+        "seqNumber": -25507,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.160888671875,
+        "seqNumber": -25506,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.180908203125,
+        "seqNumber": -25505,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.200927734375,
+        "seqNumber": -25504,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.220947265625,
+        "seqNumber": -25503,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.240966796875,
+        "seqNumber": -25502,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.26123046875,
+        "seqNumber": -25501,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.28076171875,
+        "seqNumber": -25500,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.30078125,
+        "seqNumber": -25499,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.321044921875,
+        "seqNumber": -25498,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.3408203125,
+        "seqNumber": -25497,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.361083984375,
+        "seqNumber": -25496,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.381103515625,
+        "seqNumber": -25495,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.40087890625,
+        "seqNumber": -25494,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.4208984375,
+        "seqNumber": -25493,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.44091796875,
+        "seqNumber": -25492,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.461181640625,
+        "seqNumber": -25491,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.48095703125,
+        "seqNumber": -25490,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.5009765625,
+        "seqNumber": -25489,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.52099609375,
+        "seqNumber": -25488,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.54150390625,
+        "seqNumber": -25487,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.56103515625,
+        "seqNumber": -25486,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.580810546875,
+        "seqNumber": -25485,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.60107421875,
+        "seqNumber": -25484,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.620849609375,
+        "seqNumber": -25483,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.640869140625,
+        "seqNumber": -25482,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.660888671875,
+        "seqNumber": -25481,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.68115234375,
+        "seqNumber": -25480,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.700927734375,
+        "seqNumber": -25479,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.720947265625,
+        "seqNumber": -25478,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.740966796875,
+        "seqNumber": -25477,
+        "line": "-1.0,-0.59375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.760986328125,
+        "seqNumber": -25476,
+        "line": "-1.0,-0.6484375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.781005859375,
+        "seqNumber": -25475,
+        "line": "-1.0,-0.6484375,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.801025390625,
+        "seqNumber": -25474,
+        "line": "-1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.82080078125,
+        "seqNumber": -25473,
+        "line": "-1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.841064453125,
+        "seqNumber": -25472,
+        "line": "-1.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.861083984375,
+        "seqNumber": -25471,
+        "line": "-0.8976377844810486,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.880859375,
+        "seqNumber": -25470,
+        "line": "-0.5590550899505615,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.901123046875,
+        "seqNumber": -25469,
+        "line": "0.1015625,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.9208984375,
+        "seqNumber": -25468,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.940673828125,
+        "seqNumber": -25467,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.9609375,
+        "seqNumber": -25466,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 562.98095703125,
+        "seqNumber": -25465,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.0009765625,
+        "seqNumber": -25464,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.02099609375,
+        "seqNumber": -25463,
+        "line": "0.0,-1.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.041015625,
+        "seqNumber": -25462,
+        "line": "0.0,-0.9765625,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.061279296875,
+        "seqNumber": -25461,
+        "line": "-0.32283464074134827,-0.6953125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.0810546875,
+        "seqNumber": -25460,
+        "line": "-0.32283464074134827,-0.6953125,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.100830078125,
+        "seqNumber": -25459,
+        "line": "-0.8897637724876404,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.12109375,
+        "seqNumber": -25458,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.14111328125,
+        "seqNumber": -25457,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.160888671875,
+        "seqNumber": -25456,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.180908203125,
+        "seqNumber": -25455,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.200927734375,
+        "seqNumber": -25454,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.220947265625,
+        "seqNumber": -25453,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.240966796875,
+        "seqNumber": -25452,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.26123046875,
+        "seqNumber": -25451,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.28076171875,
+        "seqNumber": -25450,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.301025390625,
+        "seqNumber": -25449,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.321044921875,
+        "seqNumber": -25448,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.341064453125,
+        "seqNumber": -25447,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.361328125,
+        "seqNumber": -25446,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.381103515625,
+        "seqNumber": -25445,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.40087890625,
+        "seqNumber": -25444,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.4208984375,
+        "seqNumber": -25443,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.44091796875,
+        "seqNumber": -25442,
+        "line": "-1.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.4609375,
+        "seqNumber": -25441,
+        "line": "-0.8267716765403748,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.48095703125,
+        "seqNumber": -25440,
+        "line": "0.171875,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.5009765625,
+        "seqNumber": -25439,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.52099609375,
+        "seqNumber": -25438,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.541259765625,
+        "seqNumber": -25437,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.560791015625,
+        "seqNumber": -25436,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.580810546875,
+        "seqNumber": -25435,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.600830078125,
+        "seqNumber": -25434,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.62109375,
+        "seqNumber": -25433,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.640869140625,
+        "seqNumber": -25432,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.660888671875,
+        "seqNumber": -25431,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.680908203125,
+        "seqNumber": -25430,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.701171875,
+        "seqNumber": -25429,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.720947265625,
+        "seqNumber": -25428,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.74072265625,
+        "seqNumber": -25427,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.760986328125,
+        "seqNumber": -25426,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.781005859375,
+        "seqNumber": -25425,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.80078125,
+        "seqNumber": -25424,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.82080078125,
+        "seqNumber": -25423,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.841552734375,
+        "seqNumber": -25422,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.86083984375,
+        "seqNumber": -25421,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.880859375,
+        "seqNumber": -25420,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.901123046875,
+        "seqNumber": -25419,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.9208984375,
+        "seqNumber": -25418,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.940673828125,
+        "seqNumber": -25417,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.9609375,
+        "seqNumber": -25416,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 563.98095703125,
+        "seqNumber": -25415,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 564.0009765625,
+        "seqNumber": -25414,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 564.02099609375,
+        "seqNumber": -25413,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 564.041015625,
+        "seqNumber": -25412,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 564.060791015625,
+        "seqNumber": -25411,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 564.0810546875,
+        "seqNumber": -25410,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 564.10107421875,
+        "seqNumber": -25409,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 564.120849609375,
+        "seqNumber": -25408,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 564.14111328125,
+        "seqNumber": -25407,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 564.160888671875,
+        "seqNumber": -25406,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 564.180908203125,
+        "seqNumber": -25405,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 564.200927734375,
+        "seqNumber": -25404,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 564.220947265625,
+        "seqNumber": -25403,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 564.240966796875,
+        "seqNumber": -25402,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 564.260986328125,
+        "seqNumber": -25401,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 564.281005859375,
+        "seqNumber": -25400,
+        "line": "0.0,0.0,"
+    },
+    {
+        "messageType": 2,
+        "timestamp": 564.30078125,
+        "seqNumber": -25399,
+        "line": "0.0,0.0,"
+    }
+]

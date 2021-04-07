@@ -126,14 +126,16 @@ public class DriveTrainSubsystem extends SubsystemBase {
 			this.drive.driveCartesian(
 				0.7*ySpeed, 
 				0.7*xSpeed, 
-				0.7*zRotation, 
+				0.7*zRotation
+				, 
 				-m_navx.getAngle()
 			);
 		else
 			this.drive.driveCartesian(
 				0.5*ySpeed, 
 				0.5*xSpeed, 
-				0.5*zRotation, 
+				0.5*zRotation
+				, 
 				-m_navx.getAngle()
 			);
 		// if (!slowMode && !doubleSlowMode) this.drive.driveCartesian(0.7*xSpeed*xSpeed * Math.signum(xSpeed),0.7*ySpeed*ySpeed * Math.signum(ySpeed), 0.5*zRotation, m_navx.getAngle());

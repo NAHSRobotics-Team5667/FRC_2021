@@ -74,7 +74,7 @@ public class DifferentialDriveCopy extends CommandBase {
 	// 	else{
 	// 	}
 }
-		drivetrain.drive(0.75*sticks.get("LSY"), 0.75*sticks.get("RSX"),
+		drivetrain.drive(0.7*sticks.get("LSY"), 0.7*sticks.get("RSX"),
 		RobotContainer.getController().getStickButtonPressed(RobotContainer.getController().getLeftHand()));
 
 		if (RobotContainer.getController().getAButtonPressed()){
