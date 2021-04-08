@@ -63,10 +63,10 @@ public class AlignCommand extends CommandBase {
 				output = (output>0) ? (Math.min(output, 0.16)) : (Math.max(output, -0.16));
 				m_turret.startTurret(output);
 			} else if (!Limelight.getInstance().hasValidTarget()) {
-				if(m_turret.getStop()){
-					m_turret.startTurret(-0.1);
-				} else {
-					m_turret.startTurret(0.1);
+				if (m_turret.getTurretAngle() > 0) {
+					m_turret.startTurret(-0.01);
+				} else if (m_turret.getTurretAngle() < 0) {
+					m_turret.startTurret(0.01);
 				}
 			}
 

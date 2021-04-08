@@ -189,7 +189,7 @@ public final class Constants {
         public static final int SHOOTER_INTAKE_ID = 1;
 
         public static final double HOOD_SPEED = 0.09;
-        public static final double SHOOTER_SPEED = 1;
+        public static final double SHOOTER_SPEED = 0.6;
         public static final double INTAKE_SPEED = 0.4;
         public static final double TURRET_SPEED = 0.1;
 

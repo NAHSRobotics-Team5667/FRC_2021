@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import frc.robot.Constants.ShooterConstants;
 import frc.robot.Constants.ShooterStates;
+import frc.robot.utils.Limelight;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
@@ -84,6 +85,12 @@ public class ShooterSubsystem extends SubsystemBase {
    */
   public double degreesToHoodTicks(double endDegrees, double initialDegrees) {
     return ((Constants.FALCON_CPR * (1 / Constants.ShooterConstants.HOOD_GEAR_RATIO)) * (endDegrees - initialDegrees)) / 360;
+  }
+
+  public double calculateHood(double area) {
+    if (area >= 3.14) return (25.3 + (1.22 * area) - (0.996 * Math.pow(area, 2)));
+    else if (area <= 3.14 && area > 0) return (47 - (17.4 * area) + (1.93 * Math.pow(area, 2)));
+    else return 24;
   }
 
   /**

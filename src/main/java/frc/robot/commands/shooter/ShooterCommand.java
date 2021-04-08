@@ -6,10 +6,13 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.Constants;
 import frc.robot.RobotContainer;
 import frc.robot.subsystems.ShooterSubsystem;
+import frc.robot.utils.Limelight;
 
 public class ShooterCommand extends CommandBase {
   private double timeout; // time to run the shooter for
   private double initTime;
+
+  int i = 0;
 
   private ShooterSubsystem m_shooter;
 
@@ -38,12 +41,13 @@ public class ShooterCommand extends CommandBase {
   @Override
   public void initialize() {
     m_shooter.stopHood();
-    initTime = Timer.getFPGATimestamp();
   }
 
   @Override
   public void execute() {
     if (!RobotContainer.movement) {
+      if (i == 0) initTime = Timer.getFPGATimestamp();
+
       m_shooter.startShooter(Constants.ShooterConstants.SHOOTER_SPEED);
       double frac = RobotContainer.controller.getRightTrigger();
       if(RobotContainer.controller.getRightTrigger()>0){
@@ -55,6 +59,32 @@ public class ShooterCommand extends CommandBase {
         m_shooter.stopShooterIntake();
       }
 
+      if (Timer.getFPGATimestamp() - initTime <= 5) {
+        if (m_shooter.getHoodAngle() < 2.23) {
+          m_shooter.startHood(Constants.ShooterConstants.HOOD_SPEED);
+        } else if (m_shooter.getHoodAngle() > 2.23) {
+          m_shooter.startHood(-Constants.ShooterConstants.HOOD_SPEED);
+        }
+      } else {
+        if (m_shooter.getHoodAngle() < m_shooter.calculateHood(Limelight.getInstance().getArea())) {
+          m_shooter.startHood(Constants.ShooterConstants.HOOD_SPEED);
+        } else if (m_shooter.getHoodAngle() > m_shooter.calculateHood(Limelight.getInstance().getArea())) {
+          m_shooter.startHood(-Constants.ShooterConstants.HOOD_SPEED);
+        }
+      }
+
+      // if (m_shooter.getHoodAngle() < m_shooter.calculateHood(Limelight.getInstance().getArea())) {
+      //   m_shooter.startHood(Constants.ShooterConstants.HOOD_SPEED);
+      // } else if (m_shooter.getHoodAngle() > m_shooter.calculateHood(Limelight.getInstance().getArea())) {
+      //   m_shooter.startHood(-Constants.ShooterConstants.HOOD_SPEED);
+      // }
+
+      if (RobotContainer.getController().getYButtonPressed()) m_shooter.zeroHood();
+
+      i++;
+    } else {
+      m_shooter.stopShooter();
+
       if (RobotContainer.controller.getXButton()) {
         m_shooter.startHood(Constants.ShooterConstants.HOOD_SPEED);
         System.out.println("gotY");
@@ -63,8 +93,6 @@ public class ShooterCommand extends CommandBase {
       } else{
         m_shooter.stopHood();
       }
-
-      if (RobotContainer.getController().getYButtonPressed()) m_shooter.zeroHood();
     }
   }
   
