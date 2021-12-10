@@ -57,8 +57,8 @@ import frc.robot.Constants.PATHS.PathWeaver;
 public class RobotContainer {
 	// The robot's subsystems and commands are defined here...
 	public static Controller controller = new Controller(0);
-	// public static DriveTrainSubsystem drivetrain;
-	public static DifferentialDriveSubsystem m_diffDrive;
+	public static DriveTrainSubsystem drivetrain;
+	//public static DifferentialDriveSubsystem m_diffDrive;
 	public static IndexSubsystem m_index;
 	public static IntakeSubsystem m_intake;
 	public static ShooterSubsystem m_shooter;
@@ -78,19 +78,19 @@ public class RobotContainer {
 	 * The container for the robot. Contains subsystems, OI devices, and commands.
 	 */
 	public RobotContainer() {
-		// drivetrain = new DriveTrainSubsystem(new AHRS(SPI.Port.kMXP), new WPI_TalonFX(Constants.DriveConstants.FR), new WPI_TalonFX(Constants.DriveConstants.FL), new WPI_TalonFX(Constants.DriveConstants.RR), new WPI_TalonFX(Constants.DriveConstants.RL));
+		drivetrain = new DriveTrainSubsystem(new AHRS(SPI.Port.kMXP), new WPI_TalonFX(Constants.DriveConstants.FR), new WPI_TalonFX(Constants.DriveConstants.FL), new WPI_TalonFX(Constants.DriveConstants.RR), new WPI_TalonFX(Constants.DriveConstants.RL));
 		// XXX: these are placeholders!!
 		m_shooter = new ShooterSubsystem(0.0, 0.0);
 		m_intake = new IntakeSubsystem();
 		m_index = new IndexSubsystem();
 		m_turret = new TurretSubsystem(0);
-		m_diffDrive = new DifferentialDriveSubsystem(new AHRS(SPI.Port.kMXP), new WPI_TalonFX(Constants.DriveConstants.FR), new WPI_TalonFX(Constants.DriveConstants.FL), new WPI_TalonFX(Constants.DriveConstants.RR), new WPI_TalonFX(Constants.DriveConstants.RL));
+		//m_diffDrive = new DifferentialDriveSubsystem(new AHRS(SPI.Port.kMXP), new WPI_TalonFX(Constants.DriveConstants.FR), new WPI_TalonFX(Constants.DriveConstants.FL), new WPI_TalonFX(Constants.DriveConstants.RR), new WPI_TalonFX(Constants.DriveConstants.RL));
 		configureButtonBindings();
 		//Set default commands
-		m_diffDrive.setDefaultCommand(new DifferentialDriveCommand(m_diffDrive));
+		//m_diffDrive.setDefaultCommand(new DifferentialDriveCommand(m_diffDrive));
 		//m_diffDrive.setDefaultCommand(new DifferentialDriveCopy(m_diffDrive));
 		//m_diffDrive.setDefaultCommand(new DifferentialDrivePlayback(m_diffDrive, "shlalom"));
-		// drivetrain.setDefaultCommand(new DriveTrainCommand(drivetrain));
+		drivetrain.setDefaultCommand(new DriveTrainCommand(drivetrain));
 		//drivetrain.setDefaultCommand(new DriveTrainPlayback(drivetrain, "barrel17"));
 		//drivetrain.setDefaultCommand(new DriveTrainCopy(drivetrain));
 		m_index.setDefaultCommand(new IndexCommand(m_index));
@@ -127,27 +127,27 @@ public class RobotContainer {
 		return controller;
 	}
 	// public Command getAutonomousCommand(int selection) { // if selection == 4 call bounce sequential command
-		// if (selection != 4) {
-		// 	drivetrain.resetOdometry(paths[selection].getInitialPose());
-		// 	return RunPath.getCommand(paths[selection], drivetrain, false).andThen(new RunCommand(drivetrain::stop));
-		// } else {
-		// 	return new SequentialCommandGroup(new Command[] {
-		// 		RunPath.getCommand(paths[4], drivetrain, false), 
-		// 		RunPath.getCommand(paths[5], drivetrain, true),
-		// 		RunPath.getCommand(paths[6], drivetrain, false),
-		// 		RunPath.getCommand(paths[7], drivetrain, true)
-		// 	});
-		// }
+	// 	// if (selection != 4) {
+	// 	// 	drivetrain.resetOdometry(paths[selection].getInitialPose());
+	// 	// 	return RunPath.getCommand(paths[selection], drivetrain, false).andThen(new RunCommand(drivetrain::stop));
+	// 	// } else {
+	// 	// 	return new SequentialCommandGroup(new Command[] {
+	// 	// 		RunPath.getCommand(paths[4], drivetrain, false), 
+	// 	// 		RunPath.getCommand(paths[5], drivetrain, true),
+	// 	// 		RunPath.getCommand(paths[6], drivetrain, false),
+	// 	// 		RunPath.getCommand(paths[7], drivetrain, true)
+	// 	// 	});
+	// 	// }
 
-		// return new AlignCommand(m_turret);
+	// 	// return new AlignCommand(m_turret);
 	// }
 	
 	public void setNeutralMode(NeutralMode mode){
-		// drivetrain.setNeutralMode(mode);
-		m_diffDrive.setNeutralMode(mode);
+		drivetrain.setNeutralMode(mode);
+		//m_diffDrive.setNeutralMode(mode);;
 	}	
 	public void feedMotorSafety() {
-		// drivetrain.feedMotorSafety();
-		m_diffDrive.feedMotorSafety();
+		drivetrain.feedMotorSafety();
+		//m_diffDrive.feedMotorSafety();;
 	}
 }
