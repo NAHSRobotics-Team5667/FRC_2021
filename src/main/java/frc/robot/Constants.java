@@ -83,9 +83,14 @@ public final class Constants {
         public static final double MAX_SPEED_TELE = 3.25;
         public static final double MAX_ANGULAR_VEL = 320;
 
-        public static final int FR = 0;
+        // public static final int FR = 0;
+        // public static final int FL = 3;
+        // public static final int RR = 4;
+        // public static final int RL = 7;
+
+        public static final int FR = 1;
         public static final int FL = 3;
-        public static final int RR = 4;
+        public static final int RR = 0;
         public static final int RL = 7;
 
         public static final double ksVolts = 0.057;
